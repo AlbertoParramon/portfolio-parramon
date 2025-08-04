@@ -10,7 +10,7 @@
     </div>
     <div class="sidebar-menu">
       <ul>
-        @for (item of menuItems; track item.label) {
+        @for (item of sections; track item.label) {
         <li class="sidebar-menu-item">
           <a
             href="#"
@@ -19,10 +19,10 @@
               'has-children': item.children,
               'menu-item-active': item.isOpen
             }"
-            (click)="toggleMenuItem(item)"
+            (click)="toggleMenuItem(item); setSectionVisible(item.label)"
           >
             <i [class]="item.icon"></i>
-            <span class="sidebar-item-text">{{ item.label }}</span>
+            <span class="sidebar-item-text">{{ item.name }}</span>
             @if (item.children && !isSidebarCollapsed) {
             <i
               class="fas fa-chevron-down sidebar-item-arrow"
@@ -38,7 +38,7 @@
             <li>
               <a href="#" class="sidebar-item sidebar-subitem">
                 <i [class]="child.icon"></i>
-                <span class="sidebar-item-text">{{ child.label }}</span>
+                <span class="sidebar-item-text">{{ child.name }}</span>
               </a>
             </li>
             }

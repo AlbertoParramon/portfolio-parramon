@@ -1,13 +1,24 @@
 <div class="main-content">
     main-content works!
-
-
-
-
-
-    dfd
-    fd
-    fd
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    ALL SECTIONS START    
+    <app-about>
+    </app-about>
+    <app-experience>
+    </app-experience>
+    <app-education>
+    </app-education>
+    <app-skills>
+    </app-skills>
+    <app-projects>
+    </app-projects>
+    ALL SECTIONS END
     <br>
     <br>
     <br>
@@ -15,6 +26,19 @@
     <br>
     <br>
     <br>    
-    sss
+    TEST:
+    @for (section of visibleSections; track section.label) {
+      <ng-container [ngSwitch]="section.label">
+        <app-about *ngSwitchCase="'app-about'"></app-about>
+        <app-education *ngSwitchCase="'app-education'"></app-education>
+        <app-experience *ngSwitchCase="'app-experience'"></app-experience>
+        <app-skills *ngSwitchCase="'app-skills'"></app-skills>
+        <app-projects *ngSwitchCase="'app-projects'"></app-projects>
+        <div *ngSwitchDefault>
+          <h2>{{ section.label }}</h2>
+          <!-- Contenido de la sección por defecto -->
+        </div>
+      </ng-container>
+    }
 
 </div>

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { SectionsService, Section } from '@services/sections';
 
 /*
 El componente padre debe gestionar qué hacer cuando sidebar se colapsa
@@ -39,37 +40,27 @@ interface MenuItem {
 
 export class Sidebar {
   isSidebarCollapsed = false;
+  sections: Section[] = [];
 
-  menuItems: MenuItem[] = [
-    {
-      icon: 'fas fa-home',
-      label: 'Dashboard',
-      isOpen: false,
-      children: [
-        { icon: 'fas fa-chart-pie', label: 'Analytics' },
-        { icon: 'fas fa-tasks', label: 'Projects' },
-      ]
-    },
-    {
-      icon: 'fas fa-cog',
-      label: 'Settings',
-      isOpen: false,
-      children: [
-        { icon: 'fas fa-user', label: 'Profile' },
-        { icon: 'fas fa-lock', label: 'Security' },
-      ]
-    },
-    {
-      icon: 'fas fa-envelope',
-      label: 'Messages'
-    }
-  ];
+  constructor(private sectionsService: SectionsService) {
+    this.sections = this.sectionsService.sections;
+  }
+
+  // Método para mostrar solo una sección
+  setSectionVisible(label: string): void {
+    this.sectionsService.showOnlySection(label);
+    // Actualizar la lista local para reflejar los cambios
+    this.sections = this.sections.map(section => ({
+      ...section,
+      visible: section.label === label
+    }));
+  }
 
   toggleSidebar() {
     this.isSidebarCollapsed = !this.isSidebarCollapsed;
   }
 
-  toggleMenuItem(item: MenuItem) {
+  toggleMenuItem(item: Section) {
     // Only toggle if sidebar is not collapsed and item has children
     if (!this.isSidebarCollapsed && item.children) {
       item.isOpen = !item.isOpen;
