@@ -2,12 +2,9 @@ import { Injectable, signal } from '@angular/core';
 
 // Interface para las secciones
 export interface Section {
-  icon: string;
   name: string;
   label: string;
   visible: boolean;
-  children?: Section[];
-  isOpen?: boolean;
 }
 
 @Injectable({
@@ -16,15 +13,12 @@ export interface Section {
 export class SectionsService {
   // Signal para la lista de secciones (reactive)
   private sectionsSignal = signal<Section[]>([
-    { icon: 'fas fa-home', name: 'ABOUT', label: 'app-about', visible: true },
-    { icon: 'fas fa-envelope', name: 'EDUCATION', label: 'app-education', visible: false },
-    { icon: 'fas fa-envelope', name: 'EXPERIENCE', label: 'app-experience', visible: false, children: [
-      { icon: 'fas fa-chart-pie', name: 'Ejemplo 1', label: 'ejemplo 1', visible: false },
-      { icon: 'fas fa-tasks', name: 'Ejemplo 2', label: 'ejemplo 2', visible: false },
-    ] },
-    { icon: 'fas fa-envelope', name: 'SKILLS', label: 'app-skills', visible: false },
-    { icon: 'fas fa-envelope', name: 'PROJECTS', label: 'app-projects', visible: false },
-    { icon: 'fas fa-envelope', name: 'OTRA', label: 'app-otra', visible: false }
+    { name: 'ABOUT', label: 'app-about', visible: true },
+    { name: 'EDUCATION', label: 'app-education', visible: false },
+    { name: 'EXPERIENCE', label: 'app-experience', visible: false },
+    { name: 'SKILLS', label: 'app-skills', visible: false },
+    { name: 'PROJECTS', label: 'app-projects', visible: false },
+    { name: 'OTRA', label: 'app-otra', visible: false }
   ]);
 
   // Getter público para acceder a las secciones

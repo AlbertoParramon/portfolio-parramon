@@ -59,11 +59,4 @@ export class Sidebar {
   toggleSidebar() {
     this.isSidebarCollapsed = !this.isSidebarCollapsed;
   }
-
-  toggleMenuItem(item: Section) {
-    // Only toggle if sidebar is not collapsed and item has children
-    if (!this.isSidebarCollapsed && item.children) {
-      item.isOpen = !item.isOpen;
-    }
-  }
 }

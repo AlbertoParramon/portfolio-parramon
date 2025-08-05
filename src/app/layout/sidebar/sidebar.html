@@ -15,35 +15,10 @@
           <a
             href="#"
             class="sidebar-item"
-            [ngClass]="{
-              'has-children': item.children,
-              'menu-item-active': item.isOpen
-            }"
-            (click)="toggleMenuItem(item); setSectionVisible(item.label)"
+            (click)=" setSectionVisible(item.label)"
           >
-            <i [class]="item.icon"></i>
             <span class="sidebar-item-text">{{ item.name }}</span>
-            @if (item.children && !isSidebarCollapsed) {
-            <i
-              class="fas fa-chevron-down sidebar-item-arrow"
-              [ngClass]="{ rotated: item.isOpen }"
-            ></i>
-            }
           </a>
-          @if (item.children && !isSidebarCollapsed && item.isOpen) {
-          <ul
-            class="sidebar-submenu"
-          >
-            @for (child of item.children; track child.label) {
-            <li>
-              <a href="#" class="sidebar-item sidebar-subitem">
-                <i [class]="child.icon"></i>
-                <span class="sidebar-item-text">{{ child.name }}</span>
-              </a>
-            </li>
-            }
-            </ul>
-          }
         </li>
         }
       </ul>
