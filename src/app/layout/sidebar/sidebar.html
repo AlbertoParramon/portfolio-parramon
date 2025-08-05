@@ -1,11 +1,12 @@
 <div class="sidebar" [ngClass]="{ 'sidebar-collapsed': isSidebarCollapsed }">
     <div class="sidebar-btn">
         <button class="sidebar-toggle-btn" (click)="toggleSidebar()">
-            <i [class]="isSidebarCollapsed ? 'fas fa-bars' : 'fas fa-times'"></i>        </button>
+            <i [class]="isSidebarCollapsed ? 'fas fa-bars' : 'fas fa-times'"></i>        
+        </button>
     </div>
     <div class="sidebar-header">
-      <a href="#" class="sidebar-logo">{{
-        isSidebarCollapsed ? 'C' : 'CodeWithChintan'
+      <a class="sidebar-logo">{{
+        isSidebarCollapsed ? '' : 'FOTO'
       }}</a>
     </div>
     <div class="sidebar-menu">
