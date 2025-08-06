@@ -7,16 +7,24 @@ import { Skills } from '@pages/skills/skills';
 import { Projects } from '@pages/projects/projects';
 import { SectionsService, Section } from '@services/sections';
 
-
 @Component({
   selector: 'app-main-content',
-  imports: [CommonModule, About, Experience, Education, Skills, Projects],
+  imports: [CommonModule],
   templateUrl: './main-content.html',
   styleUrl: './main-content.scss'
 })
 export class MainContent {
   sections: Section[] = [];
   isSmallScreen = false;
+
+  // Mapeo de labels a componentes
+  componentMap: { [key: string]: any } = {
+    'app-about': About,
+    'app-education': Education,
+    'app-experience': Experience,
+    'app-skills': Skills,
+    'app-projects': Projects
+  };
 
   constructor(private sectionsService: SectionsService) {
     this.sections = this.sectionsService.sections;
@@ -36,5 +44,10 @@ export class MainContent {
   // Obtener secciones según el tamaño de pantalla
   get sectionsToShow() {
     return this.isSmallScreen ? this.sectionsService.allSections : this.sectionsService.visibleSections;
+  }
+
+  // Obtener el componente correspondiente
+  getComponent(label: string): any {
+    return this.componentMap[label] || null;
   }
 }

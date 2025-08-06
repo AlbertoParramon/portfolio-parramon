@@ -2,16 +2,9 @@
     <h2>main-content works!</h2>
 
     @for (section of sectionsToShow; track section.label) {
-      <ng-container [ngSwitch]="section.label">
-        <div *ngSwitchCase="'app-about'" class="main-content-section"><app-about></app-about></div>
-        <div *ngSwitchCase="'app-education'" class="main-content-section"><app-education></app-education></div>
-        <div *ngSwitchCase="'app-experience'" class="main-content-section"><app-experience></app-experience></div>
-        <div *ngSwitchCase="'app-skills'" class="main-content-section"><app-skills></app-skills></div>
-        <div *ngSwitchCase="'app-projects'" class="main-content-section"><app-projects></app-projects></div>
-        <div *ngSwitchDefault>
-          <h2>{{ section.label }} is not defined</h2>
-          <!-- Contenido de la sección por defecto -->
-        </div>
-      </ng-container>
+      <div [id]="section.label" class="main-content-section">
+        <ng-container *ngComponentOutlet="getComponent(section.label)">
+        </ng-container>
+      </div>
     }
 </div>

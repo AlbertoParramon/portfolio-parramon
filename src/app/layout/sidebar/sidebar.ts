@@ -65,11 +65,37 @@ export class Sidebar {
   // Método para mostrar solo una sección
   setSectionVisible(label: string): void {
     this.sectionsService.showOnlySection(label);
-    // Actualizar la lista local para reflejar los cambios
-    this.sections = this.sections.map(section => ({
-      ...section,
-      visible: section.label === label
-    }));
+    
+    // Solo hacer scroll en pantallas pequeñas (≤992px)
+    if (window.innerWidth <= 992) {
+      this.scrollToSection(label);
+    }
+  }
+
+  // Método para hacer scroll a una sección específica
+  private scrollToSection(sectionLabel: string): void {
+    // Pequeño delay para asegurar que el DOM esté actualizado
+    setTimeout(() => {
+      const element = document.getElementById(sectionLabel);
+      
+      if (element) {
+        // Calcular el offset para el sidebar en pantallas pequeñas
+        const isSmallScreen = window.innerWidth <= 992;
+        const offset = isSmallScreen ? 60 : 0; // 60px para el sidebar horizontal
+        
+        const elementPosition = element.offsetTop - offset;
+        
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+        
+        console.log(`Scroll exitoso a: ${sectionLabel}`);
+      } else {
+        console.warn(`Elemento con ID '${sectionLabel}' no encontrado. IDs disponibles:`, 
+          Array.from(document.querySelectorAll('[id]')).map(el => el.id));
+      }
+    }, 100);
   }
 
   toggleSidebar() {

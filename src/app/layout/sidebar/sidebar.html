@@ -12,9 +12,8 @@
         @for (item of sections; track item.label) {
         <li class="sidebar-menu-item">
           <a
-            href="#"
             class="sidebar-item"
-            (click)=" setSectionVisible(item.label)"
+            (click)="setSectionVisible(item.label)"
           >
             <span class="sidebar-item-text">{{ item.name }}</span>
           </a>
