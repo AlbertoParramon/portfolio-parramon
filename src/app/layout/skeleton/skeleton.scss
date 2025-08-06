@@ -5,18 +5,6 @@
     width: 100%;
   }
   
-  // El sidebar nunca se comprimirá, mantendrá siempre su ancho fijo 
-  // (250px cuando está expandido, 50px cuando está colapsado).
-  //app-sidebar {
-  //  flex-shrink: 1; // Evita que el sidebar se comprima
-  //}
-  // Cuando el sidebar está colapsado, ajustar el main
-  // El componente app-sidebar añade automáticamente la clase 'sidebar-is-collapsed'
-  // cuando isSidebarCollapsed = true, permitiendo a los componentes padre
-  // ajustar su layout en consecuencia
-  app-sidebar.sidebar-is-collapsed ~ .content-aerea {
-      margin-left: 50px; // Margen izquierdo igual al ancho del sidebar colapsado
-  }
   
   // Estilos para el elemento app-main-content
   .content-aerea {
@@ -40,10 +28,20 @@
       background-color: #f8f9fa;
   }
   
-  // Media query para dispositivos móviles
-  //@media (max-width: 768px) {
-  //  app-main-content {
-  //    margin-left: 0; // En móviles, el main ocupa todo el ancho
-  //    padding: 1rem;
-  //  }
-  //}
+ // Media query para pantallas pequeñas
+@media (max-width: 992px) {
+    .content-aerea {
+      flex: 1; // Toma el espacio restante
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-left: 0px; // Margen izquierdo igual al ancho del sidebar expandido
+      margin-top: 60px; // Margen superior para el sidebar horizontal
+      transition: margin-left 0.3s ease-in-out; // Transición suave cuando el sidebar cambia
+    }
+
+    .app-container {
+      flex-direction: column; // Layout vertical en móviles
+    }
+  
+}

@@ -10,7 +10,8 @@
       "@app/*": ["src/app/*"],
       "@layout/*": ["src/app/layout/*"],
       "@pages/*": ["src/app/pages/*"],
-      "@services/*": ["src/app/services/*"]
+      "@services/*": ["src/app/services/*"],
+      "@shared/*": ["src/app/shared/*"]
     }
   },
   "include": [

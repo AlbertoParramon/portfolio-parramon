@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, HostListener } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { SectionsService, Section } from '@services/sections';
 
@@ -39,11 +39,27 @@ interface MenuItem {
 })
 
 export class Sidebar {
-  isSidebarCollapsed = false;
+  isSidebarCollapsed = true;
   sections: Section[] = [];
 
   constructor(private sectionsService: SectionsService) {
     this.sections = this.sectionsService.sections;
+    this.checkScreenSize();
+  }
+
+  // Detectar cambios en el tamaño de la ventana
+  @HostListener('window:resize')
+  onResize() {
+    this.checkScreenSize();
+  }
+
+  private checkScreenSize() {
+    const isSmallScreen = window.innerWidth <= 992;
+    
+    // Colapsar automáticamente en pantallas pequeñas
+    if (isSmallScreen && !this.isSidebarCollapsed) {
+      this.isSidebarCollapsed = true;
+    }
   }
 
   // Método para mostrar solo una sección

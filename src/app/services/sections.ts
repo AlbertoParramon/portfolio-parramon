@@ -31,6 +31,11 @@ export class SectionsService {
     return this.sectionsSignal().filter(section => section.visible);
   }
 
+  // Getter para todas las secciones
+  get allSections() {
+    return this.sectionsSignal();
+  }
+
   // Método para actualizar la visibilidad de una sección
   toggleSection(label: string) {
     const currentSections = this.sectionsSignal();

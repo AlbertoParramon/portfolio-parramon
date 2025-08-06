@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { About } from '@pages/about/about';
 import { Experience } from '@pages/experience/experience';
@@ -16,13 +16,25 @@ import { SectionsService, Section } from '@services/sections';
 })
 export class MainContent {
   sections: Section[] = [];
+  isSmallScreen = false;
 
   constructor(private sectionsService: SectionsService) {
     this.sections = this.sectionsService.sections;
+    this.checkScreenSize();
   }
 
-  // Obtener solo las secciones visibles
-  get visibleSections() {
-    return this.sectionsService.visibleSections;
+  // Detectar cambios en el tamaño de la ventana
+  @HostListener('window:resize')
+  onResize() {
+    this.checkScreenSize();
+  }
+
+  private checkScreenSize() {
+    this.isSmallScreen = window.innerWidth <= 992; // Pantallas de 992px o menos
+  }
+
+  // Obtener secciones según el tamaño de pantalla
+  get sectionsToShow() {
+    return this.isSmallScreen ? this.sectionsService.allSections : this.sectionsService.visibleSections;
   }
 }
