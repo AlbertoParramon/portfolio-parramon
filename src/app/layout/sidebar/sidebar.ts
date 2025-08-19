@@ -65,7 +65,8 @@ export class Sidebar {
   // Método para mostrar solo una sección
   setSectionVisible(label: string): void {
     this.sectionsService.showOnlySection(label);
-    
+    this.isSidebarCollapsed = true;
+
     // Solo hacer scroll en pantallas pequeñas (≤992px)
     if (window.innerWidth <= 992) {
       this.scrollToSection(label);
