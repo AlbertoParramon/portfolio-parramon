@@ -2,7 +2,7 @@
 
 
 .sidebar {
-    background-color: #2c3e50;
+    background-color: #236a79;
     height: 100vh;
     width: 250px;
     position: fixed;
@@ -21,13 +21,15 @@
   position: relative;
 }
 
+.sidebar-logo {
+  display: none;
+}
 .sidebar-toggle-btn {
   display: none;
 }
 
 
-
-.sidebar-header {
+.sidebar-header-right {
     display: flex;
     padding-top: 10vh;
     justify-content: center;
@@ -37,11 +39,25 @@
     position: relative;
 }
 
-.sidebar-logo {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
+.sidebar-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #0a3841;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
 
@@ -93,11 +109,30 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
-
-  .sidebar-btn {
+  .sidebar-logo {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 1.5rem;
+  }
+
+  .logo-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+        transform: scale(1.05);
+    }
+  }
+  
+
+
+  .sidebar-btn {
+    display: flex;
+    justify-content: left;
+    align-items: left;
     padding: 0rem;
     position: relative;
     height: 100%; // Ocupar toda la altura del sidebar
@@ -123,10 +158,9 @@
 
 
   // Ajustar el header del sidebar en móviles
-  .sidebar-header {
+  .sidebar-header-right {
     display: none;
   }
-
 
 
   .sidebar-menu {
@@ -136,7 +170,8 @@
     top: 60px;
     left: 0;
     width: 100%;
-    background-color: #2c3e50;
+    //background-color: #2c3e50;
+    background-color: #236a79;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: max-height 0.3s ease-in-out;
     opacity: 1;
