@@ -88,11 +88,34 @@
   
     &:hover {
       background-color: rgba(255, 255, 255, 0.1);
+      
+      .sidebar-item-text {
+        font-weight: bold;
+      }
+    }
+  
+    &.active {
+      background-color: rgba(255, 255, 255, 0.15);
+      
+      .sidebar-item-text {
+        font-weight: bold;
+      }
+    }
+    
+    // Solo mostrar estado activo en pantallas grandes
+    @media (max-width: 992px) {
+      &.active {
+        background-color: transparent;
+        
+        .sidebar-item-text {
+          font-weight: normal;
+        }
+      }
     }
   
     &-text {
       opacity: 1;
-      transition: opacity 0.3s ease-in-out;
+      transition: all 0.2s ease;
     }
 }
 

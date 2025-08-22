@@ -18,6 +18,7 @@
         <li class="sidebar-menu-item">
           <a
             class="sidebar-item"
+            [ngClass]="{ 'active': item.visible }"
             (click)="setSectionVisible(item.name)"
           >
             <span class="sidebar-item-text">{{ item.label }}</span>
