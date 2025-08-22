@@ -5,7 +5,7 @@ import { Experience } from '@pages/experience/experience';
 import { Education } from '@pages/education/education';
 import { Skills } from '@pages/skills/skills';
 import { Projects } from '@pages/projects/projects';
-import { SectionsService, Section } from '@services/sections';
+import { ConfigService, Config } from '@services/config';
 
 @Component({
   selector: 'app-main-content',
@@ -14,7 +14,7 @@ import { SectionsService, Section } from '@services/sections';
   styleUrl: './main-content.scss'
 })
 export class MainContent {
-  sections: Section[] = [];
+  sections: Config[] = [];
   isSmallScreen = false;
 
   // Mapeo de labels a componentes
@@ -26,8 +26,8 @@ export class MainContent {
     'app-projects': Projects
   };
 
-  constructor(private sectionsService: SectionsService) {
-    this.sections = this.sectionsService.sections;
+  constructor(private configService: ConfigService) {
+    this.sections = this.configService.sections;
     this.checkScreenSize();
   }
 
@@ -43,7 +43,7 @@ export class MainContent {
 
   // Obtener secciones según el tamaño de pantalla
   get sectionsToShow() {
-    return this.isSmallScreen ? this.sectionsService.allSections : this.sectionsService.visibleSections;
+    return this.isSmallScreen ? this.configService.allSections : this.configService.visibleSections;
   }
 
   // Obtener el componente correspondiente

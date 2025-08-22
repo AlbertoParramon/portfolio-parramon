@@ -1,0 +1,48 @@
+{
+  "general": {
+    "paths": {
+      "profile_photo": "/assets/images/profile_photo.jpeg",
+      "logo": "/assets/icons/android-chrome-transparente-512x512.png"
+    },
+    "colours": {
+      "1": "#236a79",
+      "1_dark": "#0a3841",
+      "2": "#ecf0f1",
+      "2_dark": "#bdc3c7",
+      "3": "#2c3e50",
+      "3_dark": "#1a252f",
+      "white": "#ffffff",
+      "black": "#000000",
+      "sidebar_text": "#ecf0f1",
+      "main-content_text": "#2c3e50"
+    },
+    "sizes": {
+      "small_screen": "992px",
+      "sidebar_top": "60px",
+      "sidebar_left": "250px",
+      "profile_photo": "120px"
+    }
+  },
+  "sections": {
+    "about": {
+      "visible": true,
+      "label": "ABOUT"
+    },
+    "education": {
+      "visible": false,
+      "label": "EDUCATION"
+    },
+    "experience": {
+      "visible": false,
+      "label": "EXPERIENCE"
+    },
+    "skills": {
+      "visible": false,
+      "label": "SKILLS"
+    },
+    "projects": {
+      "visible": false,
+      "label": "PROJECTS"
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output, HostListener } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { SectionsService, Section } from '@services/sections';
+import { ConfigService, Config } from '@services/config';
 
 /*
 El componente padre debe gestionar qué hacer cuando sidebar se colapsa
@@ -40,10 +40,10 @@ interface MenuItem {
 
 export class Sidebar {
   isSidebarCollapsed = true;
-  sections: Section[] = [];
+  sections: Config[] = [];
 
-  constructor(private sectionsService: SectionsService) {
-    this.sections = this.sectionsService.sections;
+  constructor(private configService: ConfigService) {
+    this.sections = this.configService.sections;
     this.checkScreenSize();
   }
 
@@ -64,7 +64,7 @@ export class Sidebar {
 
   // Método para mostrar solo una sección
   setSectionVisible(label: string): void {
-    this.sectionsService.showOnlySection(label);
+    this.configService.showOnlySection(label);
     this.isSidebarCollapsed = true;
 
     // Solo hacer scroll en pantallas pequeñas (≤992px)

@@ -7,7 +7,7 @@
   
   
   // Estilos para el elemento app-main-content
-  .content-aerea {
+  .content-area {
       flex: 1; // Toma el espacio restante
       display: flex;
       flex-direction: column;
@@ -30,7 +30,7 @@
   
  // Media query para pantallas pequeñas
 @media (max-width: 992px) {
-    .content-aerea {
+    .content-area {
       flex: 1; // Toma el espacio restante
       display: flex;
       flex-direction: column;
