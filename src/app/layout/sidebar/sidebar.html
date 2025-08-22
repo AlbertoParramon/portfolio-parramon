@@ -14,11 +14,11 @@
     </div>
     <div class="sidebar-menu">
       <ul>
-        @for (item of sections; track item.label) {
+        @for (item of sections; track item.name) {
         <li class="sidebar-menu-item">
           <a
             class="sidebar-item"
-            (click)="setSectionVisible(item.label)"
+            (click)="setSectionVisible(item.name)"
           >
             <span class="sidebar-item-text">{{ item.label }}</span>
           </a>

@@ -2,13 +2,13 @@
 
 
 .sidebar {
-    background-color: #236a79;
+    background-color: var(--sidebar-bg-color, #ffffff);
     height: 100vh;
     width: 250px;
     position: fixed;
     top: 0;
     left: 0;
-    box-shadow: 10px 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -51,7 +51,7 @@
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 6px solid #0a3841;
+    border: 6px solid var(--sidebar-border-color, #e0e0e0);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
     
@@ -80,7 +80,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ecf0f1;
+    color: var(--sidebar-text-color, #000000);
     text-decoration: none;
     padding: 0.75rem 1rem;
     transition: all 0.2s ease;
@@ -145,7 +145,7 @@
     right: 1rem;
     background: none;
     border: none;
-    color: #ecf0f1;
+    color: var(--sidebar-text-color, #000000);
     font-size: 1.2rem;
     cursor: pointer;
     padding: 0.5rem;
@@ -171,7 +171,7 @@
     left: 0;
     width: 100%;
     //background-color: #2c3e50;
-    background-color: #236a79;
+    background-color: var(--sidebar-bg-color, #ffffff);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: max-height 0.3s ease-in-out;
     opacity: 1;

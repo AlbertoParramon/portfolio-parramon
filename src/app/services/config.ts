@@ -163,21 +163,11 @@ ${JSON.stringify(error, null, 2)}
     return this.sectionsSignal();
   }
 
-  // Método para actualizar la visibilidad de una sección
-  toggleSection(label: string) {
-    const currentSections = this.sectionsSignal();
-    const updatedSections = currentSections.map(section => ({
-      ...section,
-      visible: section.label === label ? !section.visible : section.visible
-    }));
-    this.sectionsSignal.set(updatedSections);
-  }
-
   // Método para mostrar solo una sección específica
-  showOnlySection(label: string) {
+  showOnlySection(name: string) {
     const updatedSections = this.sectionsSignal().map(section => ({
       ...section,
-      visible: section.label === label
+      visible: section.name === name
     }));
     this.sectionsSignal.set(updatedSections);
   }

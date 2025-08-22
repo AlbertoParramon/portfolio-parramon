@@ -43,10 +43,28 @@ export class Sidebar {
 
   constructor(private configService: ConfigService) {
     this.checkScreenSize();
+    this.setupThemeColors();
+  }
+
+  // Método para configurar los colores del tema desde globalConfig
+  private setupThemeColors(): void {
+    const globalConfig = this.configService.getGlobalConfig();
+    if (globalConfig?.general?.colours) {
+      const colors = globalConfig.general.colours;
+      
+      // Establecer variables CSS personalizadas con colores por defecto blancos/negros
+      document.documentElement.style.setProperty('--sidebar-bg-color', colors['1'] || '#ffffff');
+      document.documentElement.style.setProperty('--sidebar-text-color', colors['sidebar_text'] || '#000000');
+      document.documentElement.style.setProperty('--sidebar-border-color', colors['1_dark'] || '#e0e0e0');
+    }
   }
 
   // Getter reactivo para las secciones
   get sections(): Config[] {
+    // También actualizar colores cuando se accede a las secciones (cuando ya está cargada la config)
+    if (this.configService.getGlobalConfig()) {
+      this.setupThemeColors();
+    }
     return this.configService.sections;
   }
 
@@ -66,21 +84,21 @@ export class Sidebar {
   }
 
   // Método para mostrar solo una sección
-  setSectionVisible(label: string): void {
-    this.configService.showOnlySection(label);
+  setSectionVisible(name: string): void {
+    this.configService.showOnlySection(name);
     this.isSidebarCollapsed = true;
 
     // Solo hacer scroll en pantallas pequeñas (≤992px)
     if (window.innerWidth <= 992) {
-      this.scrollToSection(label);
+      this.scrollToSection(name);
     }
   }
 
   // Método para hacer scroll a una sección específica
-  private scrollToSection(sectionLabel: string): void {
+  private scrollToSection(sectionName: string): void {
     // Pequeño delay para asegurar que el DOM esté actualizado
     setTimeout(() => {
-      const element = document.getElementById(sectionLabel);
+      const element = document.getElementById(sectionName);
       
       if (element) {
         // Calcular el offset para el sidebar en pantallas pequeñas
@@ -94,9 +112,9 @@ export class Sidebar {
           behavior: 'smooth'
         });
         
-        console.log(`Scroll exitoso a: ${sectionLabel}`);
+        console.log(`Scroll exitoso a: ${sectionName}`);
       } else {
-        console.warn(`Elemento con ID '${sectionLabel}' no encontrado. IDs disponibles:`, 
+        console.warn(`Elemento con ID '${sectionName}' no encontrado. IDs disponibles:`, 
           Array.from(document.querySelectorAll('[id]')).map(el => el.id));
       }
     }, 100);
