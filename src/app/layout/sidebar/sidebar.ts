@@ -46,16 +46,27 @@ export class Sidebar {
     this.setupThemeColors();
   }
 
-  // Método para configurar los colores del tema desde globalConfig
+  // Método para configurar los colores y tamaños del tema desde globalConfig
   private setupThemeColors(): void {
     const globalConfig = this.configService.getGlobalConfig();
-    if (globalConfig?.general?.colours) {
+    if (globalConfig?.general) {
       const colors = globalConfig.general.colours;
+      const sizes = globalConfig.general.sizes;
       
-      // Establecer variables CSS personalizadas con colores por defecto blancos/negros
-      document.documentElement.style.setProperty('--sidebar-bg-color', colors['1'] || '#ffffff');
-      document.documentElement.style.setProperty('--sidebar-text-color', colors['sidebar_text'] || '#000000');
-      document.documentElement.style.setProperty('--sidebar-border-color', colors['1_dark'] || '#e0e0e0');
+      // Establecer variables CSS personalizadas para colores
+      if (colors) {
+        document.documentElement.style.setProperty('--sidebar-bg-color', colors['1'] || '#ffffff');
+        document.documentElement.style.setProperty('--sidebar-text-color', colors['sidebar_text'] || '#000000');
+        document.documentElement.style.setProperty('--sidebar-border-color', colors['1_dark'] || '#e0e0e0');
+      }
+      
+      // Establecer variables CSS personalizadas para tamaños
+      if (sizes) {
+        document.documentElement.style.setProperty('--small-screen-breakpoint', sizes['small_screen'] || '992px');
+        document.documentElement.style.setProperty('--sidebar-top-height', sizes['sidebar_top'] || '60px');
+        document.documentElement.style.setProperty('--sidebar-left-width', sizes['sidebar_left'] || '250px');
+        document.documentElement.style.setProperty('--profile-photo-size', sizes['profile_photo'] || '150px');
+      }
     }
   }
 
