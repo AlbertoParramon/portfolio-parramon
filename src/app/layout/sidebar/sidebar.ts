@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, Output, HostListener } from '@angular/core';
+import { Component,HostListener } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { ConfigService, Config } from '@services/config';
+import { effect } from '@angular/core';
 
 /*
 El componente padre debe gestionar qué hacer cuando sidebar se colapsa
@@ -43,7 +44,17 @@ export class Sidebar {
 
   constructor(private configService: ConfigService) {
     this.checkScreenSize();
-    this.setupThemeColors();
+    
+    // Crear un effect que se ejecute cuando globalConfig cambie
+    effect(() => {
+      const globalConfig = this.configService.globalConfig$();
+      if (globalConfig) {
+        console.log('Configurando temas desde effect - globalConfig cargado');
+        this.setupThemeColors();
+      } else {
+        console.log('globalConfig aún no está disponible');
+      }
+    });
   }
 
   // Método para configurar los colores y tamaños del tema desde globalConfig
@@ -72,10 +83,6 @@ export class Sidebar {
 
   // Getter reactivo para las secciones
   get sections(): Config[] {
-    // También actualizar colores cuando se accede a las secciones (cuando ya está cargada la config)
-    if (this.configService.getGlobalConfig()) {
-      this.setupThemeColors();
-    }
     return this.configService.sections;
   }
 

@@ -38,8 +38,8 @@ export interface Config {
   providedIn: 'root' // Hace que el servicio esté disponible en toda la aplicación
 })
 export class ConfigService {
-  // Variable para la configuración global
-  public globalConfig: GlobalConfig | null = null;
+  // Signal para la configuración global (reactive)
+  private globalConfigSignal = signal<GlobalConfig | null>(null);
 
   // Signal para la lista de secciones (reactive) - se inicializa desde config.json
   private sectionsSignal = signal<Config[]>([]);
@@ -53,8 +53,8 @@ export class ConfigService {
     this.http.get<GlobalConfig>('./assets/config.json')
       .subscribe({
         next: (config) => {
-          this.globalConfig = config;
-          console.log('Configuración global cargada:', config);
+          console.log('ConfigService - config.json cargado exitosamente:', config);
+          this.globalConfigSignal.set(config);
           this.initializeSectionsFromConfig();
         },
         error: (error) => {
@@ -66,17 +66,18 @@ export class ConfigService {
 
   // Método para inicializar sectionsSignal desde globalConfig.sections
   private initializeSectionsFromConfig(): void {
-    if (!this.globalConfig?.sections) {
+    const globalConfig = this.globalConfigSignal();
+    if (!globalConfig?.sections) {
       console.warn('No se encontraron secciones en la configuración global');
       return;
     }
 
     const sections: Config[] = [];
-    const sectionKeys = Object.keys(this.globalConfig.sections);
+    const sectionKeys = Object.keys(globalConfig.sections);
     
     // Convertir cada sección del JSON a la estructura Config
     sectionKeys.forEach((key, index) => {
-      const section = this.globalConfig!.sections![key];
+      const section = globalConfig.sections![key];
       sections.push({
         name: key, // La key del objeto (about, education, etc.)
         label: section.label || key.toUpperCase(), // El label del JSON
@@ -130,17 +131,23 @@ ${JSON.stringify(error, null, 2)}
     return this.sectionsSignal();
   }
 
+  // Getter público para acceder al signal de configuración global
+  get globalConfig$() {
+    return this.globalConfigSignal;
+  }
+
   // Getter público para acceder a la configuración global
   getGlobalConfig(): GlobalConfig | null {
-    return this.globalConfig;
+    return this.globalConfigSignal();
   }
 
   // Método para obtener una configuración específica
   getConfigValue(path: string): any {
-    if (!this.globalConfig) return null;
+    const globalConfig = this.globalConfigSignal();
+    if (!globalConfig) return null;
     
     const keys = path.split('.');
-    let value: any = this.globalConfig;
+    let value: any = globalConfig;
     
     for (const key of keys) {
       if (value && typeof value === 'object' && key in value) {
