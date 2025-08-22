@@ -25,23 +25,18 @@
   },
   "sections": {
     "about": {
-      "visible": true,
       "label": "ABOUT"
     },
     "education": {
-      "visible": false,
       "label": "EDUCATION"
     },
     "experience": {
-      "visible": false,
       "label": "EXPERIENCE"
     },
     "skills": {
-      "visible": false,
       "label": "SKILLS"
     },
     "projects": {
-      "visible": false,
       "label": "PROJECTS"
     }
   }

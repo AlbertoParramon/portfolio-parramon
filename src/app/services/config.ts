@@ -41,15 +41,8 @@ export class ConfigService {
   // Variable para la configuración global
   public globalConfig: GlobalConfig | null = null;
 
-  // Signal para la lista de secciones (reactive)
-  private sectionsSignal = signal<Config[]>([
-    { name: 'ABOUT', label: 'app-about', visible: true },
-    { name: 'EDUCATION', label: 'app-education', visible: false },
-    { name: 'EXPERIENCE', label: 'app-experience', visible: false },
-    { name: 'SKILLS', label: 'app-skills', visible: false },
-    { name: 'PROJECTS', label: 'app-projects', visible: false },
-    { name: 'OTRA', label: 'app-otra', visible: false }
-  ]);
+  // Signal para la lista de secciones (reactive) - se inicializa desde config.json
+  private sectionsSignal = signal<Config[]>([]);
 
   constructor(private http: HttpClient) {
     this.loadGlobalConfig();
@@ -62,12 +55,38 @@ export class ConfigService {
         next: (config) => {
           this.globalConfig = config;
           console.log('Configuración global cargada:', config);
+          this.initializeSectionsFromConfig();
         },
         error: (error) => {
           console.error('Error al cargar la configuración global:', error);
           this.showConfigError(error);
         }
       });
+  }
+
+  // Método para inicializar sectionsSignal desde globalConfig.sections
+  private initializeSectionsFromConfig(): void {
+    if (!this.globalConfig?.sections) {
+      console.warn('No se encontraron secciones en la configuración global');
+      return;
+    }
+
+    const sections: Config[] = [];
+    const sectionKeys = Object.keys(this.globalConfig.sections);
+    
+    // Convertir cada sección del JSON a la estructura Config
+    sectionKeys.forEach((key, index) => {
+      const section = this.globalConfig!.sections![key];
+      sections.push({
+        name: key, // La key del objeto (about, education, etc.)
+        label: section.label || key.toUpperCase(), // El label del JSON
+        visible: index === 0 // true para el primero, false para el resto
+      });
+    });
+
+    // Actualizar el signal con las secciones convertidas
+    this.sectionsSignal.set(sections);
+    console.log('SectionsSignal inicializado desde config.json:', sections);
   }
 
   // Método para mostrar error de configuración

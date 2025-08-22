@@ -40,11 +40,14 @@ interface MenuItem {
 
 export class Sidebar {
   isSidebarCollapsed = true;
-  sections: Config[] = [];
 
   constructor(private configService: ConfigService) {
-    this.sections = this.configService.sections;
     this.checkScreenSize();
+  }
+
+  // Getter reactivo para las secciones
+  get sections(): Config[] {
+    return this.configService.sections;
   }
 
   // Detectar cambios en el tamaño de la ventana

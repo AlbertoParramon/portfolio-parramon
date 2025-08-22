@@ -1,9 +1,9 @@
 <div class="main-content">
     <h2>main-content works!</h2>
 
-    @for (section of sectionsToShow; track section.label) {
-      <div [id]="section.label" class="main-content-section">
-        <ng-container *ngComponentOutlet="getComponent(section.label)">
+    @for (section of sectionsToShow; track section.name) {
+      <div [id]="section.name" class="main-content-section">
+        <ng-container *ngComponentOutlet="getComponent(section.name)">
         </ng-container>
       </div>
     }

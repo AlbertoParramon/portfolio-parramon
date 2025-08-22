@@ -19,11 +19,11 @@ export class MainContent {
 
   // Mapeo de labels a componentes
   componentMap: { [key: string]: any } = {
-    'app-about': About,
-    'app-education': Education,
-    'app-experience': Experience,
-    'app-skills': Skills,
-    'app-projects': Projects
+    'about': About,
+    'education': Education,
+    'experience': Experience,
+    'skills': Skills,
+    'projects': Projects
   };
 
   constructor(private configService: ConfigService) {
