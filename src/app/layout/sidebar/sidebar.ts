@@ -41,6 +41,10 @@ interface MenuItem {
 
 export class Sidebar {
   isSidebarCollapsed = true;
+  
+  // Propiedades para almacenar valores calculados una sola vez
+  private smallScreenBreakpoint: number = 992;
+  private sidebarTopHeight: number = 60;
 
   constructor(private configService: ConfigService) {
     this.checkScreenSize();
@@ -50,15 +54,16 @@ export class Sidebar {
       const globalConfig = this.configService.globalConfig$();
       if (globalConfig) {
         console.log('Configurando temas desde effect - globalConfig cargado');
-        this.setupThemeColors();
+        this.setupConfig();
+        this.calculateConfigValues();
       } else {
         console.log('globalConfig aún no está disponible');
       }
     });
   }
 
-  // Método para configurar los colores y tamaños del tema desde globalConfig
-  private setupThemeColors(): void {
+  // Método para configurar los colores y tamaños desde globalConfig
+  private setupConfig(): void {
     const globalConfig = this.configService.getGlobalConfig();
     if (globalConfig?.general) {
       const colors = globalConfig.general.colours;
@@ -81,6 +86,16 @@ export class Sidebar {
     }
   }
 
+  // Método para calcular valores de configuración una sola vez
+  private calculateConfigValues(): void {
+    const globalConfig = this.configService.getGlobalConfig();
+    if (globalConfig?.general?.sizes) {
+      const sizes = globalConfig.general.sizes;
+      this.smallScreenBreakpoint = sizes['small_screen'] ? parseInt(sizes['small_screen']) : 992;
+      this.sidebarTopHeight = sizes['sidebar_top'] ? parseInt(sizes['sidebar_top']) : 60;
+    }
+  }
+
   // Getter reactivo para las secciones
   get sections(): Config[] {
     return this.configService.sections;
@@ -93,7 +108,7 @@ export class Sidebar {
   }
 
   private checkScreenSize() {
-    const isSmallScreen = window.innerWidth <= 992;
+    const isSmallScreen = window.innerWidth <= this.smallScreenBreakpoint;
     
     // Colapsar automáticamente en pantallas pequeñas
     if (isSmallScreen && !this.isSidebarCollapsed) {
@@ -106,34 +121,42 @@ export class Sidebar {
     this.configService.showOnlySection(name);
     this.isSidebarCollapsed = true;
 
-    // Solo hacer scroll en pantallas pequeñas (≤992px)
-    if (window.innerWidth <= 992) {
-      this.scrollToSection(name);
-    }
+    // Hacer scroll a la sección (tanto en pantallas pequeñas como grandes)
+    this.scrollToSection(name);
   }
 
   // Método para hacer scroll a una sección específica
   private scrollToSection(sectionName: string): void {
     // Pequeño delay para asegurar que el DOM esté actualizado
     setTimeout(() => {
-      const element = document.getElementById(sectionName);
+      const isSmallScreen = window.innerWidth <= this.smallScreenBreakpoint;
       
-      if (element) {
-        // Calcular el offset para el sidebar en pantallas pequeñas
-        const isSmallScreen = window.innerWidth <= 992;
-        const offset = isSmallScreen ? 60 : 0; // 60px para el sidebar horizontal
+      if (isSmallScreen) {
+        // En pantallas pequeñas: scroll al elemento específico
+        const element = document.getElementById(sectionName);
         
-        const elementPosition = element.offsetTop - offset;
-        
+        if (element) {
+          const offset = this.sidebarTopHeight;
+          const elementPosition = element.offsetTop - offset;
+          
+          window.scrollTo({
+            top: elementPosition,
+            behavior: 'smooth'
+          });
+          
+          console.log(`Scroll exitoso a: ${sectionName} - Pantalla pequeña`);
+        } else {
+          console.warn(`Elemento con ID '${sectionName}' no encontrado. IDs disponibles:`, 
+            Array.from(document.querySelectorAll('[id]')).map(el => el.id));
+        }
+      } else {
+        // En pantallas grandes: scroll al principio de la página
         window.scrollTo({
-          top: elementPosition,
+          top: 0,
           behavior: 'smooth'
         });
         
-        console.log(`Scroll exitoso a: ${sectionName}`);
-      } else {
-        console.warn(`Elemento con ID '${sectionName}' no encontrado. IDs disponibles:`, 
-          Array.from(document.querySelectorAll('[id]')).map(el => el.id));
+        console.log(`Scroll al principio de la página - Pantalla grande`);
       }
     }, 100);
   }
