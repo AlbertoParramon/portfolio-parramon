@@ -1,47 +1,45 @@
-// Estilos para el contenedor principal de la aplicación
+// Styles for the main application container
 .app-container {
     display: flex;
     min-height: 100vh;
     width: 100%;
   }
+
+.content-area {
+    flex: 1; // Takes remaining space
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: var(--sidebar-left-width, 250px); // Dynamic left margin
+    transition: margin-left 0.3s ease-in-out; // Smooth transition when sidebar changes
+}
+
+app-main-content {
+    display: flex;
+    flex: 1;
+    background-color: #f8f9fa;
+    padding: 2rem;
+}
+
+app-footer {
+    flex-shrink: 0; // Fixed height
+    background-color: #f8f9fa;
+}
   
-  
-  // Estilos para el elemento app-main-content
-  .content-area {
-      flex: 1; // Toma el espacio restante
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      margin-left: var(--sidebar-left-width, 250px); // Margen izquierdo dinámico
-      transition: margin-left 0.3s ease-in-out; // Transición suave cuando el sidebar cambia
-  }
-  
-  app-main-content {
-      display: flex; // ✅ Añadir esto
-      flex: 1;
-      background-color: #f8f9fa;
-      padding: 2rem;
-  }
-  
-  app-footer {
-      flex-shrink: 0; // ✅ Altura fija
-      background-color: #f8f9fa;
-  }
-  
- // Media query para pantallas pequeñas
+ // Media query for small screens
 @media (max-width: 992px) {
     .content-area {
-      flex: 1; // Toma el espacio restante
+      flex: 1; // Takes remaining space
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      margin-left: 0px; // Margen izquierdo igual al ancho del sidebar expandido
-      margin-top: var(--sidebar-top-height, 60px); // Margen superior dinámico
-      transition: margin-left 0.3s ease-in-out; // Transición suave cuando el sidebar cambia
+      margin-left: 0px; 
+      margin-top: var(--sidebar-top-height, 60px); // Dynamic top margin
+      transition: margin-left 0.3s ease-in-out; // Smooth transition when sidebar changes
     }
 
     .app-container {
-      flex-direction: column; // Layout vertical en móviles
+      flex-direction: column; // Vertical layout
     }
   
 }

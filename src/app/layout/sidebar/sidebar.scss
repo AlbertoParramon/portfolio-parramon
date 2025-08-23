@@ -11,8 +11,6 @@
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-
-
 .sidebar-btn {
   display: flex;
   justify-content: center;
@@ -102,7 +100,7 @@
       }
     }
     
-    // Solo mostrar estado activo en pantallas grandes
+    // Only show active state in menu items on large screens
     @media (max-width: 992px) {
       &.active {
         background-color: transparent;
@@ -120,11 +118,11 @@
 }
 
 
-// Media query para pantallas pequeñas
+// Media query for small screens
 @media (max-width: 992px) {
   .sidebar {
-    height: var(--sidebar-top-height, 60px); // Altura reducida para la parte superior
-    width: 100%; // Ancho completo
+    height: var(--sidebar-top-height, 60px); // Reduced height for top section
+    width: 100%; // Full width
     top: 0;
     left: 0;
     right: 0;
@@ -150,18 +148,15 @@
     }
   }
   
-
-
   .sidebar-btn {
     display: flex;
     justify-content: left;
     align-items: left;
     padding: 0rem;
     position: relative;
-    height: 100%; // Ocupar toda la altura del sidebar
+    height: 100%; // Occupy full sidebar height
   }
 
-  // Ajustar el botón de toggle en móviles
   .sidebar-toggle-btn {
     display: block;
     position: absolute;
@@ -178,13 +173,9 @@
     }
   }
 
-
-
-  // Ajustar el header del sidebar en móviles
   .sidebar-header-right {
     display: none;
   }
-
 
   .sidebar-menu {
     padding-top: 0;
@@ -198,13 +189,13 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: max-height 0.3s ease-in-out;
     opacity: 1;
-    max-height: 500px; // Altura máxima cuando está visible
+    max-height: 500px; // Maximum height when visible
     overflow: hidden;
   }
 
   .sidebar-collapsed {
     .sidebar-menu {
-      max-height: 0; // Altura 0 cuando está colapsado
+      max-height: 0; // Height 0 when collapsed
     }
   }
 

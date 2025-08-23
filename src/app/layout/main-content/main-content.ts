@@ -17,7 +17,7 @@ export class MainContent {
   sections: Config[] = [];
   isSmallScreen = false;
 
-  // Mapeo de labels a componentes
+  // Component mapping
   componentMap: { [key: string]: any } = {
     'about': About,
     'education': Education,
@@ -31,7 +31,6 @@ export class MainContent {
     this.checkScreenSize();
   }
 
-  // Detectar cambios en el tamaño de la ventana
   @HostListener('window:resize')
   onResize() {
     this.checkScreenSize();
@@ -41,14 +40,10 @@ export class MainContent {
     this.isSmallScreen = window.innerWidth <= this.configService.smallScreenBreakpoint$;
   }
 
-  // Obtener secciones según el tamaño de pantalla
   get sectionsToShow() {
     return this.isSmallScreen ? this.configService.allSections : this.configService.visibleSections;
   }
 
-
-
-  // Obtener el componente correspondiente
   getComponent(label: string): any {
     return this.componentMap[label] || null;
   }

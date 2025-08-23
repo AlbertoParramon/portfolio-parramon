@@ -44,13 +44,12 @@ export class Sidebar {
   constructor(private configService: ConfigService) {
     this.checkScreenSize();
   }
-
-  // Getter reactivo para las secciones
+  
   get sections(): Config[] {
     return this.configService.sections;
   }
 
-  // Detectar cambios en el tamaño de la ventana
+  // Detect window resize changes
   @HostListener('window:resize')
   onResize() {
     this.checkScreenSize();
@@ -59,29 +58,29 @@ export class Sidebar {
   private checkScreenSize() {
     const isSmallScreen = window.innerWidth <= this.configService.smallScreenBreakpoint$;
     
-    // Colapsar automáticamente en pantallas pequeñas
+    // Automatically collapse on small screens
     if (isSmallScreen && !this.isSidebarCollapsed) {
       this.isSidebarCollapsed = true;
     }
   }
 
-  // Método para mostrar solo una sección
+  // Method to show only one section
   setSectionVisible(name: string): void {
     this.configService.showOnlySection(name);
     this.isSidebarCollapsed = true;
 
-    // Hacer scroll a la sección (tanto en pantallas pequeñas como grandes)
+    // Scroll to section (both on small and large screens)
     this.scrollToSection(name);
   }
 
-  // Método para hacer scroll a una sección específica
+  // Method to scroll to a specific section
   private scrollToSection(sectionName: string): void {
-    // Pequeño delay para asegurar que el DOM esté actualizado
+    // Small delay to ensure DOM is updated
     setTimeout(() => {
       const isSmallScreen = window.innerWidth <= this.configService.smallScreenBreakpoint$;
       
       if (isSmallScreen) {
-        // En pantallas pequeñas: scroll al elemento específico
+        // On small screens: scroll to specific element
         const element = document.getElementById(sectionName);
         
         if (element) {
@@ -99,7 +98,7 @@ export class Sidebar {
             Array.from(document.querySelectorAll('[id]')).map(el => el.id));
         }
       } else {
-        // En pantallas grandes: scroll al principio de la página
+        // On large screens: scroll to top of page
         window.scrollTo({
           top: 0,
           behavior: 'smooth'

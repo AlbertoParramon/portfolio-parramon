@@ -1,7 +1,7 @@
 import { Injectable, signal, computed } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-// Interface para la configuración global
+// Interface for global configuration
 export interface GlobalConfig {
   general?: {
     paths?: {
@@ -24,10 +24,10 @@ export interface GlobalConfig {
       [key: string]: any;
     };
   };
-  [key: string]: any; // Permite campos adicionales
+  [key: string]: any; // Allows additional fields
 }
 
-// Interface para las secciones
+// Interface for sections
 export interface Config {
   name: string;
   label: string;
@@ -35,16 +35,16 @@ export interface Config {
 }
 
 @Injectable({
-  providedIn: 'root' // Hace que el servicio esté disponible en toda la aplicación
+  providedIn: 'root' // Makes the service available throughout the application
 })
 export class ConfigService {
-  // Variable normal para la configuración global (solo se carga una vez)
+  // Normal variable for global configuration (only loaded once)
   private globalConfig: GlobalConfig | null = null;
 
-  // Signal para la lista de secciones (reactive) - se inicializa desde config.json
+  // Signal for sections list (reactive) - initialized from config.json
   private sectionsSignal = signal<Config[]>([]);
 
-  // Signal para valores calculados (reactive)
+  // Signal for calculated values (reactive)
   private configValuesSignal = signal<{
     smallScreenBreakpoint: number;
     sidebarTopHeight: number;
@@ -57,49 +57,48 @@ export class ConfigService {
     this.loadGlobalConfig();
   }
 
-  // Método para cargar la configuración global desde el archivo JSON
+  // Method to load global configuration from JSON file
   private loadGlobalConfig(): void {
     this.http.get<GlobalConfig>('./assets/config.json')
       .subscribe({
         next: (config) => {
-          console.log('ConfigService - config.json cargado exitosamente:', config);
+          console.log('ConfigService - config.json loaded successfully:', config);
           this.globalConfig = config;
           this.initializeSectionsFromConfig();
-          this.setupConfig(); // Configurar automáticamente
+          this.setupConfig(); // Configure automatically
         },
         error: (error) => {
-          console.error('Error al cargar la configuración global:', error);
+          console.error('Error loading global configuration:', error);
           this.showConfigError(error);
         }
       });
   }
 
-  // Método para inicializar sectionsSignal desde globalConfig.sections
   private initializeSectionsFromConfig(): void {
     if (!this.globalConfig?.sections) {
-      console.warn('No se encontraron secciones en la configuración global');
+      console.warn('No sections found in global configuration');
       return;
     }
 
     const sections: Config[] = [];
     const sectionKeys = Object.keys(this.globalConfig.sections);
     
-    // Convertir cada sección del JSON a la estructura Config
+    // Convert each section from JSON to Config structure
     sectionKeys.forEach((key, index) => {
       const section = this.globalConfig!.sections![key];
       sections.push({
-        name: key, // La key del objeto (about, education, etc.)
-        label: section.label || key.toUpperCase(), // El label del JSON
-        visible: index === 0 // true para el primero, false para el resto
+        name: key, // Object key (about, education, etc.)
+        label: section.label || key.toUpperCase(), // Label from JSON
+        visible: index === 0 // true for first, false for rest
       });
     });
 
-    // Actualizar el signal con las secciones convertidas
+    // Update signal with converted sections
     this.sectionsSignal.set(sections);
-    console.log('SectionsSignal inicializado desde config.json:', sections);
+    console.log('SectionsSignal initialized from config.json:', sections);
   }
 
-  // Método para configurar automáticamente cuando se carga globalConfig
+  // Method to configure automatically when globalConfig is loaded
   private setupConfig(): void {
     if (!this.globalConfig?.general) {
       return;
@@ -108,7 +107,7 @@ export class ConfigService {
     const colors = this.globalConfig.general.colours;
     const sizes = this.globalConfig.general.sizes;
 
-    // Configurar todas las variables CSS para colores
+    // Configure all CSS variables for colors
     if (colors) {
       document.documentElement.style.setProperty('--sidebar-bg-color', colors['1'] || '#ffffff');
       document.documentElement.style.setProperty('--sidebar-text-color', colors['sidebar_text'] || '#000000');
@@ -117,26 +116,26 @@ export class ConfigService {
       document.documentElement.style.setProperty('--main-content-text-color', colors['main-content_text'] || '#2c3e50');
     }
 
-    // Configurar todas las variables CSS para tamaños
+    // Configure all CSS variables for sizes
     if (sizes) {
       document.documentElement.style.setProperty('--small-screen-breakpoint', sizes['small_screen'] || '992px');
       document.documentElement.style.setProperty('--sidebar-top-height', sizes['sidebar_top'] || '60px');
       document.documentElement.style.setProperty('--sidebar-left-width', sizes['sidebar_left'] || '250px');
       document.documentElement.style.setProperty('--profile-photo-size', sizes['profile_photo'] || '150px');
 
-      // Actualizar signal con valores calculados
+      // Update signal with calculated values
       this.configValuesSignal.set({
         smallScreenBreakpoint: sizes['small_screen'] ? parseInt(sizes['small_screen']) : 992,
         sidebarTopHeight: sizes['sidebar_top'] ? parseInt(sizes['sidebar_top']) : 60
       });
     }
 
-    console.log('Configuración aplicada automáticamente desde ConfigService');
+    console.log('Configuration applied automatically from ConfigService');
   }
 
-  // Método para mostrar error de configuración
+  // Method to show configuration error
   private showConfigError(error: any): void {
-    // Crear un elemento de error en el DOM
+    // Create error element in DOM
     const errorDiv = document.createElement('div');
     errorDiv.style.cssText = `
       position: fixed;
@@ -157,37 +156,37 @@ export class ConfigService {
     `;
     
     errorDiv.innerHTML = `
-      <h1 style="margin-bottom: 20px; font-size: 2em;">❌ Error en la configuración</h1>
+      <h1 style="margin-bottom: 20px; font-size: 2em;">❌ Configuration Error</h1>
       <div style="background-color: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px; max-width: 600px;">
-        <h2 style="margin-bottom: 15px;">Detalles del error:</h2>
+        <h2 style="margin-bottom: 15px;">Error Details:</h2>
         <pre style="background-color: rgba(0,0,0,0.5); padding: 15px; border-radius: 5px; overflow-x: auto; text-align: left;">
 ${JSON.stringify(error, null, 2)}
         </pre>
       </div>
     `;
     
-    // Agregar al DOM
+    // Add to DOM
     document.body.appendChild(errorDiv);
   }
 
-  // Getter público para acceder a las secciones
+  // Public getter to access sections
   get sections() {
     return this.sectionsSignal();
   }
 
 
   
-  // Getter para solo secciones visibles
+  // Getter for visible sections only
   get visibleSections() {
     return this.sectionsSignal().filter(section => section.visible);
   }
 
-  // Getter para todas las secciones
+  // Getter for all sections
   get allSections() {
     return this.sectionsSignal();
   }
 
-  // Método para mostrar solo una sección específica
+  // Method to show only one specific section
   showOnlySection(name: string) {
     const updatedSections = this.sectionsSignal().map(section => ({
       ...section,
@@ -196,7 +195,7 @@ ${JSON.stringify(error, null, 2)}
     this.sectionsSignal.set(updatedSections);
   }
 
-  // Getters para acceder a los valores calculados
+  // Getters to access calculated values
   get smallScreenBreakpoint$() {
     return this.configValuesSignal().smallScreenBreakpoint;
   }
