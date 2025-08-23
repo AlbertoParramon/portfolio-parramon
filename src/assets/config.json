@@ -17,8 +17,8 @@
       "main-content_text": "#2c3e50"
     },
     "sizes": {
-      "sidebar_top": "160px",
-      "sidebar_left": "350px",
+      "sidebar_top": "60px",
+      "sidebar_left": "250px",
       "profile_photo": "150px"
     }
   },
