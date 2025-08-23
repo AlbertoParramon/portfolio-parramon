@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, computed } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 // Interface para la configuración global
@@ -38,11 +38,20 @@ export interface Config {
   providedIn: 'root' // Hace que el servicio esté disponible en toda la aplicación
 })
 export class ConfigService {
-  // Signal para la configuración global (reactive)
-  private globalConfigSignal = signal<GlobalConfig | null>(null);
+  // Variable normal para la configuración global (solo se carga una vez)
+  private globalConfig: GlobalConfig | null = null;
 
   // Signal para la lista de secciones (reactive) - se inicializa desde config.json
   private sectionsSignal = signal<Config[]>([]);
+
+  // Signal para valores calculados (reactive)
+  private configValuesSignal = signal<{
+    smallScreenBreakpoint: number;
+    sidebarTopHeight: number;
+  }>({
+    smallScreenBreakpoint: 992,
+    sidebarTopHeight: 60
+  });
 
   constructor(private http: HttpClient) {
     this.loadGlobalConfig();
@@ -54,8 +63,9 @@ export class ConfigService {
       .subscribe({
         next: (config) => {
           console.log('ConfigService - config.json cargado exitosamente:', config);
-          this.globalConfigSignal.set(config);
+          this.globalConfig = config;
           this.initializeSectionsFromConfig();
+          this.setupConfig(); // Configurar automáticamente
         },
         error: (error) => {
           console.error('Error al cargar la configuración global:', error);
@@ -66,18 +76,17 @@ export class ConfigService {
 
   // Método para inicializar sectionsSignal desde globalConfig.sections
   private initializeSectionsFromConfig(): void {
-    const globalConfig = this.globalConfigSignal();
-    if (!globalConfig?.sections) {
+    if (!this.globalConfig?.sections) {
       console.warn('No se encontraron secciones en la configuración global');
       return;
     }
 
     const sections: Config[] = [];
-    const sectionKeys = Object.keys(globalConfig.sections);
+    const sectionKeys = Object.keys(this.globalConfig.sections);
     
     // Convertir cada sección del JSON a la estructura Config
     sectionKeys.forEach((key, index) => {
-      const section = globalConfig.sections![key];
+      const section = this.globalConfig!.sections![key];
       sections.push({
         name: key, // La key del objeto (about, education, etc.)
         label: section.label || key.toUpperCase(), // El label del JSON
@@ -88,6 +97,41 @@ export class ConfigService {
     // Actualizar el signal con las secciones convertidas
     this.sectionsSignal.set(sections);
     console.log('SectionsSignal inicializado desde config.json:', sections);
+  }
+
+  // Método para configurar automáticamente cuando se carga globalConfig
+  private setupConfig(): void {
+    if (!this.globalConfig?.general) {
+      return;
+    }
+
+    const colors = this.globalConfig.general.colours;
+    const sizes = this.globalConfig.general.sizes;
+
+    // Configurar todas las variables CSS para colores
+    if (colors) {
+      document.documentElement.style.setProperty('--sidebar-bg-color', colors['1'] || '#ffffff');
+      document.documentElement.style.setProperty('--sidebar-text-color', colors['sidebar_text'] || '#000000');
+      document.documentElement.style.setProperty('--sidebar-border-color', colors['1_dark'] || '#e0e0e0');
+      document.documentElement.style.setProperty('--main-content-bg-color', colors['2'] || '#ffffff');
+      document.documentElement.style.setProperty('--main-content-text-color', colors['main-content_text'] || '#2c3e50');
+    }
+
+    // Configurar todas las variables CSS para tamaños
+    if (sizes) {
+      document.documentElement.style.setProperty('--small-screen-breakpoint', sizes['small_screen'] || '992px');
+      document.documentElement.style.setProperty('--sidebar-top-height', sizes['sidebar_top'] || '60px');
+      document.documentElement.style.setProperty('--sidebar-left-width', sizes['sidebar_left'] || '250px');
+      document.documentElement.style.setProperty('--profile-photo-size', sizes['profile_photo'] || '150px');
+
+      // Actualizar signal con valores calculados
+      this.configValuesSignal.set({
+        smallScreenBreakpoint: sizes['small_screen'] ? parseInt(sizes['small_screen']) : 992,
+        sidebarTopHeight: sizes['sidebar_top'] ? parseInt(sizes['sidebar_top']) : 60
+      });
+    }
+
+    console.log('Configuración aplicada automáticamente desde ConfigService');
   }
 
   // Método para mostrar error de configuración
@@ -131,34 +175,7 @@ ${JSON.stringify(error, null, 2)}
     return this.sectionsSignal();
   }
 
-  // Getter público para acceder al signal de configuración global
-  get globalConfig$() {
-    return this.globalConfigSignal;
-  }
 
-  // Getter público para acceder a la configuración global
-  getGlobalConfig(): GlobalConfig | null {
-    return this.globalConfigSignal();
-  }
-
-  // Método para obtener una configuración específica
-  getConfigValue(path: string): any {
-    const globalConfig = this.globalConfigSignal();
-    if (!globalConfig) return null;
-    
-    const keys = path.split('.');
-    let value: any = globalConfig;
-    
-    for (const key of keys) {
-      if (value && typeof value === 'object' && key in value) {
-        value = value[key];
-      } else {
-        return null;
-      }
-    }
-    
-    return value;
-  }
   
   // Getter para solo secciones visibles
   get visibleSections() {
@@ -177,5 +194,14 @@ ${JSON.stringify(error, null, 2)}
       visible: section.name === name
     }));
     this.sectionsSignal.set(updatedSections);
+  }
+
+  // Getters para acceder a los valores calculados
+  get smallScreenBreakpoint$() {
+    return this.configValuesSignal().smallScreenBreakpoint;
+  }
+
+  get sidebarTopHeight$() {
+    return this.configValuesSignal().sidebarTopHeight;
   }
 } 

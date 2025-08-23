@@ -38,13 +38,15 @@ export class MainContent {
   }
 
   private checkScreenSize() {
-    this.isSmallScreen = window.innerWidth <= 992; // Pantallas de 992px o menos
+    this.isSmallScreen = window.innerWidth <= this.configService.smallScreenBreakpoint$;
   }
 
   // Obtener secciones según el tamaño de pantalla
   get sectionsToShow() {
     return this.isSmallScreen ? this.configService.allSections : this.configService.visibleSections;
   }
+
+
 
   // Obtener el componente correspondiente
   getComponent(label: string): any {
