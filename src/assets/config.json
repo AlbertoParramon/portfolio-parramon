@@ -20,6 +20,9 @@
       "sidebar_top": "60px",
       "sidebar_left": "250px",
       "profile_photo": "150px"
+    },
+    "text": {
+      "sidebar_title": "Alberto Parramon"
     }
   },
   "sections": {

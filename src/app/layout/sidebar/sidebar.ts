@@ -49,6 +49,10 @@ export class Sidebar {
     return this.configService.sections;
   }
 
+  get config(): any {
+    return this.configService.config;
+  }
+
   // Detect window resize changes
   @HostListener('window:resize')
   onResize() {

@@ -174,7 +174,9 @@ ${JSON.stringify(error, null, 2)}
     return this.sectionsSignal();
   }
 
-
+  get config() {
+    return this.globalConfig;
+  }
   
   // Getter for visible sections only
   get visibleSections() {
