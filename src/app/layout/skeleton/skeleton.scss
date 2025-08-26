@@ -17,13 +17,13 @@
 app-main-content {
     display: flex;
     flex: 1;
-    background-color: #f8f9fa;
-    padding: 0rem;
+    background-color: var(--main-content-bg-color, #ffffff);
+    padding: 2rem;
 }
 
 app-footer {
     flex-shrink: 0; // Fixed height
-    background-color: #f8f9fa;
+    background-color: var(--main-content-bg-color, #ffffff);
 }
   
  // Media query for small screens

@@ -5,16 +5,15 @@
       "logo": "/assets/icons/android-chrome-transparente-512x512.png"
     },
     "colours": {
-      "1": "#236a79",
-      "1_dark": "#0a3841",
-      "2": "#ecf0f1",
-      "2_dark": "#bdc3c7",
-      "3": "#2c3e50",
-      "3_dark": "#1a252f",
-      "white": "#ffffff",
-      "black": "#000000",
-      "sidebar_text": "#ecf0f1",
-      "main-content_text": "#2c3e50"
+      "main": "#236a79",
+      "main_dark": "#0a3841",
+      "secondary": "#",
+      "secondary_dark": "#",
+      "background": "#ecf0f1",
+      "background_dark": "#bdc3c7",
+      "background_total": "#ffffff",
+      "sidebar_text": "#ffffff",
+      "main-content_text": "#000000"
     },
     "sizes": {
       "sidebar_top": "60px",

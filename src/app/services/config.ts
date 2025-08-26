@@ -109,12 +109,14 @@ export class ConfigService {
 
     // Configure all CSS variables for colors
     if (colors) {
-      document.documentElement.style.setProperty('--sidebar-bg-color', colors['1'] || '#ffffff');
+      document.documentElement.style.setProperty('--sidebar-bg-color', colors['main'] || '#ffffff');
       document.documentElement.style.setProperty('--sidebar-text-color', colors['sidebar_text'] || '#000000');
-      document.documentElement.style.setProperty('--sidebar-border-color', colors['1_dark'] || '#e0e0e0');
-      document.documentElement.style.setProperty('--main-content-bg-color', colors['2'] || '#ffffff');
+      document.documentElement.style.setProperty('--sidebar-border-color', colors['main_dark'] || '#e0e0e0');
+      document.documentElement.style.setProperty('--main-content-bg-color', colors['background_total'] || '#ffffff');
+      document.documentElement.style.setProperty('--section-bg-color', colors['background'] || '#ffffff');
+      document.documentElement.style.setProperty('--about-bg-color', colors['background_dark'] || '#ffffff');
       document.documentElement.style.setProperty('--main-content-text-color', colors['main-content_text'] || '#2c3e50');
-      document.documentElement.style.setProperty('--body-bg-color', colors['2'] || '#ffffff');
+      document.documentElement.style.setProperty('--body-bg-color', colors['background'] || '#ffffff');
     }
 
     // Configure all CSS variables for sizes

@@ -5,7 +5,7 @@
 }
 
 .about-container h1 {
-  color: var(--main-content-text-color, #2c3e50);
+  color: var(--main-content-text-color, #000000);
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
@@ -13,15 +13,15 @@
 }
 
 .about-box {
-  background: white;
-  border: 2px solid var(--main-content-text-color, #2c3e50);
+  background: var(--about-bg-color, #ffffff);
+  border: 2px solid var(--main-content-text-color, #000000);
   border-radius: 8px;
   padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about-box p {
-  color: var(--main-content-text-color, #2c3e50);
+  color: var(--main-content-text-color, #000000);
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
@@ -38,7 +38,7 @@
 }
 
 .info-item {
-  color: var(--main-content-text-color, #2c3e50);
+  color: var(--main-content-text-color, #000000);
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 0.8rem;
@@ -49,13 +49,13 @@
 }
 
 .info-item strong {
-  color: var(--main-content-text-color, #2c3e50);
+  color: var(--main-content-text-color, #000000);
   font-weight: 600;
   margin-right: 0.5rem;
 }
 
 .info-item a {
-  color: var(--main-content-text-color, #2c3e50);
+  color: var(--main-content-text-color, #000000);
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-bottom-color 0.2s ease;
