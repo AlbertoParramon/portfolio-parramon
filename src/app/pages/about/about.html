@@ -7,63 +7,39 @@
     }
   </div>
   <div class="about-info-table">
-    <div class="info-row">
-      <div class="info-label">
-        <strong>EMAIL</strong>
+    @for (item of configService.config?.sections?.['about']?.['info_table']; track item.label) {
+      <div class="info-row">
+        <div class="info-label">
+          <strong>{{item.label | uppercase}}</strong>
+        </div>
+        <div class="info-content">
+          <span>{{item.value}}</span>
+          @if (item.copy) {
+            <button 
+              class="copy-btn" 
+              (click)="copyToClipboard(item.value)"
+              [class.copied]="item.value === valueCopied"
+              title="Copy {{item.label}} to clipboard">
+              <i class="fas" [class.fa-copy]="valueCopied !== item.value" [class.fa-check]="valueCopied === item.value"></i>
+            </button>
+          }
+          @if (item.path) {
+            <button 
+              class="download-btn" 
+              (click)="downloadFile(item.path, item.filename)"
+              title="Download PDF">
+              <i class="fas fa-download"></i>
+              <span>Download CV</span>
+            </button>
+          }
+        </div>
       </div>
-      <div class="info-content">
-        <span>{{configService.config?.sections?.['about']?.['email']}}</span>
-        <button 
-          class="copy-btn" 
-          (click)="copyToClipboard(configService.config?.sections?.['about']?.['email'], 'email')"
-          [class.copied]="emailCopied"
-          title="Copy email to clipboard">
-          <i class="fas" [class.fa-copy]="!emailCopied" [class.fa-check]="emailCopied"></i>
-        </button>
-      </div>
-    </div>
-    <div class="info-row">
-      <div class="info-label">
-        <strong>PHONE</strong>
-      </div>
-      <div class="info-content">
-        <span>{{configService.config?.sections?.['about']?.['phone']}}</span>
-        <button 
-          class="copy-btn" 
-          (click)="copyToClipboard(configService.config?.sections?.['about']?.['phone'], 'phone')"
-          [class.copied]="phoneCopied"
-          title="Copy phone to clipboard">
-          <i class="fas" [class.fa-copy]="!phoneCopied" [class.fa-check]="phoneCopied"></i>
-        </button>
-      </div>
-    </div>
-    <div class="info-row">
-      <div class="info-label">
-        <strong>CV</strong>
-      </div>
-      <div class="info-content">
-        <button 
-          class="download-btn" 
-          (click)="downloadCV()"
-          title="Download PDF">
-          <i class="fas fa-download"></i>
-          <span>Download CV</span>
-        </button>
-      </div>
-    </div>
-    <div class="info-row">
-      <div class="info-label">
-        <strong>LANGUAGES</strong>
-      </div>
-      <div class="info-content">
-        {{configService.config?.sections?.['about']?.['languages']}}
-      </div>
-    </div>
+    }
   </div>
   <div class="about-info-icons">
-    @for (item of configService.config?.sections?.['about']?.['extra'] | keyvalue; track item.key) {
-      <a href="{{item.value}}" target="_blank" class="info-icon-link" title="View {{item.key}} profile">
-        <i class="fab fa-{{item.key}} info-icon"></i>
+    @for (item of configService.config?.sections?.['about']?.['info_icons']; track item.label) {
+      <a href="{{item.path}}" target="_blank" class="info-icon-link" title="View {{item.label}} profile">
+        <i class="fab fa-{{item.label}} info-icon"></i>
       </a>
     }
   </div>  

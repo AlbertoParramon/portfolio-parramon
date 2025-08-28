@@ -116,6 +116,8 @@ export class ConfigService {
       document.documentElement.style.setProperty('--footer-bg-color', colors['background'] || '#ffffff');
       document.documentElement.style.setProperty('--section-bg-color', colors['background_total'] || '#ffffff');
       document.documentElement.style.setProperty('--about-bg-color', colors['background_total'] || '#ffffff');
+      document.documentElement.style.setProperty('--about-icons-color', colors['main'] || '#ffffff');
+      document.documentElement.style.setProperty('--about-icons-hover-color', colors['secondary'] || '#ffffff');
       document.documentElement.style.setProperty('--main-content-text-color', colors['main-content_text'] || '#2c3e50');
       document.documentElement.style.setProperty('--body-bg-color', colors['background'] || '#ffffff');
     }

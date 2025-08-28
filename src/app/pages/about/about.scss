@@ -30,6 +30,7 @@
 
 .about-info-table {
   width: 100%;
+  margin-top: 1rem;
   margin-bottom: 2rem;
   font-size: 1.2rem;
   margin-left: 2rem;
@@ -38,7 +39,8 @@
 .info-row {
   display: flex;
   align-items: center;
-  padding: 0.75rem 0;
+  padding: 0.25rem 0;
+  min-height: 2rem ;
 }
 
 .info-label {
@@ -56,12 +58,11 @@
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
 }
 
 .copy-btn {
-  background: var(--sidebar-bg-color, #2c3e50);
-  color: #efc907;
+  background: var(--about-bg-color, #ffffff);
+  color: var(--about-icons-color, #2c3e50);
   border: none;
   border-radius: 50%;
   width: 32px;
@@ -72,31 +73,26 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 0.9rem;
-  opacity: 0.7;
 }
 
 .copy-btn:hover {
   opacity: 1;
   transform: scale(1.1);
-  background: var(--sidebar-bg-color, #2c3e50);
-  color: #efc907;
+  color: var(--about-icons-hover-color, #efc907);
 }
 
 .copy-btn.copied {
-  background: #28a745;
-  color: white;
+  background: var(--about-bg-color, #ffffff);
+  color: var(--about-icons-color, #2c3e50);
   opacity: 1;
 }
 
-.copy-btn.copied:hover {
-  background: #28a745;
-  color: white;
-}
-
 .download-btn {
-  background: var(--sidebar-bg-color, #2c3e50);
-  color: #efc907;
-  border: none;
+  background: var(--about-bg-color, #ffffff);
+  color: var(--about-icons-color, #000000);
+  border-color: var(--about-icons-color, #000000);
+  border-width: 2px;
+  border-style: solid;
   border-radius: 8px;
   padding: 0.5rem 1rem;
   display: flex;
@@ -110,20 +106,15 @@
 }
 
 .download-btn:hover {
-  background: #34495e;
-  color: #efc907;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.download-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: var(--about-icons-hover-color, #000000);
+  border-color: var(--about-icons-hover-color, #000000);
+  transform: scale(1.05);
 }
 
 .download-btn i {
   font-size: 1rem;
 }
+
 
 .about-info-icons {
   display: flex;
@@ -133,6 +124,22 @@
   gap: 1rem;
 }
 
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  background-color: var(--about-icons-color, #000000);
+  color: var(--about-bg-color, #ffffff);
+  border-radius: 50%;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+
+/* Tooltip for icons */
 .info-icon-link {
   position: relative;
   display: flex;
@@ -142,28 +149,12 @@
   transition: all 0.3s ease;
 }
 
-.info-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 55px;
-  height: 55px;
-  background-color: var(--sidebar-bg-color, #2c3e50);
-  color: #efc907;
-  border-radius: 50%;
-  font-size: 1.3rem;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
 .info-icon-link:hover .info-icon {
-  background-color: #efc907;
-  color: var(--sidebar-bg-color, #2c3e50);
+  background-color: var(--about-icons-hover-color, #ffffff);
+  color: var(--about-icons-color, #000000);
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(239, 201, 7, 0.3);
 }
 
-/* Tooltip personalizado */
 .info-icon-link::before {
   content: attr(title);
   position: absolute;

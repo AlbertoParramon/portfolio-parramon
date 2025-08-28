@@ -9,35 +9,25 @@ import { ConfigService } from '../../services/config';
   styleUrl: './about.scss'
 })
 export class About {
-  emailCopied = false;
-  phoneCopied = false;
+  valueCopied = '';
 
   constructor(public configService: ConfigService) {}
 
-  async copyToClipboard(text: string, type: 'email' | 'phone'): Promise<void> {
+  async copyToClipboard(text: string): Promise<void> {
     try {
       await navigator.clipboard.writeText(text);
-      
-      if (type === 'email') {
-        this.emailCopied = true;
-        setTimeout(() => this.emailCopied = false, 2000);
-      } else {
-        this.phoneCopied = true;
-        setTimeout(() => this.phoneCopied = false, 2000);
-      }
+      this.valueCopied = text;
+      setTimeout(() => this.valueCopied = "", 2000);
     } catch (err) {
       console.error('Error al copiar al portapapeles:', err);
     }
   }
 
-  downloadCV(): void {
-    const cvConfig = this.configService.config?.sections?.['about']?.['cv'];
-    const cvPath = cvConfig?.['path'] || 'assets/cv.pdf';
-    const cvFilename = cvConfig?.['filename'] || 'Alberto_Parramon_CV.pdf';
+  downloadFile(path: string, filename: string): void {
     
     const link = document.createElement('a');
-    link.href = cvPath;
-    link.download = cvFilename;
+    link.href = path;
+    link.download = filename;
     link.target = '_blank';
     document.body.appendChild(link);
     link.click();
