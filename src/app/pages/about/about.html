@@ -1,6 +1,11 @@
 <div class="about-container-1">
   <h1 class="about-title">ABOUT</h1>
   
+  <!--<div class="about-name">
+    <span class="name-1">{{configService.config?.sections?.['about']?.['name_1']}}</span>
+    <span class="name-2">{{configService.config?.sections?.['about']?.['name_2']}}</span>
+  </div>-->
+  
   <div class="about-text">
     @for (paragraph of configService.config?.sections?.['about']?.['intro']; track paragraph) {
       <p>{{paragraph}}</p>
