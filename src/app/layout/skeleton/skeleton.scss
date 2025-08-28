@@ -43,3 +43,12 @@ app-footer {
     }
   
 }
+
+@media (max-width: 480px) {
+  app-main-content {
+    display: flex;
+    flex: 1;
+    background-color: var(--main-content-bg-color, #ffffff);
+    padding: 1rem;
+  }
+}
