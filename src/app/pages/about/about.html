@@ -2,31 +2,69 @@
   <h1 class="about-title">ABOUT</h1>
   
   <div class="about-text">
-    <p>Full Stack Developer with 8 years of professional experience. Native Spanish speaker with a C1 level of English.</p>
-    
-    <p>I work as part of a 15-person development team and occasionally step in as coordinator when the main lead is unavailable. I serve as the architect and maintainer of ElasticSearch clusters, as well as a developer of custom Kibana plugins used to analyze large transactional datasets. I also lead the design and development of new features across our platform.</p>
-    
-    <p>Currently seeking new opportunities in international teams, with a strong interest in expanding my skills in cybersecurity and AI/ML.</p>
+    @for (paragraph of configService.config?.sections?.['about']?.['intro']; track paragraph) {
+      <p>{{paragraph}}</p>
+    }
   </div>
-  <div class="about-info-grid">
-    <div class="info-item">
-      <strong>Gmail:</strong> <a href="mailto:parramon.castillo.alberto@gmail.com">parramon.castillo.alberto@gmail.com</a>
+  <div class="about-info-table">
+    <div class="info-row">
+      <div class="info-label">
+        <strong>EMAIL</strong>
+      </div>
+      <div class="info-content">
+        <span>{{configService.config?.sections?.['about']?.['email']}}</span>
+        <button 
+          class="copy-btn" 
+          (click)="copyToClipboard(configService.config?.sections?.['about']?.['email'], 'email')"
+          [class.copied]="emailCopied"
+          title="Copy email to clipboard">
+          <i class="fas" [class.fa-copy]="!emailCopied" [class.fa-check]="emailCopied"></i>
+        </button>
+      </div>
     </div>
-    <div class="info-item">
-      <strong>Tlf:</strong> 696720415
+    <div class="info-row">
+      <div class="info-label">
+        <strong>PHONE</strong>
+      </div>
+      <div class="info-content">
+        <span>{{configService.config?.sections?.['about']?.['phone']}}</span>
+        <button 
+          class="copy-btn" 
+          (click)="copyToClipboard(configService.config?.sections?.['about']?.['phone'], 'phone')"
+          [class.copied]="phoneCopied"
+          title="Copy phone to clipboard">
+          <i class="fas" [class.fa-copy]="!phoneCopied" [class.fa-check]="phoneCopied"></i>
+        </button>
+      </div>
     </div>
-    <div class="info-item">
-      <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alberto-parramon-castillo-a19716251/" target="_blank">https://www.linkedin.com/in/alberto-parramon-castillo-a19716251/</a>
+    <div class="info-row">
+      <div class="info-label">
+        <strong>CV</strong>
+      </div>
+      <div class="info-content">
+        <button 
+          class="download-btn" 
+          (click)="downloadCV()"
+          title="Download PDF">
+          <i class="fas fa-download"></i>
+          <span>Download CV</span>
+        </button>
+      </div>
     </div>
-    <div class="info-item">
-      <strong>CV</strong> 27-11-1993
+    <div class="info-row">
+      <div class="info-label">
+        <strong>LANGUAGES</strong>
+      </div>
+      <div class="info-content">
+        {{configService.config?.sections?.['about']?.['languages']}}
+      </div>
     </div>
-    <div class="info-item">
-      <strong>GitHub:</strong> <a href="https://github.com/AlbertoParramon" target="_blank">https://github.com/AlbertoParramon</a>
-    </div>
-    <div class="info-item">
-      <strong>Languages:</strong> Spanish, English (C1)
-    </div>
- 
   </div>
+  <div class="about-info-icons">
+    @for (item of configService.config?.sections?.['about']?.['extra'] | keyvalue; track item.key) {
+      <a href="{{item.value}}" target="_blank" class="info-icon-link" title="View {{item.key}} profile">
+        <i class="fab fa-{{item.key}} info-icon"></i>
+      </a>
+    }
+  </div>  
 </div>

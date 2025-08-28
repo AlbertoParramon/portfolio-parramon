@@ -7,6 +7,7 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .about-title {
@@ -24,23 +25,201 @@
   padding: 1rem;
   font-size: 1.2rem;
   line-height: 1.3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.about-info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 columns */
-  grid-template-rows: auto auto auto; /* 3 rows */
+.about-info-table {
+  width: 100%;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  margin-left: 2rem;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+}
+
+.info-label {
+  display: flex;
+  align-items: center;
+  width: 150px;
+  min-width: 150px;
+  font-weight: 600;
+  color: var(--main-content-text-color, #000000);
+}
+
+.info-content {
+  flex: 1;
+  color: var(--main-content-text-color, #000000);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.copy-btn {
+  background: var(--sidebar-bg-color, #2c3e50);
+  color: #efc907;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.copy-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  background: var(--sidebar-bg-color, #2c3e50);
+  color: #efc907;
+}
+
+.copy-btn.copied {
+  background: #28a745;
+  color: white;
+  opacity: 1;
+}
+
+.copy-btn.copied:hover {
+  background: #28a745;
+  color: white;
+}
+
+.download-btn {
+  background: var(--sidebar-bg-color, #2c3e50);
+  color: #efc907;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.download-btn:hover {
+  background: #34495e;
+  color: #efc907;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn i {
+  font-size: 1rem;
+}
+
+.about-info-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
   gap: 1rem;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.info-icon-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  background-color: var(--sidebar-bg-color, #2c3e50);
+  color: #efc907;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.info-icon-link:hover .info-icon {
+  background-color: #efc907;
+  color: var(--sidebar-bg-color, #2c3e50);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(239, 201, 7, 0.3);
+}
+
+/* Tooltip personalizado */
+.info-icon-link::before {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  margin-bottom: 8px;
+}
+
+.info-icon-link::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  margin-bottom: 3px;
+}
+
+.info-icon-link:hover::before,
+.info-icon-link:hover::after {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
   
-  .about-info-grid {
-    grid-template-columns: 1fr; /* 1 column */
-    gap: 0.8rem;
+  .info-label {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .info-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
   }
 }
+  

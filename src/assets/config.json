@@ -26,7 +26,23 @@
   },
   "sections": {
     "about": {
-      "label": "ABOUT"
+      "label": "ABOUT",
+      "intro": [
+        "Full Stack Developer with 8 years of professional experience. Native Spanish speaker with a C1 level of English.",
+        "I work as part of a 15-person development team and occasionally step in as coordinator when the main lead is unavailable. I serve as the architect and maintainer of ElasticSearch clusters, as well as a developer of custom Kibana plugins used to analyze large transactional datasets. I also lead the design and development of new features across our platform.",
+        "Currently seeking new opportunities in international teams, with a strong interest in expanding my skills in cybersecurity and AI/ML."
+      ],
+      "email": "parramon.castillo.alberto@gmail.com",
+      "phone": "696720415",
+      "languages": "Spanish, English (C1)",
+      "cv": {
+        "path": "assets/cv.pdf",
+        "filename": "Alberto_Parramon_CV.pdf"
+      },
+      "extra": {
+        "linkedin": "https://www.linkedin.com/in/alberto-parramon-castillo-b71000100/",
+        "github": "https://github.com/albertoparramon"
+      }
     },
     "education": {
       "label": "EDUCATION"

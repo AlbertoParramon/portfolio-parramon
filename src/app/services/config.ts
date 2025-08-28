@@ -114,8 +114,8 @@ export class ConfigService {
       document.documentElement.style.setProperty('--sidebar-border-color', colors['main_dark'] || '#e0e0e0');
       document.documentElement.style.setProperty('--main-content-bg-color', colors['background_total'] || '#ffffff');
       document.documentElement.style.setProperty('--footer-bg-color', colors['background'] || '#ffffff');
-      document.documentElement.style.setProperty('--section-bg-color', colors['background'] || '#ffffff');
-      document.documentElement.style.setProperty('--about-bg-color', colors['background_dark'] || '#ffffff');
+      document.documentElement.style.setProperty('--section-bg-color', colors['background_total'] || '#ffffff');
+      document.documentElement.style.setProperty('--about-bg-color', colors['background_total'] || '#ffffff');
       document.documentElement.style.setProperty('--main-content-text-color', colors['main-content_text'] || '#2c3e50');
       document.documentElement.style.setProperty('--body-bg-color', colors['background'] || '#ffffff');
     }
