@@ -34,8 +34,7 @@
       "name_1": "ALBERTO",
       "name_2": "PARRAMON",
       "cv": {
-        "path": "assets/cv.pdf",
-        "filename": "Alberto_Parramon_CV.pdf"
+        "path": "assets/Alberto_Parramon_CV.pdf"
       },
       "intro": [
         "I am a full Stack Developer with 8 years of professional experience. Native Spanish speaker with a C1 level of English.",
@@ -50,7 +49,7 @@
         },
         {
           "label": "phone",
-          "value": "696720415",
+          "value": "+34 696720415",
           "copy": true
         },
         {
