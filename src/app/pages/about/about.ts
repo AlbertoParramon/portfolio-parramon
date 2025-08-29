@@ -24,7 +24,6 @@ export class About {
   }
 
   downloadFile(path: string, filename: string): void {
-    
     const link = document.createElement('a');
     link.href = path;
     link.download = filename;
@@ -32,5 +31,8 @@ export class About {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    
+    // Notificación simple
+    alert('Descarga iniciada: ' + filename);
   }
 }

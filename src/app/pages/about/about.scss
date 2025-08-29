@@ -284,6 +284,12 @@
     align-items: center;
     gap: 0.65rem;
   }
+
+  /* Desactivar hover en móviles */
+  .copy-btn:hover {
+    color: var(--about-icons-color, #2c3e50);
+    transform: none;
+  }
 }
 
 @media (max-width: 480px) {
