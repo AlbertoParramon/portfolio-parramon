@@ -150,6 +150,7 @@
     right: 0;
     bottom: auto;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; // High z-index to stay on top
   }
   
   .sidebar-header-top {
@@ -227,6 +228,7 @@
     opacity: 1;
     max-height: 500px; // Maximum height when visible
     overflow: hidden;
+    z-index: 999; // High z-index for dropdown menu
   }
 
   .sidebar-collapsed {

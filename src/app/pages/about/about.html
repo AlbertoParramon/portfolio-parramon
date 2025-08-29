@@ -14,12 +14,10 @@
     }
     <div class="download-cv">
       <button class="download-btn" 
-      (click)="downloadFile(
-        configService.config?.sections?.['about']?.['cv']?.['path'], 
-        configService.config?.sections?.['about']?.['cv']?.['filename'])" 
-      title="Download PDF">
-        <i class="fas fa-download"></i>
-        <span>Download CV</span>
+      (click)="openFile(configService.config?.sections?.['about']?.['cv']?.['path'])" 
+      title="Open PDF">
+        <i class="fas fa-external-link-alt"></i>
+        <span>Open CV</span>
       </button>
     </div>
   </div>
@@ -43,10 +41,10 @@
           @if (item.path) {
             <button 
               class="download-btn" 
-              (click)="downloadFile(item.path, item.filename)"
-              title="Download PDF">
-              <i class="fas fa-download"></i>
-              <span>Download CV</span>
+              (click)="openFile(item.path)"
+              title="Open PDF">
+              <i class="fas fa-external-link-alt"></i>
+              <span>Open CV</span>
             </button>
           }
         </div>

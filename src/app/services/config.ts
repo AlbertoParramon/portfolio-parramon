@@ -15,6 +15,9 @@ export interface GlobalConfig {
     sizes?: {
       [key: string]: string;
     };
+    text?: {
+      [key: string]: string;
+    };
     [key: string]: any;
   };
   sections?: {
@@ -106,6 +109,7 @@ export class ConfigService {
 
     const colors = this.globalConfig.general.colours;
     const sizes = this.globalConfig.general.sizes;
+    const text = this.globalConfig.general.text;
 
     // Configure all CSS variables for colors
     if (colors) {
@@ -123,6 +127,11 @@ export class ConfigService {
       document.documentElement.style.setProperty('--about-name-color-1', colors['main'] || '#ffffff');
       document.documentElement.style.setProperty('--about-name-color-2', colors['secondary'] || '#ffffff');
       document.documentElement.style.setProperty('--about-text-color', colors['about_text'] || '#ffffff');
+    }
+
+    if (text) {
+      document.documentElement.style.setProperty('--font_family_title', text['font_family_title'] || 'Bebas Neue, sans-serif');
+      document.documentElement.style.setProperty('--font_family_content', text['font_family_content'] || 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif');
     }
 
     // Configure all CSS variables for sizes

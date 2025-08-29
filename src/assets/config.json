@@ -23,7 +23,9 @@
       "profile_photo_about": "200px"
     },
     "text": {
-      "sidebar_title": "Alberto Parramon"
+      "sidebar_title": "Alberto Parramon",
+      "font_family_title": "'Bebas Neue', sans-serif",
+      "font_family_content": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
     }
   },
   "sections": {
