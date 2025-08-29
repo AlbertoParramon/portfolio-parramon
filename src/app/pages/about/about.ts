@@ -23,7 +23,7 @@ export class About {
     }
   }
 
-  downloadFile(path: string, filename: string): void {
+  async downloadFile(path: string, filename: string): Promise<void> {
     const link = document.createElement('a');
     link.href = path;
     link.download = filename;
@@ -32,7 +32,23 @@ export class About {
     link.click();
     document.body.removeChild(link);
     
-    // Notificación simple
-    alert('Descarga iniciada: ' + filename);
+    // Native browser notification.
+    if ('Notification' in window) {
+      if (Notification.permission === 'granted') {
+        new Notification('Descarga completada', {
+          body: `${filename} file downloaded successfully.`,
+          icon: '/assets/icons/android-chrome-transparente-512x512.png'
+        });
+      } else if (Notification.permission !== 'denied') {
+        Notification.requestPermission().then(permission => {
+          if (permission === 'granted') {
+            new Notification('Descarga completada', {
+              body: `${filename} file downloaded successfully.`,
+              icon: '/assets/icons/android-chrome-transparente-512x512.png'
+            });
+          }
+        });
+      }
+    }
   }
 }
