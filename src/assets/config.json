@@ -7,18 +7,20 @@
     "colours": {
       "main": "#236a79",
       "main_dark": "#0a3841",
-      "secondary": "#e0b046",
+      "secondary": "#A38134",
       "secondary_dark": "#",
       "background": "#ecf0f1",
       "background_dark": "#bdc3c7",
       "background_total": "#ffffff",
       "sidebar_text": "#ffffff",
-      "main-content_text": "#000000"
+      "main-content_text": "#000000",
+      "about_text": "#4a4a4a"
     },
     "sizes": {
       "sidebar_top": "60px",
       "sidebar_left": "250px",
-      "profile_photo": "150px"
+      "profile_photo_sidebar": "150px",
+      "profile_photo_about": "200px"
     },
     "text": {
       "sidebar_title": "Alberto Parramon"
@@ -29,6 +31,10 @@
       "label": "ABOUT",
       "name_1": "ALBERTO",
       "name_2": "PARRAMON",
+      "cv": {
+        "path": "assets/cv.pdf",
+        "filename": "Alberto_Parramon_CV.pdf"
+      },
       "intro": [
         "I am a full Stack Developer with 8 years of professional experience. Native Spanish speaker with a C1 level of English.",
         "I work as part of a 15-person development team and occasionally step in as coordinator when the main lead is unavailable. I serve as the architect and maintainer of ElasticSearch clusters, as well as a developer of custom Kibana plugins used to analyze large transactional datasets. I also lead the design and development of new features across our platform.",
@@ -49,11 +55,6 @@
           "label": "languages",
           "value": "Spanish, English (C1)",
           "copy": false
-        },
-        {
-          "label": "cv",
-          "path": "assets/cv.pdf",
-          "filename": "Alberto_Parramon_CV.pdf"
         }
       ],
       "info_icons": [

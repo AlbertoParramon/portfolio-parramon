@@ -120,6 +120,9 @@ export class ConfigService {
       document.documentElement.style.setProperty('--about-icons-hover-color', colors['secondary'] || '#ffffff');
       document.documentElement.style.setProperty('--main-content-text-color', colors['main-content_text'] || '#2c3e50');
       document.documentElement.style.setProperty('--body-bg-color', colors['background'] || '#ffffff');
+      document.documentElement.style.setProperty('--about-name-color-1', colors['main'] || '#ffffff');
+      document.documentElement.style.setProperty('--about-name-color-2', colors['secondary'] || '#ffffff');
+      document.documentElement.style.setProperty('--about-text-color', colors['about_text'] || '#ffffff');
     }
 
     // Configure all CSS variables for sizes
@@ -127,7 +130,8 @@ export class ConfigService {
       document.documentElement.style.setProperty('--small-screen-breakpoint', sizes['small_screen'] || '992px');
       document.documentElement.style.setProperty('--sidebar-top-height', sizes['sidebar_top'] || '60px');
       document.documentElement.style.setProperty('--sidebar-left-width', sizes['sidebar_left'] || '250px');
-      document.documentElement.style.setProperty('--profile-photo-size', sizes['profile_photo'] || '150px');
+      document.documentElement.style.setProperty('--profile-photo-size-sidebar', sizes['profile_photo_sidebar'] || '150px');
+      document.documentElement.style.setProperty('--profile-photo-size-about', sizes['profile_photo_about'] || '200px');
 
       // Update signal with calculated values
       this.configValuesSignal.set({
