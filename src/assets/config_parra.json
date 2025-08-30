@@ -1,0 +1,148 @@
+{
+  "general": {
+    "paths": {
+      "profile_photo": "/assets/images/profile_photo.jpeg",
+      "logo": "/assets/icons/android-chrome-transparente-512x512.png"
+    },
+    "colours": {
+      "main": "#236a79",
+      "main_dark": "#0a3841",
+      "secondary": "#A38134",
+      "secondary_dark": "#",
+      "background": "#ecf0f1",
+      "background_dark": "#bdc3c7",
+      "background_total": "#ffffff",
+      "sidebar_text": "#ffffff",
+      "main-content_text": "#4a4a4a"
+    },
+    "sizes": {
+      "sidebar_top": "60px",
+      "sidebar_left": "250px",
+      "profile_photo_sidebar": "150px",
+      "profile_photo_about": "200px"
+    },
+    "text": {
+      "sidebar_title": "Alberto Parramon",
+      "font_family_title": "'Bebas Neue', sans-serif",
+      "font_family_content": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+    }
+  },
+  "sections": {
+    "about": {
+      "label": "ABOUT",
+      "name_1": "ALBERTO",
+      "name_2": "PARRAMON",
+      "cv": {
+        "path": "assets/Alberto_Parramon_CV.pdf"
+      },
+      "intro": [
+        "I am a full Stack Developer with 8 years of professional experience. Native Spanish speaker with a C1 level of English.",
+        "I work as part of a 15-person development team and occasionally step in as coordinator when the main lead is unavailable. I serve as the architect and maintainer of ElasticSearch clusters, as well as a developer of custom Kibana plugins used to analyze large transactional datasets. I also lead the design and development of new features across our platform.",
+        "Currently seeking new opportunities in international teams, with a strong interest in expanding my skills in cybersecurity and AI/ML."
+      ],
+      "info_table": [
+        {
+          "label": "email",
+          "value": "parramon.castillo.alberto@gmail.com",
+          "copy": true
+        },
+        {
+          "label": "phone",
+          "value": "+34 696720415",
+          "copy": true
+        },
+        {
+          "label": "languages",
+          "value": "Spanish, English (C1)",
+          "copy": false
+        }
+      ],
+      "info_icons": [
+        {
+          "label": "linkedin",
+          "path": "https://www.linkedin.com/in/alberto-parramon-castillo-a19716251/"
+        },
+        {
+          "label": "github",
+          "path": "https://github.com/albertoparramon"
+        }
+      ]
+    },
+    "experience": {
+      "label": "EXPERIENCE",
+      "timeline": [
+        {
+          "company": "Empresa Actual",
+          "position": "Full Stack Developer",
+          "period": "2022 - Presente",
+          "location": "Madrid, España",
+          "description": "Desarrollo full stack en tecnologías modernas. Lidero el diseño y desarrollo de nuevas funcionalidades. Arquitecto y mantenedor de clusters ElasticSearch.",
+          "technologies": ["Angular", "Node.js", "ElasticSearch", "Kibana", "TypeScript"],
+          "achievements": [
+            "Lideré el desarrollo de 3 nuevas funcionalidades principales",
+            "Optimicé el rendimiento del sistema en un 40%",
+            "Implementé mejoras en la arquitectura de datos"
+          ]
+        },
+        {
+          "company": "Empresa Anterior",
+          "position": "Backend Developer",
+          "period": "2020 - 2022",
+          "location": "Barcelona, España",
+          "description": "Desarrollo de APIs RESTful y microservicios. Trabajo con bases de datos relacionales y no relacionales.",
+          "technologies": ["Java", "Spring Boot", "PostgreSQL", "MongoDB", "Docker"],
+          "achievements": [
+            "Desarrollé 5 APIs principales del sistema",
+            "Implementé sistema de autenticación JWT",
+            "Reduje tiempo de respuesta de APIs en un 30%"
+          ]
+        },
+        {
+          "company": "Primera Empresa",
+          "position": "Junior Developer",
+          "period": "2018 - 2020",
+          "location": "Valencia, España",
+          "description": "Desarrollo web frontend y backend. Aprendizaje de tecnologías modernas y buenas prácticas.",
+          "technologies": ["JavaScript", "React", "PHP", "MySQL", "HTML/CSS"],
+          "achievements": [
+            "Desarrollé 2 aplicaciones web completas",
+            "Implementé sistema de gestión de usuarios",
+            "Mejoré la experiencia de usuario en un 25%"
+          ]
+        }
+      ]
+    },
+    "education": {
+      "label": "EDUCATION",
+      "courses": [
+        {
+          "title": "Grado en ingeniería informática",
+          "center": "Universidad Autonoma de Madrid",
+          "period": "2022 - Presente",
+          "grade": "8 / 10",
+          "description": "Desarrollo full stack en tecnologías modernas. Lidero el diseño y desarrollo de nuevas funcionalidades. Arquitecto y mantenedor de clusters ElasticSearch."
+        },
+        {
+          "title": "Grado en ingeniería informática",
+          "center": "Universidad Autonoma de Madrid",
+          "period": "2022 - Presente",
+          "grade": "8 / 10",
+          "description": "Desarrollo full stack en tecnologías modernas. Lidero el diseño y desarrollo de nuevas funcionalidades. Arquitecto y mantenedor de clusters ElasticSearch."
+        },
+        {
+          "title": "Grado en ingeniería informática",
+          "center": "Universidad Autonoma de Madrid",
+          "period": "2022 - Presente",
+          "grade": "8 / 10",
+          "description": "Desarrollo full stack en tecnologías modernas. Lidero el diseño y desarrollo de nuevas funcionalidades. Arquitecto y mantenedor de clusters ElasticSearch."
+        }
+      ]
+    },
+    "skills": {
+      "label": "SKILLS"
+    },
+    "projects": {
+      "label": "PROJECTS"
+    }
+  }
+}

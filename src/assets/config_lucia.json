@@ -5,9 +5,9 @@
       "logo": "/assets/icons/android-chrome-transparente-512x512.png"
     },
     "colours": {
-      "main": "#636b2f",
-      "main_dark": "#A38134",
-      "secondary": "#A38134",
+      "main": "#376B01",
+      "main_dark": "#244501",
+      "secondary": "#E0A402",
       "secondary_dark": "#",
       "background": "#ecf0f1",
       "background_dark": "#bdc3c7",
@@ -97,7 +97,7 @@
           "position": "Brand Specialist in Consumables",
           "period": "2021",
           "location": "Madrid, España",
-          "description": "Acted as the main point of contact for 2 EU vendors, advising on performance growth, vendor-funded deals, and promotional activities.",
+          "description": "Acted as the main point of contact for 2 EU vendors, advising on performance growth, vendor-funded deals, and promotional activities.": ["JavaScript", "React", "PHP", "MySQL", "HTML/CSS"],
           "achievements": [
             "Designed and implemented promotional activities to improve visibility and  conversion rates, increasing vendor margins by 15%.",
             "Analyzed deep sales and performance data to define quarterly KPIs and identify actionable opportunities for growth.",
@@ -113,21 +113,21 @@
           "title": "ICEX-Master´s Degree in International Commerce",
           "center": "International University Menéndez Pelayo",
           "period": "2023 - 2024",
-          "grade": "8,7 / 10"
+          "grade": "8,7 / 10",
         },
         {
           "title": "Degree in Business Administration",
           "center": "IE University",
           "period": "2016 - 2021",
-          "grade": "8,5 / 10"
+          "grade": "8,5 / 10",
         },
         {
           "title": "Degree in International Relations",
           "center": "IE University",
           "period": "2016 - 2021",
-          "grade": "8,2 / 10"
+          "grade": "8,2 / 10",
         }
       ]
-    }
+    },
   }
 }
