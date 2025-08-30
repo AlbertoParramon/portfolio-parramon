@@ -13,8 +13,7 @@
       "background_dark": "#bdc3c7",
       "background_total": "#ffffff",
       "sidebar_text": "#ffffff",
-      "main-content_text": "#000000",
-      "about_text": "#4a4a4a"
+      "main-content_text": "#4a4a4a"
     },
     "sizes": {
       "sidebar_top": "60px",
@@ -69,11 +68,75 @@
         }
       ]
     },
-    "education": {
-      "label": "EDUCATION"
-    },
     "experience": {
-      "label": "EXPERIENCE"
+      "label": "EXPERIENCE",
+      "timeline": [
+        {
+          "company": "Empresa Actual",
+          "position": "Full Stack Developer",
+          "period": "2022 - Presente",
+          "location": "Madrid, España",
+          "description": "Desarrollo full stack en tecnologías modernas. Lidero el diseño y desarrollo de nuevas funcionalidades. Arquitecto y mantenedor de clusters ElasticSearch.",
+          "technologies": ["Angular", "Node.js", "ElasticSearch", "Kibana", "TypeScript"],
+          "achievements": [
+            "Lideré el desarrollo de 3 nuevas funcionalidades principales",
+            "Optimicé el rendimiento del sistema en un 40%",
+            "Implementé mejoras en la arquitectura de datos"
+          ]
+        },
+        {
+          "company": "Empresa Anterior",
+          "position": "Backend Developer",
+          "period": "2020 - 2022",
+          "location": "Barcelona, España",
+          "description": "Desarrollo de APIs RESTful y microservicios. Trabajo con bases de datos relacionales y no relacionales.",
+          "technologies": ["Java", "Spring Boot", "PostgreSQL", "MongoDB", "Docker"],
+          "achievements": [
+            "Desarrollé 5 APIs principales del sistema",
+            "Implementé sistema de autenticación JWT",
+            "Reduje tiempo de respuesta de APIs en un 30%"
+          ]
+        },
+        {
+          "company": "Primera Empresa",
+          "position": "Junior Developer",
+          "period": "2018 - 2020",
+          "location": "Valencia, España",
+          "description": "Desarrollo web frontend y backend. Aprendizaje de tecnologías modernas y buenas prácticas.",
+          "technologies": ["JavaScript", "React", "PHP", "MySQL", "HTML/CSS"],
+          "achievements": [
+            "Desarrollé 2 aplicaciones web completas",
+            "Implementé sistema de gestión de usuarios",
+            "Mejoré la experiencia de usuario en un 25%"
+          ]
+        }
+      ]
+    },
+    "education": {
+      "label": "EDUCATION",
+      "courses": [
+        {
+          "title": "Grado en ingeniería informática",
+          "center": "Universidad Autonoma de Madrid",
+          "period": "2022 - Presente",
+          "grade": "8 / 10",
+          "description": "Desarrollo full stack en tecnologías modernas. Lidero el diseño y desarrollo de nuevas funcionalidades. Arquitecto y mantenedor de clusters ElasticSearch."
+        },
+        {
+          "title": "Grado en ingeniería informática",
+          "center": "Universidad Autonoma de Madrid",
+          "period": "2022 - Presente",
+          "grade": "8 / 10",
+          "description": "Desarrollo full stack en tecnologías modernas. Lidero el diseño y desarrollo de nuevas funcionalidades. Arquitecto y mantenedor de clusters ElasticSearch."
+        },
+        {
+          "title": "Grado en ingeniería informática",
+          "center": "Universidad Autonoma de Madrid",
+          "period": "2022 - Presente",
+          "grade": "8 / 10",
+          "description": "Desarrollo full stack en tecnologías modernas. Lidero el diseño y desarrollo de nuevas funcionalidades. Arquitecto y mantenedor de clusters ElasticSearch."
+        }
+      ]
     },
     "skills": {
       "label": "SKILLS"

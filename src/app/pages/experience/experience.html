@@ -1,65 +1,64 @@
-<h2>experience works!</h2>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS COSAS 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
+<div class="experience-container">
+  <h1 class="experience-title">EXPERIENCE</h1>
+  
+  <div class="timeline-container">
+    @if (configService.config?.sections?.['experience']?.['timeline']) {
+      @for (experience of configService.config?.sections?.['experience']?.['timeline']; track $index) {
+        <div class="timeline-item">
+          <!-- Línea del timeline -->
+          <div class="timeline-line">
+            <div class="timeline-dot"></div>
+          </div>
+          
+          <!-- Contenido de la experiencia -->
+          <div class="experience-card">
+            <!-- Header con empresa y período -->
+            <div class="experience-header">
+              <div class="company-info">
+                <div class="company-name-position">
+                    <div><span class="company-name">{{ experience.company }}</span></div>
+                    <div><span class="position-title">{{ experience.position }}</span></div>
+                </div>
+                <div class="location-period">
+                  <span class="period">
+                    <i class="fas fa-calendar-alt"></i>
+                    {{ experience.period }}
+                  </span>
+                  <span class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    {{ experience.location }}
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Descripción -->
+            <div class="experience-description">
+              <p>{{ experience.description }}</p>
+            </div>
+            
+            <!-- Tecnologías -->
+            <!--<div class="technologies-section">
+              <h5>Tecnologías:</h5>
+              <div class="technologies-tags">
+                @for (tech of experience.technologies; track tech) {
+                  <span class="tech-tag">{{ tech }}</span>
+                }
+              </div>
+            </div>-->
+            
+            <!-- Logros -->
+            <div class="achievements-section">
+              <h5>Main achievements:</h5>
+              <ul class="achievements-list">
+                @for (achievement of experience.achievements; track achievement) {
+                  <li>{{ achievement }}</li>
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      }
+    }
+  </div>
+</div>

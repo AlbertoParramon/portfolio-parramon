@@ -1,0 +1,223 @@
+.experience-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0rem;
+}
+
+.experience-title {
+  font-family: var(--font-family-title, 'Bebas Neue', sans-serif);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--main-content-text-color, #000000);
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.timeline-container {
+  position: relative;
+  padding-left: 0rem;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 1.3rem;
+  top: 0;
+  bottom: 0;
+  width: 0.3rem;
+  background: var(--bg-color, #ffffff);
+  //background: linear-gradient(to bottom, var(--main-color, #236a79), var(--secondary-color, #A38134));
+  border-radius: 2px;
+}
+
+.timeline-item {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  background-color: var(--main-content-bg-total-color, #ffffff);
+}
+
+.timeline-line {
+  padding-top: 0rem;
+  width: 2.9rem;
+  height: 100%;
+  display: flex;
+  z-index: 1;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.timeline-dot {
+  width: 2.3rem;
+  height: 2.3rem;
+  background: var(--timeline-dot-color, #ffffff);
+  border: 0.3rem solid var(--bg-color, #ffffff);
+  border-radius: 50%;
+}
+
+.experience-card {
+  background: var(--main-content-bg-color, #ffffff);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-left: 1rem;
+  flex: 1;
+}
+
+.experience-header {
+  margin-bottom: 1rem;
+}
+
+.company-name-position {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  font-family: var(--font_family_title, 'Bebas Neue', sans-serif);
+  margin: 0 0 1rem 0;
+  letter-spacing: 1px;
+}
+
+.company-name {
+  font-size: 1.5rem;
+  color: var(--main-content-text-color, #000000);
+  font-weight: 800;
+}
+
+.position-title {
+  font-size: 1.5rem;
+  color: var(--main-color, #000000);
+}
+
+.location-period {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.location, .period {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.location i, .period i {
+  color: var(--main-color, #A38134);
+  font-size: 0.8rem;
+}
+
+.experience-description {
+  margin-bottom: 1rem;
+}
+
+.experience-description p {
+  font-family: var(--font-family-content, 'Segoe UI', sans-serif);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.technologies-section, .achievements-section {
+  margin-bottom: 0rem;
+}
+
+.technologies-section h5, .achievements-section h5 {
+  font-family: var(--font_family_content, 'Segoe UI', sans-serif);
+  font-size: 1rem;
+  color: var(--main-content-text-color, #236a79);
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.technologies-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  background: var(--main-color, #236a79);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.achievements-list {
+  padding-left: 1.5rem;
+  list-style: none;
+  margin: 0;
+}
+
+.achievements-list li {
+  font-family: var(--font-family-content, 'Segoe UI', sans-serif);
+  padding: 0.2rem 0;
+  padding-left: 0rem;
+  position: relative;
+  line-height: 1;
+  list-style: disc;  /* Elimina el estilo nativo */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+   .company-name-position {
+     flex-direction: column;
+   }
+  
+  //.timeline-container::before {
+  //  left: 0.5rem;
+  //}
+  //
+  //.timeline-line {
+  //  width: 1.5rem;
+  //}
+  //
+  //.experience-card {
+  //  padding: 1.5rem;
+  //  margin-left: 0.5rem;
+  //}
+  
+  .location-period {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .technologies-tags {
+    gap: 0.3rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  .timeline-container::before {
+    left: 0.9rem;
+  }
+  
+  .timeline-line {
+    width: 2.1rem;
+  }
+  
+  .timeline-dot {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .experience-card {
+    padding: 1rem;
+    margin-left: 0.25rem;
+  }
+  
+  //.company-name {
+  //  font-size: 1.5rem;
+  //}
+  
+  //.position-title {
+  //  font-size: 1.1rem;
+  //}
+}

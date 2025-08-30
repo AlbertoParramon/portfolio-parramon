@@ -1,29 +1,59 @@
-<div class="about-container">
-    <h1>ABOUT</h1>
+<div class="education-container">
+    <h1 class="education-title">EDUCATION</h1>
     
-    <div class="about-box">
-      <p>Full Stack Developer with 8 years of professional experience. Native Spanish speaker with a C1 level of English.</p>
-      
-      <p>I work as part of a 15-person development team and occasionally step in as coordinator when the main lead is unavailable. I serve as the architect and maintainer of ElasticSearch clusters, as well as a developer of custom Kibana plugins used to analyze large transactional datasets. I also lead the design and development of new features across our platform.</p>
-      
-      <p>Currently seeking new opportunities in international teams, with a strong interest in expanding my skills in cybersecurity and AI/ML.</p>
-      
-      <div class="contact-info">
-        <div class="info-item">
-          <strong>Birth date:</strong> 27-11-1993
-        </div>
-        <div class="info-item">
-          <strong>Languages:</strong> Spanish, English (C1)
-        </div>
-        <div class="info-item">
-          <strong>Gmail:</strong> <a href="mailto:parramon.castillo.alberto@gmail.com">com</a>
-        </div>
-        <div class="info-item">
-          <strong>GitHub:</strong> <a href="https://github.com/AlbertoParramon" target="_blank">bertoParramon</a>
-        </div>
-        <div class="info-item">
-          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alberto-parramon-castillo-a19716251/" target="_blank">https://www.1/</a>
-        </div>
-      </div>
+    <div class="education-container">
+      @if (configService.config?.sections?.['experience']?.['timeline']) {
+        @for (education of configService.config?.sections?.['education']?.['courses']; track $index) {
+          <div class="education-item">
+            <!-- Education content -->
+            <div class="education-card">
+              <!-- Header con empresa y período -->
+                <div class="education-info">
+                  <div class="education-title-center">
+                      <div><span class="education-course-title">{{ education.title }}</span></div>
+                      <div><span class="education-center">{{ education.center }}</span></div>
+                  </div>
+                  <div class="period-grade">
+                    <span class="period">
+                      <i class="fas fa-calendar-alt"></i>
+                      {{ education.period }}
+                    </span>
+                    <span class="grade">
+                      <i class="fas fa-map-marker-alt"></i>
+                      {{ education.grade }}
+                    </span>
+                  </div>
+                </div>
+              
+              <!-- Descripción -->
+              <div class="education-description">
+                <p>{{ education.description }}</p>
+              </div>
+              
+              <!-- Tecnologías -->
+              <!--<div class="technologies-section">
+                <h5>Tecnologías:</h5>
+                <div class="technologies-tags">
+                  @for (tech of experience.technologies; track tech) {
+                    <span class="tech-tag">{{ tech }}</span>
+                  }
+                </div>
+              </div>-->
+              
+              <!-- Logros -->
+               <!--
+              <div class="achievements-section">
+                <h5>Main achievements:</h5>
+                <ul class="achievements-list">
+                  @for (achievement of experience.achievements; track achievement) {
+                    <li>{{ achievement }}</li>
+                  }
+                </ul>
+              </div>-->
+            </div>
+          </div>
+        }
+      }
     </div>
   </div>
+  

@@ -1,86 +1,103 @@
-.about-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
+.education-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0rem;
+}
+
+.education-title {
+  font-family: var(--font-family-title, 'Bebas Neue', sans-serif);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--main-content-text-color, #000000);
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.education-container {
+  position: relative;
+  padding-left: 0rem;
+}
+
+.education-item {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  background-color: var(--main-content-bg-total-color, #ffffff);
+}
+
+.education-card {
+  background: var(--main-content-bg-color, #ffffff);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-left: 1rem;
+  flex: 1;
+}
+
+.education-header {
+  margin-bottom: 1rem;
+}
+
+.education-title-center {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  font-family: var(--font_family_title, 'Bebas Neue', sans-serif);
+  margin: 0 0 1rem 0;
+  letter-spacing: 1px;
+}
+
+.education-course-title {
+  font-size: 1.5rem;
+  color: var(--main-content-text-color, #000000);
+  font-weight: 800;
+}
+
+.education-center {
+  font-size: 1.5rem;
+  color: var(--main-color, #000000);
+}
+
+.period-grade {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.period, .grade {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.period i, .grade i {
+  color: var(--main-color, #A38134);
+  font-size: 0.8rem;
+}
+
+.education-description p {
+  font-family: var(--font-family-content, 'Segoe UI', sans-serif);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+   .company-name-position {
+     flex-direction: column;
+   }
   
-  .about-container h1 {
-    color: var(--main-content-text-color, #2c3e50);
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 2rem;
+  .period-grade {
+    flex-direction: column;
+    gap: 0.5rem;
   }
+}
+
+@media (max-width: 480px) {
   
-  .about-box {
-    background: white;
-    border: 2px solid var(--main-content-text-color, #2c3e50);
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  .education-card {
+    padding: 1rem;
+    margin-left: 0.25rem;
   }
-  
-  .about-box p {
-    color: var(--main-content-text-color, #2c3e50);
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-  }
-  
-  .about-box p:last-child {
-    margin-bottom: 0;
-  }
-  
-  .contact-info {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(44, 62, 80, 0.2);
-  }
-  
-  .info-item {
-    color: var(--main-content-text-color, #2c3e50);
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 0.8rem;
-  }
-  
-  .info-item:last-child {
-    margin-bottom: 0;
-  }
-  
-  .info-item strong {
-    color: var(--main-content-text-color, #2c3e50);
-    font-weight: 600;
-    margin-right: 0.5rem;
-  }
-  
-  .info-item a {
-    color: var(--main-content-text-color, #2c3e50);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-bottom-color 0.2s ease;
-  }
-  
-  .info-item a:hover {
-    border-bottom-color: var(--main-content-text-color, #2c3e50);
-  }
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .about-container {
-      padding: 1rem;
-    }
-    
-    .about-container h1 {
-      font-size: 2rem;
-    }
-    
-    .about-box {
-      padding: 1.5rem;
-    }
-    
-    .about-box p {
-      font-size: 1rem;
-    }
-  }
-  
+}

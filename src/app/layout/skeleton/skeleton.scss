@@ -17,7 +17,7 @@
 app-main-content {
     display: flex;
     flex: 1;
-    background-color: var(--main-content-bg-color, #ffffff);
+    background-color: var(--main-content-bg-total-color, #ffffff);
     padding: 2rem;
     justify-content: center;
     align-items: center;
@@ -25,7 +25,7 @@ app-main-content {
 
 app-footer {
     flex-shrink: 0; // Fixed height
-    background-color: var(--main-content-bg-color, #ffffff);
+    background-color: var(--main-content-bg-total-color, #ffffff);
 }
   
  // Media query for small screens
@@ -50,7 +50,7 @@ app-footer {
   app-main-content {
     display: flex;
     flex: 1;
-    background-color: var(--main-content-bg-color, #ffffff);
+    background-color: var(--main-content-bg-total-color, #ffffff);
     padding: 1rem;
   }
 }
