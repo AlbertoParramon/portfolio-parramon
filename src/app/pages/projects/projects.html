@@ -1,65 +1,61 @@
-<h2>projects works!</h2>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
+<div class="projects-container">
+  <h1 class="projects-title">PROJECTS</h1>
+  
+  <div class="projects-sections">
+    @if (configService.config?.sections?.['projects']?.['sections']) {
+      @for (section of configService.config?.sections?.['projects']?.['sections']; track $index) {
+        <div class="project-section">
+          <!-- Título de la sección -->
+          <div class="section-header">
+            <h2 class="section-title">{{ section.name }}</h2>
+            <p class="section-description">{{ section.description }}</p>
+          </div>
+          
+          <!-- Grid de proyectos -->
+          <div class="projects-grid">
+            @if (section.projects) {
+              @for (project of section.projects; track $index) {
+                <div class="project-card">
+                  <!-- Imagen del proyecto -->
+                  <div class="project-image">
+                    <img [src]="project.image" [alt]="project.title" 
+                         (error)="onImageError($event)" 
+                         class="project-img">
+                  </div>
+                  
+                  <!-- Contenido del proyecto -->
+                  <div class="project-content">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <p class="project-description">{{ project.description }}</p>
+                    
+                    <!-- Botones de acción -->
+                    <div class="project-actions">
+                      @if (project.open_button) {
+                        <button 
+                          class="project-btn"
+                          (click)="openProject(project.open_button)" 
+                          title="Open Project">
+                          <i class="fas fa-external-link-alt"></i>
+                          <span>Open Project</span>
+                        </button>
+                      }
+                      
+                      @if (project.github_button) {
+                        <a [href]="project.github_button" 
+                           target="_blank" 
+                           class="project-btn">
+                          <i class="fab fa-github"></i>
+                          GitHub
+                        </a>
+                      }
+                    </div>
+                  </div>
+                </div>
+              }
+            }
+          </div>
+        </div>
+      }
+    }
+  </div>
+</div>

@@ -1,7 +1,7 @@
 .experience-container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0rem;
+  padding: 2rem;
 }
 
 .experience-title {
@@ -160,6 +160,10 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
+  .experience-container {
+    padding: 1rem;
+  }
+
    .company-name-position {
      flex-direction: column;
    }
@@ -193,7 +197,10 @@
 }
 
 @media (max-width: 480px) {
-  
+  .experience-container  {
+    padding: 0.5rem;
+  }
+
   .timeline-container::before {
     left: 0.9rem;
   }

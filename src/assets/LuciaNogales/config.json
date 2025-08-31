@@ -99,7 +99,7 @@
         }
       ]
     },
-"education": {
+    "education": {
       "label": "EDUCATION",
       "courses": [
         {
@@ -119,6 +119,53 @@
           "center": "IE University",
           "period": "2016 - 2021",
           "grade": "8,2 / 10"
+        }
+      ]
+    },
+    "projects": {
+      "label": "PROJECTS",
+      "sections": [
+        {
+          "name": "Market Research Case Studies",
+          "description": "",
+          "projects": [
+            {
+              "image": "assets/LuciaNogales/projects/images/project1.png",
+              "title": "Organized food retail in Germany",
+              "description": "An up-to-date and detailed overview of organized food retail in Germany in 2025.",
+              "open_button": "assets/estudio-mercado-comercio-organizado-alimentacion-alemania-2025.pdf"
+            },
+            {
+              "image": "assets/LuciaNogales/projects/images/project2.png",
+              "title": "The market for fresh vegetables and fruit in Germany",
+              "description": "A detailed overview of fresh fruits and vegetables market in Germany in 2025",
+              "open_button": "assets/estudio-mercado-hortalizas-frutas-frescas-alemania-2025.pdf"
+            },
+            {
+              "image": "assets/LuciaNogales/projects/images/project3.png",
+              "title": "Women's lingerie, sleepwear, and swimwear in Germany",
+              "description": "Sectorial research paper on women’s lingering, swimwear and sleepwear in Germany in 2025",
+              "open_button": "assets/ficha-sector-moda-intima-dormir-bano-femenina-alemania-2025.pdf"
+            }
+          ]
+        },
+        {
+          "name": "Trade fair reports",
+          "description": "",
+          "projects": [
+            {
+              "image": "assets/LuciaNogales/projects/images/project4.png",
+              "title": "Biofach",
+              "description": "Trade fair report on the largest organic food and beverage exhibition, including data on the number of attendees and exhibitors, as well as the level of Spanish participation.",
+              "open_button": "assets/informe-feria-biofach-nuremberg-2025.pdf"
+            },
+            {
+              "image": "assets/LuciaNogales/projects/images/project5.png",
+              "title": "Fruitlogistica",
+              "description": "Trade fair report on the world’s leading trade fair for the fresh fruit and vegetable industry, bringing together the entire value chain in Berlin — from producers to distributors — to showcase innovations, build connections, and drive international business.",
+              "open_button": "assets/informe-feria-fruit-logistica-berlin-2025.pdf"
+            }
+          ]
         }
       ]
     }

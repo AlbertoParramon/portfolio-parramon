@@ -1,7 +1,6 @@
 <div class="education-container">
     <h1 class="education-title">EDUCATION</h1>
     
-    <div class="education-container">
       @if (configService.config?.sections?.['experience']?.['timeline']) {
         @for (education of configService.config?.sections?.['education']?.['courses']; track $index) {
           <div class="education-item">
@@ -54,6 +53,5 @@
           </div>
         }
       }
-    </div>
   </div>
   

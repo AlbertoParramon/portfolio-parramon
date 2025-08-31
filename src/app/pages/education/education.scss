@@ -1,7 +1,8 @@
 .education-container {
   max-width: 1000px;
+  position: relative;
   margin: 0 auto;
-  padding: 0rem;
+  padding: 2rem;
 }
 
 .education-title {
@@ -11,11 +12,6 @@
   text-align: center;
   margin-bottom: 1rem;
   letter-spacing: 1px;
-}
-
-.education-container {
-  position: relative;
-  padding-left: 0rem;
 }
 
 .education-item {
@@ -29,7 +25,6 @@
   background: var(--section-bg-color, #ffffff);
   border-radius: 12px;
   padding: 2rem;
-  margin-left: 1rem;
   flex: 1;
 }
 
@@ -84,6 +79,10 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
+  .education-container {
+    padding: 1rem;
+  }
+
    .education-title-center {
      flex-direction: column;
    }
@@ -95,7 +94,10 @@
 }
 
 @media (max-width: 480px) {
-  
+  .education-container {
+    padding: 0.5rem;
+  }
+
   .education-card {
     padding: 1rem;
     margin-left: 0.25rem;

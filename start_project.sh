@@ -11,6 +11,7 @@ modify_xml() {
 
 if [[ -d src/assets/$NAME ]]; then
   cp src/assets/$NAME/* src/assets/
+  cp src/assets/$NAME/projects/src/* src/assets/
   source src/assets/config.env
   modify_xml
   if [[ $MODE == "PRO" ]]; then
