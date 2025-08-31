@@ -1,9 +1,5 @@
 {
   "general": {
-    "paths": {
-      "profile_photo": "/assets/images/profile_photo.jpeg",
-      "logo": "/assets/icons/android-chrome-transparente-512x512.png"
-    },
     "colours": {
       "main": "#236a79",
       "main_dark": "#0a3841",
