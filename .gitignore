@@ -43,6 +43,7 @@ Thumbs.db
 
 # Dply files
 /src/assets/config.json
+/src/assets/config.env
 /src/assets/favicon.ico
 /src/assets/*.pdf
 /src/assets/*.jpeg
