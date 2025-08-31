@@ -22,11 +22,11 @@
   margin-bottom: 1.5rem;
   display: flex;
   align-items: flex-start;
-  background-color: var(--main-content-bg-total-color, #ffffff);
+  background-color: var(--main-content-section-bg-color, #ffffff);
 }
 
 .education-card {
-  background: var(--main-content-bg-color, #ffffff);
+  background: var(--section-bg-color, #ffffff);
   border-radius: 12px;
   padding: 2rem;
   margin-left: 1rem;
@@ -54,7 +54,7 @@
 
 .education-center {
   font-size: 1.5rem;
-  color: var(--main-color, #000000);
+  color: var(--main-content-main-text-color, #000000);
 }
 
 .period-grade {
@@ -72,7 +72,7 @@
 }
 
 .period i, .grade i {
-  color: var(--main-color, #A38134);
+  color: var(--icons-color, #A38134);
   font-size: 0.8rem;
 }
 
@@ -84,7 +84,7 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
-   .company-name-position {
+   .education-title-center {
      flex-direction: column;
    }
   

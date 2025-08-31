@@ -68,7 +68,7 @@
     height: var(--profile-photo-size-sidebar, 150px);
     border-radius: 50%;
     object-fit: cover;
-    border: 6px solid var(--sidebar-border-color, #e0e0e0);
+    border: 6px solid var(--profile-photo-border-color, #e0e0e0);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
     

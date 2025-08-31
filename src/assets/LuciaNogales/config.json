@@ -2,11 +2,8 @@
   "general": {
     "colours": {
       "main": "#636b2f",
-      "main_dark": "#A38134",
       "secondary": "#A38134",
-      "secondary_dark": "#",
       "background": "#ecf0f1",
-      "background_dark": "#bdc3c7",
       "background_total": "#ffffff",
       "sidebar_text": "#ffffff",
       "main-content_text": "#4a4a4a"

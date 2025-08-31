@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--about-bg-color, #ffffff);
+  background: var(--main-content-section-bg-color, #ffffff);
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
@@ -26,7 +26,7 @@
   height: var(--profile-photo-size-about, 200px);
   border-radius: 50%;
   object-fit: cover;
-  border: 6px solid var(--sidebar-border-color, #e0e0e0);
+  border: 6px solid var(--profile-photo-border-color, #e0e0e0);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
   
@@ -61,7 +61,7 @@
 }
 
 .about-text {
-  background: var(--about-bg-color, #ffffff);
+  background: var(--main-content-section-bg-color, #ffffff);
   max-width: 800px;
   margin: 0 auto;
   padding: 0rem 1rem 1rem 1rem;
@@ -115,8 +115,8 @@
 }
 
 .copy-btn {
-  background: var(--about-bg-color, #ffffff);
-  color: var(--about-icons-color, #2c3e50);
+  background: var(--main-content-section-bg-color, #ffffff);
+  color: var(--icons-color, #2c3e50);
   border: none;
   border-radius: 50%;
   width: 32px;
@@ -132,19 +132,19 @@
 .copy-btn:hover {
   opacity: 1;
   transform: scale(1.1);
-  color: var(--about-icons-hover-color, #efc907);
+  color: var(--icons-hover-color, #efc907);
 }
 
 .copy-btn.copied {
-  background: var(--about-bg-color, #ffffff);
-  color: var(--about-icons-color, #2c3e50);
+  background: var(--main-content-section-bg-color, #ffffff);
+  color: var(--icons-color, #2c3e50);
   opacity: 1;
 }
 
 .download-btn {
-  background: var(--about-bg-color, #ffffff);
-  color: var(--about-icons-color, #000000);
-  border-color: var(--about-icons-color, #000000);
+  background: var(--main-content-section-bg-color, #ffffff);
+  color: var(--icons-color, #000000);
+  border-color: var(--icons-color, #000000);
   border-width: 2px;
   border-style: solid;
   border-radius: 8px;
@@ -160,8 +160,8 @@
 }
 
 .download-btn:hover {
-  color: var(--about-icons-hover-color, #000000);
-  border-color: var(--about-icons-hover-color, #000000);
+  color: var(--icons-hover-color, #000000);
+  border-color: var(--icons-hover-color, #000000);
   transform: scale(1.05);
 }
 
@@ -185,8 +185,8 @@
   justify-content: center;
   width: 55px;
   height: 55px;
-  background-color: var(--about-icons-color, #000000);
-  color: var(--about-bg-color, #ffffff);
+  background-color: var(--icons-color, #000000);
+  color: var(--main-content-section-bg-color, #ffffff);
   border-radius: 50%;
   font-size: 1.3rem;
   transition: all 0.3s ease;
@@ -205,8 +205,8 @@
 }
 
 .info-icon-link:hover .info-icon {
-  background-color: var(--about-icons-hover-color, #ffffff);
-  color: var(--about-bg-color, #000000);
+  background-color: var(--icons-hover-color, #ffffff);
+  color: var(--main-content-section-bg-color, #000000);
   transform: scale(1.1);
 }
 
@@ -287,7 +287,7 @@
 
   /* Disable hover on mobile */
   .copy-btn:hover {
-    color: var(--about-icons-color, #2c3e50);
+    color: var(--icons-color, #2c3e50);
     transform: none;
   }
 
