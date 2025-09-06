@@ -63,7 +63,7 @@
         {
           "company": "Economic and Commercial Office of Spain in Düsseldorf",
           "position": "International Trade Advisor in the Foods Sector ",
-          "period": "2025 - Presente",
+          "period": "2025 - Present",
           "location": "Düsseldorf, Germany",
           "description": "Advise Spanish food vendors on market entry and growth strategies in Germany, ensuring alignment with local regulations.",
           "technologies": ["Angular", "Node.js", "ElasticSearch", "Kibana", "TypeScript"],
@@ -103,7 +103,7 @@
       "label": "EDUCATION",
       "courses": [
         {
-          "title": "ICEX-Master´s Degree in International Commerce",
+          "title": "ICEX-Master's Degree in International Commerce",
           "center": "International University Menéndez Pelayo",
           "period": "2023 - 2024",
           "grade": "8,7 / 10"

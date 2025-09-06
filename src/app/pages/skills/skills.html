@@ -1,65 +1,46 @@
-<h2>skills works!</h2>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>    
-MAS COSAS
+<div class="section-container">
+  <h1 class="section-title">SKILLS</h1>
+  
+  <div class="skills-sections">
+    @if (configService.config?.sections?.['skills']?.['sections']) {
+      @for (section of configService.config?.sections?.['skills']?.['sections']; track $index) {
+        <div class="skill-section">
+          <!-- Título de la sección -->
+          <div class="sub-section-header">
+            <h2 class="sub-section-title">{{ section.name }}</h2>
+            <p class="sub-section-description">{{ section.description }}</p>
+          </div>
+          
+          <!-- Grid de habilidades -->
+          <div class="skills-grid">
+            @if (section.skills) {
+              @for (skill of section.skills; track $index) {
+                <div class="skill-card">
+                  <!-- Contenido de la habilidad -->
+                  <div class="skill-content">
+                    <h3 class="skill-name">{{ skill.name }}</h3>
+                    <p class="skill-description">{{ skill.description }}</p>
+                    
+                    <!-- Barra de progreso -->
+                    <div class="skill-progress">
+                      <div class="progress-bar">
+                        <div 
+                          class="progress-fill {{ getLevelClass(skill.level) }}"
+                          [style.width.%]="getLevelPercentage(skill.level)">
+                        </div>
+                      </div>
+                      <div class="progress-info">
+                        <span class="level-label">{{ getLevelLabel(skill.level) }}</span>
+                        <span class="level-percentage">{{ getLevelPercentage(skill.level) }}%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              }
+            }
+          </div>
+        </div>
+      }
+    }
+  </div>
+</div>

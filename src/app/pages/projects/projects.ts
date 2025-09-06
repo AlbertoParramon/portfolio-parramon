@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConfigService } from '../../services/config';
+import { UtilsService } from '../../services/utils';
 
 @Component({
   selector: 'app-projects',
@@ -9,14 +10,10 @@ import { ConfigService } from '../../services/config';
   styleUrl: './projects.scss'
 })
 export class Projects {
-  constructor(public configService: ConfigService) {}
+  constructor(
+    public configService: ConfigService,
+    public utilsService: UtilsService
+  ) {}
 
-  onImageError(event: any): void {
-    // Si la imagen no se puede cargar, usar una imagen por defecto
-    event.target.src = 'assets/images/projects/default-project.png';
-  }
 
-  openProject(url: string): void {
-    window.open(url, '_blank');
-  }
 }

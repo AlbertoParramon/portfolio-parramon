@@ -1,18 +1,3 @@
-.experience-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.experience-title {
-  font-family: var(--font-family-title, 'Bebas Neue', sans-serif);
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  color: var(--main-content-text-color, #000000);
-  text-align: center;
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
-}
-
 .timeline-container {
   position: relative;
   padding-left: 0rem;
@@ -160,10 +145,6 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .experience-container {
-    padding: 1rem;
-  }
-
    .company-name-position {
      flex-direction: column;
    }
@@ -197,9 +178,6 @@
 }
 
 @media (max-width: 480px) {
-  .experience-container  {
-    padding: 0.5rem;
-  }
 
   .timeline-container::before {
     left: 0.9rem;

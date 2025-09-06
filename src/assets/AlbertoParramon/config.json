@@ -135,7 +135,109 @@
       ]
     },
     "skills": {
-      "label": "SKILLS"
+      "label": "SKILLS",
+      "sections": [
+        {
+          "name": "Programming Languages or frameworks",
+          "description": "Programming Languages or frameworks",
+          "skills": [
+            {
+              "name": "C",
+              "level": "3",
+              "description": "C"
+            },
+            {
+              "name": "Python",
+              "level": "3",
+              "description": "Python"
+            },
+            {
+              "name": "Bash",
+              "level": "3",
+              "description": "Bash"
+            },
+            {
+              "name": "C++",
+              "level": "2",
+              "description": "C++"
+            },
+            {
+              "name": "Angular",
+              "level": "2",
+              "description": "Angular"
+            },
+            {
+              "name": "Typescript",
+              "level": "2",
+              "description": "Typescript"
+            },
+            {
+              "name": "HTML, PHP, CSS",
+              "level": "2",
+              "description": "HTML, PHP, CSS"
+            }
+          ]
+        },
+        {
+          "name": "Databases",
+          "description": "Databases",
+          "skills": [
+            {
+              "name": "ElasticSearch",
+              "level": "3",
+              "description": "ElasticSearch"
+            },
+            {
+              "name": "Opensearch",
+              "level": "3",
+              "description": "Opensearch"
+            },
+            {
+              "name": "Oracle",
+              "level": "3",
+              "description": "Oracle"
+            },
+            {
+              "name": "PostgreSQL",
+              "level": "1",
+              "description": "PostgreSQL"
+            }
+          ]
+        },
+        {
+          "name": "Software, OS, etc.",
+          "description": "Tools, SW, OS, etc.",
+          "skills": [
+            {
+              "name": "Kibana",
+              "level": "3",
+              "description": "Kibana"
+            },
+            {
+              "name": "AWS",
+              "level": "3",
+              "description": "AWS"
+            },
+            {
+              "name": "Docker",
+              "level": "3",
+              "description": "Docker"
+            }
+          ]
+        }, 
+        {
+          "name": "Development tools",
+          "description": "Tools, SW, OS, etc.",
+          "skills": [
+            {
+              "name": "Docker",
+              "level": "3",
+              "description": "Docker"
+            }
+          ]
+        }
+
+      ]
     },
     "projects": {
       "label": "PROJECTS"

@@ -114,62 +114,6 @@
   align-items: center;
 }
 
-.copy-btn {
-  background: var(--main-content-section-bg-color, #ffffff);
-  color: var(--icons-color, #2c3e50);
-  border: none;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 0.9rem;
-}
-
-.copy-btn:hover {
-  opacity: 1;
-  transform: scale(1.1);
-  color: var(--icons-hover-color, #efc907);
-}
-
-.copy-btn.copied {
-  background: var(--main-content-section-bg-color, #ffffff);
-  color: var(--icons-color, #2c3e50);
-  opacity: 1;
-}
-
-.download-btn {
-  background: var(--main-content-section-bg-color, #ffffff);
-  color: var(--icons-color, #000000);
-  border-color: var(--icons-color, #000000);
-  font-family: var(--font-family-content, 'Segoe UI', sans-serif);
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.download-btn:hover {
-  color: var(--icons-hover-color, #000000);
-  border-color: var(--icons-hover-color, #000000);
-  transform: scale(1.05);
-}
-
-.download-btn i {
-  font-size: 1rem;
-}
-
 
 .about-info-icons {
   display: flex;
@@ -180,37 +124,12 @@
   align-self: center;
 }
 
-.info-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 55px;
-  height: 55px;
-  background-color: var(--icons-color, #000000);
-  color: var(--main-content-section-bg-color, #ffffff);
-  border-radius: 50%;
-  font-size: 1.3rem;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
+
+
 
 
 /* Tooltip for icons */
-.info-icon-link {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.info-icon-link:hover .info-icon {
-  background-color: var(--icons-hover-color, #ffffff);
-  color: var(--main-content-section-bg-color, #000000);
-  transform: scale(1.1);
-}
-
+/**
 .info-icon-link::before {
   content: attr(title);
   position: absolute;
@@ -246,9 +165,10 @@
 
 .info-icon-link:hover::before,
 .info-icon-link:hover::after {
-  opacity: 1;
+  opacity: 1; 
   visibility: visible;
 }
+  */
 /* Tooltip for icons  ended*/
 
 /* Responsive design */
@@ -286,11 +206,6 @@
     gap: 0.65rem;
   }
 
-  /* Disable hover on mobile */
-  .copy-btn:hover {
-    color: var(--icons-color, #2c3e50);
-    transform: none;
-  }
 
 }
 

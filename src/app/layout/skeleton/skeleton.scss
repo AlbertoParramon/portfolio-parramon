@@ -30,19 +30,19 @@ app-footer {
   
  // Media query for small screens
 @media (max-width: 992px) {
-    .content-area {
-      flex: 1; // Takes remaining space
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      margin-left: 0px; 
-      margin-top: var(--sidebar-top-height, 60px); // Dynamic top margin
-      transition: margin-left 0.3s ease-in-out; // Smooth transition when sidebar changes
-    }
-
-    .app-container {
-      flex-direction: column; // Vertical layout
-    }
+  .app-container {
+    flex-direction: column; // Vertical layout
+  }
+  
+  .content-area {
+    flex: 1; // Takes remaining space
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 0px; 
+    margin-top: var(--sidebar-top-height, 60px); // Dynamic top margin
+    transition: margin-left 0.3s ease-in-out; // Smooth transition when sidebar changes
+  }
   
 }
 

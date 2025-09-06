@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConfigService } from '../../services/config';
+import { UtilsService } from '../../services/utils';
 
 @Component({
   selector: 'app-about',
@@ -9,22 +10,10 @@ import { ConfigService } from '../../services/config';
   styleUrl: './about.scss'
 })
 export class About {
-  valueCopied = '';
 
-  constructor(public configService: ConfigService) {}
+  constructor(
+    public configService: ConfigService,
+    public utilsService: UtilsService
+  ) {}
 
-  async copyToClipboard(text: string): Promise<void> {
-    try {
-      await navigator.clipboard.writeText(text);
-      this.valueCopied = text;
-      setTimeout(() => this.valueCopied = "", 2000);
-    } catch (err) {
-      console.error('Error al copiar al portapapeles:', err);
-    }
-  }
-
-  async openFile(path: string): Promise<void> {
-    // Abrir el archivo en una nueva pestaña
-    window.open(path, '_blank');
-  }
 }

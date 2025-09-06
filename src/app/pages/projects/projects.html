@@ -1,14 +1,14 @@
-<div class="projects-container">
-  <h1 class="projects-title">PROJECTS</h1>
+<div class="section-container">
+  <h1 class="section-title">PROJECTS</h1>
   
   <div class="projects-sections">
     @if (configService.config?.sections?.['projects']?.['sections']) {
       @for (section of configService.config?.sections?.['projects']?.['sections']; track $index) {
         <div class="project-section">
           <!-- Título de la sección -->
-          <div class="section-header">
-            <h2 class="section-title">{{ section.name }}</h2>
-            <p class="section-description">{{ section.description }}</p>
+          <div class="sub-section-header">
+            <h2 class="sub-section-title">{{ section.name }}</h2>
+            <p class="sub-section-description">{{ section.description }}</p>
           </div>
           
           <!-- Grid de proyectos -->
@@ -19,7 +19,6 @@
                   <!-- Imagen del proyecto -->
                   <div class="project-image">
                     <img [src]="project.image" [alt]="project.title" 
-                         (error)="onImageError($event)" 
                          class="project-img">
                   </div>
                   
@@ -33,7 +32,7 @@
                       @if (project.open_button) {
                         <button 
                           class="project-btn"
-                          (click)="openProject(project.open_button)" 
+                          (click)="utilsService.openFile(project.open_button)" 
                           title="Open Project">
                           <i class="fas fa-external-link-alt"></i>
                           <span>Open Project</span>

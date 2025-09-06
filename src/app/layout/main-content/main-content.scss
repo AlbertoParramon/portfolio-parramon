@@ -1,20 +1,11 @@
 .main-content {
-    //display: flex;
-    //justify-content: center;
-    //align-items: center;
-    //flex-direction: column;
     flex:1; 
 }
 
 .main-content-section {
-    background-color: var(--main-content-section-bg-color, #ffffff);
+    //background-color: var(--main-content-section-bg-color, #ffffff);
     color: var(--main-content-text-color, #000000);
-    padding: 0rem;
-    border-radius: 0px;
-    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
-    margin: 0rem;
     padding-bottom: 2rem;
-    border-bottom: none;
 }
 
 /* Responsive design */

@@ -14,7 +14,7 @@
     }
     <div class="download-cv">
       <button class="download-btn" 
-      (click)="openFile(configService.config?.sections?.['about']?.['cv']?.['path'])" 
+      (click)="utilsService.openFile(configService.config?.sections?.['about']?.['cv']?.['path'])" 
       title="Open PDF">
         <i class="fas fa-external-link-alt"></i>
         <span>Open CV</span>
@@ -32,19 +32,10 @@
           @if (item.copy) {
             <button 
               class="copy-btn" 
-              (click)="copyToClipboard(item.value)"
-              [class.copied]="item.value === valueCopied"
+              (click)="utilsService.copyToClipboard(item.value)"
+              [class.copied]="item.value === utilsService.valueCopied"
               title="Copy {{item.label}} to clipboard">
-              <i class="fas" [class.fa-copy]="valueCopied !== item.value" [class.fa-check]="valueCopied === item.value"></i>
-            </button>
-          }
-          @if (item.path) {
-            <button 
-              class="download-btn" 
-              (click)="openFile(item.path)"
-              title="Open PDF">
-              <i class="fas fa-external-link-alt"></i>
-              <span>Open CV</span>
+              <i class="fas" [class.fa-copy]="utilsService.valueCopied !== item.value" [class.fa-check]="utilsService.valueCopied === item.value"></i>
             </button>
           }
         </div>

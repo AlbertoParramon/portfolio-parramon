@@ -189,7 +189,7 @@ export class ConfigService {
       <div style="background-color: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px; max-width: 600px;">
         <h2 style="margin-bottom: 15px;">Error Details:</h2>
         <pre style="background-color: rgba(0,0,0,0.5); padding: 15px; border-radius: 5px; overflow-x: auto; text-align: left;">
-${JSON.stringify(error, null, 2)}
+          ${JSON.stringify(error, null, 2)}
         </pre>
       </div>
     `;
