@@ -23,15 +23,17 @@
                     
                     <!-- Barra de progreso -->
                     <div class="skill-progress">
-                      <div class="progress-bar">
+                      <!--<div class="progress-bar">
                         <div 
                           class="progress-fill {{ getLevelClass(skill.level) }}"
-                          [style.width.%]="getLevelPercentage(skill.level)">
+                          [style.width.%]="skill.level"
+                          title="{{ getLevelLabel(skill.level) }}">
                         </div>
-                      </div>
+                      </div>-->
                       <div class="progress-info">
-                        <span class="level-label">{{ getLevelLabel(skill.level) }}</span>
-                        <span class="level-percentage">{{ getLevelPercentage(skill.level) }}%</span>
+                        <span class="level-label {{ getLevelClass(skill.level) }}">{{ getLevelLabel(skill) }} </span>
+                        <span class="level-explanation"> {{ skill.level_explanation }}</span>
+                        <!--<span class="level-percentage">{{ getLevelPercentage(skill.level) }}%</span> -->
                       </div>
                     </div>
                   </div>

@@ -115,6 +115,7 @@ export class ConfigService {
     if (colors) {
       document.documentElement.style.setProperty('--sidebar-text-color', colors['sidebar_text'] || '#000000');
       document.documentElement.style.setProperty('--main-content-text-color', colors['main-content_text'] || '#2c3e50');
+      document.documentElement.style.setProperty('--main-content-text-light-color', colors['main-content_text_light'] || '#2c3e50');
       document.documentElement.style.setProperty('--main-content-main-text-color', colors['main'] || '#2c3e50');
       document.documentElement.style.setProperty('--main-content-secondary-text-color', colors['secondary'] || '#2c3e50');
 

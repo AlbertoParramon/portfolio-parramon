@@ -13,47 +13,47 @@ export class Skills {
   constructor(public configService: ConfigService) {}
 
   /**
-   * Convierte el nivel numérico (1-3) a porcentaje para la barra de progreso
-   * @param level - Nivel de habilidad (1, 2, o 3)
-   * @returns Porcentaje para la barra de progreso
+   * Get the level label based on the complete skill
+   * @param skill - Complete skill object with level and level_explanation
+   * @returns Descriptive label of the level with explanation if exists
    */
-  getLevelPercentage(level: string): number {
-    const numLevel = parseInt(level);
-    switch (numLevel) {
-      case 1: return 33;  // Básico
-      case 2: return 66;  // Intermedio
-      case 3: return 100; // Avanzado
-      default: return 0;
+  getLevelLabel(skill: any): string {
+    const numLevel = parseInt(skill.level);
+    let levelText = '';
+    
+    if (numLevel > 1 && numLevel <= 33) {
+      levelText = 'Básico';
+    } else if (numLevel > 33 && numLevel <= 66) {
+      levelText = 'Intermedio';
+    } else if (numLevel > 66 && numLevel <= 100) {
+      levelText = 'Avanzado';
+    } else {
+      levelText = 'Desconocido';
     }
+    
+    // If there is level_explanation and it is not empty, add ":"
+    if (skill.level_explanation && skill.level_explanation.trim() !== '') {
+      levelText += ':';
+    }
+    
+    return levelText;
   }
 
   /**
-   * Obtiene la etiqueta de nivel basada en el número
-   * @param level - Nivel de habilidad (1, 2, o 3)
-   * @returns Etiqueta descriptiva del nivel
-   */
-  getLevelLabel(level: string): string {
-    const numLevel = parseInt(level);
-    switch (numLevel) {
-      case 1: return 'Básico';
-      case 2: return 'Intermedio';
-      case 3: return 'Avanzado';
-      default: return 'Desconocido';
-    }
-  }
-
-  /**
-   * Obtiene la clase CSS para el color de la barra de progreso
-   * @param level - Nivel de habilidad (1, 2, o 3)
-   * @returns Clase CSS para el color
+   * Get the class for the level
+   * @param level - Level of the skill
+   * @returns Class for the level
    */
   getLevelClass(level: string): string {
     const numLevel = parseInt(level);
-    switch (numLevel) {
-      case 1: return 'level-basic';
-      case 2: return 'level-intermediate';
-      case 3: return 'level-advanced';
-      default: return 'level-unknown';
+    if (numLevel > 1 && numLevel <= 33) {
+      return 'level-basic';
+    } else if (numLevel > 33 && numLevel <= 66) {
+      return 'level-intermediate';
+    } else if (numLevel > 66 && numLevel <= 100) {
+      return 'level-advanced';
+    } else {
+      return 'level-unknown';
     }
   }
 }

@@ -9,7 +9,8 @@
       "background_dark": "#bdc3c7",
       "background_total": "#ffffff",
       "sidebar_text": "#ffffff",
-      "main-content_text": "#4a4a4a"
+      "main-content_text": "#4a4a4a",
+      "main-content_text_light": "#737272"
     },
     "sizes": {
       "sidebar_top": "60px",
@@ -138,109 +139,140 @@
       "label": "SKILLS",
       "sections": [
         {
-          "name": "Programming Languages or frameworks",
-          "description": "Programming Languages or frameworks",
+          "name": "Programming languages or frameworks",
+          "description": "",
           "skills": [
             {
               "name": "C",
-              "level": "3",
-              "description": "C"
+              "level": "85",
+              "level_explanation": "level explanation",
+              "description": "description"
             },
             {
               "name": "Python",
-              "level": "3",
-              "description": "Python"
+              "level": "85",
+              "level_explanation": "level explanation",
+              "description": "description"
             },
             {
-              "name": "Bash",
-              "level": "3",
-              "description": "Bash"
+              "name": "Bash, AWK",
+              "level": "85",
+              "level_explanation": "level explanation",
+              "description": "description"
+            },
+            {
+              "name": "Angular, Typescript",
+              "level": "65",
+              "level_explanation": "level explanation",
+              "description": "Frontend framework, this website is built with Angular"
             },
             {
               "name": "C++",
-              "level": "2",
-              "description": "C++"
-            },
-            {
-              "name": "Angular",
-              "level": "2",
-              "description": "Angular"
-            },
-            {
-              "name": "Typescript",
-              "level": "2",
-              "description": "Typescript"
+              "level": "65",
+              "level_explanation": "level explanation",
+              "description": "description"
             },
             {
               "name": "HTML, PHP, CSS",
-              "level": "2",
-              "description": "HTML, PHP, CSS"
+              "level": "65",
+              "level_explanation": "level explanation",
+              "description": "description"
+            },
+            {
+              "name": "SQL",
+              "level": "65",
+              "level_explanation": "level explanation",
+              "description": "description"
             }
           ]
         },
         {
-          "name": "Databases",
-          "description": "Databases",
+          "name": "Software and other technologies",
+          "description": "description",
           "skills": [
             {
-              "name": "ElasticSearch",
-              "level": "3",
-              "description": "ElasticSearch"
+              "name": "ElasticSearch, Opensearch",
+              "level": "95",
+              "level_explanation": "level explanation",
+              "description": "Non-relational databases"
             },
             {
-              "name": "Opensearch",
-              "level": "3",
-              "description": "Opensearch"
-            },
-            {
-              "name": "Oracle",
-              "level": "3",
-              "description": "Oracle"
-            },
-            {
-              "name": "PostgreSQL",
-              "level": "1",
-              "description": "PostgreSQL"
-            }
-          ]
-        },
-        {
-          "name": "Software, OS, etc.",
-          "description": "Tools, SW, OS, etc.",
-          "skills": [
-            {
-              "name": "Kibana",
-              "level": "3",
-              "description": "Kibana"
+              "name": "Kibana, Opensearch-dashboards",
+              "level": "95",
+              "level_explanation": "level explanation",
+              "description": "Visualization tools"
             },
             {
               "name": "AWS",
-              "level": "3",
-              "description": "AWS"
+              "level": "50",
+              "level_explanation": "level explanation",
+              "description": "Cloud services"
+            }
+          ]
+        },
+        {
+          "name": "CI/CD tools",
+          "description": "description",
+          "skills": [
+            {
+              "name": "Gitlab, Gitlab Pipelines, Github",
+              "level": "90",
+              "level_explanation": "level explanation",
+              "description": "Repository management and CI/CD"
+            },
+            {
+              "name": "Pytest, Google Test",
+              "level": "90",
+              "level_explanation": "level explanation",
+              "description": "Testing frameworks"
+            },
+            {
+              "name": "SonarQube",
+              "level": "80",
+              "level_explanation": "level explanation",
+              "description": "description"
             },
             {
               "name": "Docker",
-              "level": "3",
-              "description": "Docker"
-            }
-          ]
-        }, 
-        {
-          "name": "Development tools",
-          "description": "Tools, SW, OS, etc.",
-          "skills": [
+              "level": "70",
+              "level_explanation": "level explanation",
+              "description": "Containerization"
+            },
             {
-              "name": "Docker",
-              "level": "3",
-              "description": "Docker"
+              "name": "Jenkins",
+              "level": "50",
+              "level_explanation": "level explanation",
+              "description": "description"
             }
           ]
         }
-
       ]
     },
     "projects": {
       "label": "PROJECTS"
+    },
+    "contact": {
+      "label": "CONTACT",
+      "info_contact": [
+        {
+          "intro": "You can contact me by email:",
+          "label": "email",
+          "value": "parramon.castillo.alberto@gmail.com",
+          "copy": true
+        },
+        {
+          "intro": "Learn more about my professional background on LinkedIn:",
+          "label": "linkedin",
+          "value": "https://www.linkedin.com/in/alberto-parramon-castillo-a19716251/",
+          "copy": false 
+        },
+        {
+          "intro": "See some of my code and personal projects on GitHub: ",
+          "label": "github",
+          "value": "https://github.com/albertoparramon",
+          "copy": false
+        }
+      ]
     }
   }
 }
