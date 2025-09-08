@@ -40,6 +40,8 @@
   background: var(--section-bg-color, #ffffff);
   border-radius: 12px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-image {
@@ -58,7 +60,7 @@
   display: flex;
   flex-direction: column;
   padding: 0.5rem 1.5rem 1.5rem 1.5rem;
-  min-height: 200px; /* Altura mínima para que funcione el flex */
+  flex: 1; /* Ocupa todo el espacio disponible */
 }
 
 .project-title {
