@@ -13,5 +13,8 @@
     .main-content-section {
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     }
+    .main-content-section.last-section {
+        border-bottom: none;
+    }
 }
 

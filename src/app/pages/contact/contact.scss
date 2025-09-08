@@ -1,0 +1,81 @@
+.contact-container {
+  background: var(--main-content-section-bg-color, #ffffff);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-item {
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+  border-radius: 8px;
+  font-family: var(--font_family_content, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
+  font-size: 1.2rem;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to right, transparent 25%, rgba(0,0,0,0.1) 25%, rgba(0,0,0,0.1) 75%, transparent 75%) 1;
+  
+  &.last-item {
+    border-bottom: none;
+    border-image: none;
+  }
+}
+
+.contact-intro {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  color: var(--main-content-text-color, #4a4a4a);
+  font-weight: 400;
+  text-align: center;
+}
+
+.contact-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.contact-value {
+  font-size: 1.1rem;
+  color: var(--main-content-text-color, #4a4a4a);
+  font-weight: 500;
+  word-break: break-all;
+}
+
+
+/* Responsive design */
+@media (max-width: 680px) {
+  .contact-item {
+    padding: 1rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .contact-intro {
+    font-size: 1rem;
+  }
+  
+  .contact-value {
+    font-size: 1rem;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 0.25rem;
+  }
+  
+  .contact-item {
+    padding: 0.75rem;
+    padding-bottom: 1rem;
+  }
+  
+  .contact-intro {
+    font-size: 0.8rem;
+  }
+  
+  .contact-value {
+    font-size: 0.8rem;
+  }
+  
+}

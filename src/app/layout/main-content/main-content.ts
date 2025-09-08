@@ -5,6 +5,7 @@ import { Experience } from '@pages/experience/experience';
 import { Education } from '@pages/education/education';
 import { Skills } from '@pages/skills/skills';
 import { Projects } from '@pages/projects/projects';
+import { Contact } from '@pages/contact/contact';
 import { ConfigService, Config } from '@services/config';
 
 @Component({
@@ -23,7 +24,8 @@ export class MainContent {
     'education': Education,
     'experience': Experience,
     'skills': Skills,
-    'projects': Projects
+    'projects': Projects,
+    'contact': Contact
   };
 
   constructor(private configService: ConfigService) {

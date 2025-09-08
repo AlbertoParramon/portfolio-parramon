@@ -1,0 +1,31 @@
+<div class="section-container">
+  <div class="contact-container">
+    <h1 class="section-title">CONTACT</h1>
+    @for (item of configService.config?.sections?.['contact']?.['info_contact']; track item.label; let last = $last) {
+        <div class="contact-item" [class.last-item]="last">
+        <div class="contact-intro">
+          {{item.intro}}
+        </div>
+        <div class="contact-action">
+            <a 
+              [href]="item.label === 'email' ? 'mailto:' + item.value : item.value" 
+              [target]="item.label === 'email' ? '_self' : '_blank'"
+              class="info-icon-link"
+              [title]="item.label === 'email' ? 'Send email to ' + item.value : 'Open ' + item.label + ' profile'">
+              <i class="{{item.icon}} info-icon"></i>
+            </a>
+            @if (item.copy) {
+              <span class="contact-value">{{item.value}}</span>
+              <button 
+                class="copy-btn" 
+                (click)="utilsService.copyToClipboard(item.value)"
+                [class.copied]="item.value === utilsService.valueCopied"
+                title="Copy {{item.label}} to clipboard">
+                <i class="fas" [class.fa-copy]="utilsService.valueCopied !== item.value" [class.fa-check]="utilsService.valueCopied === item.value"></i>
+              </button>
+            }
+        </div>
+      </div>
+    }
+  </div>
+</div>

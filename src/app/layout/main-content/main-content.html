@@ -1,6 +1,6 @@
 <div class="main-content">
-    @for (section of sectionsToShow; track section.name) {
-      <div [id]="section.name" class="main-content-section">
+    @for (section of sectionsToShow; track section.name; let last = $last) {
+      <div [id]="section.name" class="main-content-section" [class.last-section]="last">
         <ng-container *ngComponentOutlet="getComponent(section.name)">
         </ng-container>
       </div>
