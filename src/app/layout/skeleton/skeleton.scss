@@ -18,7 +18,8 @@ app-main-content {
     display: flex;
     flex: 1;
     background-color: var(--main-content-bg-total-color, #ffffff);
-    padding: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
     justify-content: center;
     align-items: center;
 }
@@ -43,6 +44,16 @@ app-footer {
     margin-top: var(--sidebar-top-height, 60px); // Dynamic top margin
     transition: margin-left 0.3s ease-in-out; // Smooth transition when sidebar changes
   }
+
+  app-main-content {
+    display: flex;
+    flex: 1;
+    background-color: var(--main-content-bg-total-color, #ffffff);
+    padding-left: 3rem;
+    padding-right: 3rem;
+    justify-content: center;
+    align-items: center;
+}
   
 }
 
@@ -51,6 +62,7 @@ app-footer {
     display: flex;
     flex: 1;
     background-color: var(--main-content-bg-total-color, #ffffff);
-    padding: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }

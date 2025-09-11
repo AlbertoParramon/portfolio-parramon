@@ -48,6 +48,11 @@
           "label": "languages",
           "value": "Spanish, English, German (B1)",
           "copy": false
+        },
+        {
+          "label": "birh date",
+          "value": "13 December 1997",
+          "copy": false
         }
       ],
       "info_icons": [

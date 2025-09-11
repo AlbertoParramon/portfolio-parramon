@@ -7,7 +7,7 @@ body {
 .section-container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem;
+  padding-bottom: 2rem;
 }
 
 .section-title {
@@ -15,7 +15,10 @@ body {
   font-size: clamp(2rem, 6vw, 3.5rem);
   color: var(--main-content-text-color, #000000);
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+  padding-bottom: 1rem;
+  padding-top: 2rem;
   letter-spacing: 1px;
 }
 
@@ -139,7 +142,7 @@ body {
 /* Responsive design */
 @media (max-width: 768px) {
   .section-container {
-    padding: 1rem;
+    //padding: 1rem;
   }
 
   /* Disable hover on mobile */
@@ -152,7 +155,7 @@ body {
 
 @media (max-width: 480px) {
   .section-container {
-    padding: 0.5rem;
+    //padding: 0.5rem;
   }
   
 }

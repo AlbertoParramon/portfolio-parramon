@@ -35,6 +35,12 @@
   gap: 1rem;
 }
 
+.contact-value-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .contact-value {
   font-size: 1.1rem;
   color: var(--main-content-text-color, #4a4a4a);
@@ -76,6 +82,13 @@
   
   .contact-value {
     font-size: 0.8rem;
+  }
+  
+}
+
+@media (max-width: 320px) {
+  .contact-action {
+    flex-direction: column;
   }
   
 }
