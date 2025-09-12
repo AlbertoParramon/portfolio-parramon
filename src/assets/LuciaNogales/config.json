@@ -6,7 +6,10 @@
       "background": "#ecf0f1",
       "background_total": "#ffffff",
       "sidebar_text": "#ffffff",
-      "main-content_text": "#4a4a4a"
+      "main-content_text": "#4a4a4a",
+      "main-content_text_light": "#737272",
+      "footer_text": "#737272",
+      "footer_text_dark": "#4a4a4a"
     },
     "sizes": {
       "sidebar_top": "60px",

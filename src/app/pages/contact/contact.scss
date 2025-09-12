@@ -63,7 +63,11 @@
   .contact-value {
     font-size: 1rem;
   }
-  
+
+  .contact-action {
+    flex-direction: column;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -82,13 +86,6 @@
   
   .contact-value {
     font-size: 0.8rem;
-  }
-  
-}
-
-@media (max-width: 320px) {
-  .contact-action {
-    flex-direction: column;
   }
   
 }

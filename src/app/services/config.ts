@@ -114,17 +114,19 @@ export class ConfigService {
     // Configure all CSS variables for colors
     if (colors) {
       document.documentElement.style.setProperty('--sidebar-text-color', colors['sidebar_text'] || '#000000');
-      document.documentElement.style.setProperty('--main-content-text-color', colors['main-content_text'] || '#2c3e50');
-      document.documentElement.style.setProperty('--main-content-text-light-color', colors['main-content_text_light'] || '#2c3e50');
+      document.documentElement.style.setProperty('--main-content-text-color', colors['main-content_text'] || '#4a4a4a');
+      document.documentElement.style.setProperty('--main-content-text-light-color', colors['main-content_text_light'] || '#737272');
       document.documentElement.style.setProperty('--main-content-main-text-color', colors['main'] || '#2c3e50');
       document.documentElement.style.setProperty('--main-content-secondary-text-color', colors['secondary'] || '#2c3e50');
+      document.documentElement.style.setProperty('--footer-text-color', colors['footer_text'] || '#737272');
+      document.documentElement.style.setProperty('--footer-text-dark-color', colors['footer_text_dark'] || '#737272');
 
       document.documentElement.style.setProperty('--body-bg-color', '#000000' ); //it shouldn't appear in the interface
       document.documentElement.style.setProperty('--sidebar-bg-color', colors['main'] || '#ffffff');
       document.documentElement.style.setProperty('--main-content-bg-total-color', colors['background_total'] || '#ffffff');
       document.documentElement.style.setProperty('--main-content-section-bg-color', colors['background_total'] || '#ffffff');
       document.documentElement.style.setProperty('--section-bg-color', colors['background'] || '#ffffff');
-      document.documentElement.style.setProperty('--footer-bg-color', colors['background'] || '#ffffff');
+      document.documentElement.style.setProperty('--footer-bg-color', colors['background_total'] || '#ffffff');
 
       document.documentElement.style.setProperty('--about-name-color-1', colors['main'] || '#ffffff');
       document.documentElement.style.setProperty('--about-name-color-2', colors['secondary'] || '#ffffff');
@@ -134,7 +136,6 @@ export class ConfigService {
       document.documentElement.style.setProperty('--icons-color', colors['main'] || '#ffffff');
       document.documentElement.style.setProperty('--icons-hover-color', colors['secondary'] || '#ffffff');  
       
-      document.documentElement.style.setProperty('--bg-dark-color', colors['background_dark'] || '#ffffff');
       document.documentElement.style.setProperty('--bg-color', colors['background'] || '#ffffff');
       document.documentElement.style.setProperty('--secondary-color', colors['secondary'] || '#ffffff');
       document.documentElement.style.setProperty('--main-color', colors['main'] || '#ffffff');
