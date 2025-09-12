@@ -136,6 +136,7 @@ export class ConfigService {
       document.documentElement.style.setProperty('--icons-color', colors['main'] || '#ffffff');
       document.documentElement.style.setProperty('--icons-hover-color', colors['secondary'] || '#ffffff');  
       
+      document.documentElement.style.setProperty('--bg-dark-color', colors['background_dark'] || '#bdc3c7');
       document.documentElement.style.setProperty('--bg-color', colors['background'] || '#ffffff');
       document.documentElement.style.setProperty('--secondary-color', colors['secondary'] || '#ffffff');
       document.documentElement.style.setProperty('--main-color', colors['main'] || '#ffffff');

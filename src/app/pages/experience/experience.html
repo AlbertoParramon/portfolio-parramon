@@ -37,16 +37,6 @@
               <p>{{ experience.description }}</p>
             </div>
             
-            <!-- Tecnologías -->
-            <!--<div class="technologies-section">
-              <h5>Tecnologías:</h5>
-              <div class="technologies-tags">
-                @for (tech of experience.technologies; track tech) {
-                  <span class="tech-tag">{{ tech }}</span>
-                }
-              </div>
-            </div>-->
-            
             <!-- Logros -->
             <div class="achievements-section">
               <h5>Main achievements:</h5>
@@ -56,6 +46,17 @@
                 }
               </ul>
             </div>
+
+            <!-- Tecnologías -->
+            @if (experience.technologies) {
+            <div class="technologies-section">
+              <div class="technologies-tags">
+                @for (tech of experience.technologies; track tech) {
+                  <span class="tech-tag">{{ tech }}</span>
+                }
+              </div>
+            </div>
+            }
           </div>
         </div>
       }

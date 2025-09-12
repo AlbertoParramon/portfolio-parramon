@@ -53,7 +53,7 @@
           "copy": false
         },
         {
-          "label": "birh date",
+          "label": "birth date",
           "value": "13 December 1997",
           "copy": false
         }
@@ -74,7 +74,6 @@
           "period": "2025 - Present",
           "location": "Düsseldorf, Germany",
           "description": "Advise Spanish food vendors on market entry and growth strategies in Germany, ensuring alignment with local regulations.",
-          "technologies": ["Angular", "Node.js", "ElasticSearch", "Kibana", "TypeScript"],
           "achievements": [
             "Market performance analysis and produced sector reports with PowerBi. Use of Salesforce as a tracking system to measure vendor engagement and performance KPIs.",
             "Coordination with stakeholders at international trade fairs such as ISM or ANUGA in Cologne, securing promotional opportunities and drafting post-event strategic roadmaps"
@@ -86,7 +85,6 @@
           "period": "2022 - 2023",
           "location": "Madrid, España",
           "description": "Analyzed the full customer conversion funnel to detect drop-off points and propose optimizations that improved user experience.",
-          "technologies": ["Java", "Spring Boot", "PostgreSQL", "MongoDB", "Docker"],
           "achievements": [
             "Partnered with product teams to define feature requests, estimate business impact, and comply with legal and operational standards.",
             "Tracked and coordinated continuous improvement using Jira, applying agile methodologies (sprints, feature prioritization) and performed the user acceptance tests.",

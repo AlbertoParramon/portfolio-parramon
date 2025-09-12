@@ -100,8 +100,9 @@
   margin: 0;
 }
 
-.technologies-section, .achievements-section {
-  margin-bottom: 0rem;
+.technologies-section {
+  padding-top: 1rem;
+  padding-left: 1rem;
 }
 
 .technologies-section h5, .achievements-section h5 {
@@ -119,11 +120,12 @@
 }
 
 .tech-tag {
-  background: var(--icons-color, #236a79);
+  background: var(--main-content-text-light-color, #236a79);
+  //background: var(--icons-color, #236a79);
   color: white;
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 500;
   transition: all 0.3s ease;
 }

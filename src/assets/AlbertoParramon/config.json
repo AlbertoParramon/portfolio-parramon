@@ -32,8 +32,8 @@
         "path": "assets/Alberto_Parramon_CV.pdf"
       },
       "intro": [
-        "I am a full Stack Developer with 8 years of professional experience. Native Spanish speaker with a C1 level of English.",
-        "I work as part of a 15-person development team and occasionally step in as coordinator when the main lead is unavailable. I serve as the architect and maintainer of ElasticSearch clusters, as well as a developer of custom Kibana plugins used to analyze large transactional datasets. I also lead the design and development of new features across our platform.",
+        "Full Stack Developer with 8 years of professional experience. Native Spanish speaker with a C1 level of English.",
+        "I work as part of a 15-person development team and occasionally step in as coordinator when the main lead is unavailable. I serve as the architect and maintainer of ElasticSearch clusters and its Kibana interface. I also participate in the design and development of new features across our platform.",
         "Currently seeking new opportunities in international teams, with a strong interest in expanding my skills in cybersecurity and AI/ML."
       ],
       "info_table": [
@@ -51,12 +51,17 @@
           "label": "languages",
           "value": "Spanish, English (C1)",
           "copy": false
+        },
+        {
+          "label": "birth date",
+          "value": "27 November 1993",
+          "copy": false
         }
       ],
       "info_icons": [
         {
           "label": "linkedin",
-          "path": "https://www.linkedin.com/in/alberto-parramon-castillo-a19716251/"
+          "path": "https://www.linkedin.com/in/alberto-parramon-castillo/"
         },
         {
           "label": "github",
@@ -68,42 +73,31 @@
       "label": "EXPERIENCE",
       "timeline": [
         {
-          "company": "Empresa Actual",
+          "company": "Lynx Tech",
           "position": "Full Stack Developer",
-          "period": "2022 - Presente",
-          "location": "Madrid, España",
-          "description": "Desarrollo full stack en tecnologías modernas. Lidero el diseño y desarrollo de nuevas funcionalidades. Arquitecto y mantenedor de clusters ElasticSearch.",
-          "technologies": ["Angular", "Node.js", "ElasticSearch", "Kibana", "TypeScript"],
+          "period": "Jan 2023 - Present",
+          "location": "Remote",
+          "description": "Lynx is a new company that emerged from ADIC – IIC. At this company, critical software is developed for banks, operating in Near Real Time with a response time of less than 100ms. It also includes a web application used for product management and data visualization, along with storage in both relational and non-relational databases. Among my main responsibilities:",
+          "technologies": ["Elasticsearch", "Opensearch", "Kibana", "Python", "C", "Bash", "Docker", "AWS", "Typescript", "NodeJS", "CI/CD (Pytest, Google Test, Sonarqube, Jenkins)"],
           "achievements": [
-            "Lideré el desarrollo de 3 nuevas funcionalidades principales",
-            "Optimicé el rendimiento del sistema en un 40%",
-            "Implementé mejoras en la arquitectura de datos"
+            "Backend developer of the described product, taking on the role of coordinator in the absence of the main coordinator.",
+            "Architecture and maintenance of Elasticsearch and Kibana clusters for our clients.",
+            "Main product lead for one of the clients, handling email management, applying fixes, new features, and maintenance in a Linux (RedHat) environment.",
+            "Part of the team responsible for migrating the product to the cloud.",
+            "DevOps application – CI/CD for the software, performing unit tests and continuous integration."
           ]
         },
         {
-          "company": "Empresa Anterior",
-          "position": "Backend Developer",
-          "period": "2020 - 2022",
-          "location": "Barcelona, España",
-          "description": "Desarrollo de APIs RESTful y microservicios. Trabajo con bases de datos relacionales y no relacionales.",
-          "technologies": ["Java", "Spring Boot", "PostgreSQL", "MongoDB", "Docker"],
+          "company": "Instituto de Ingenieria del Conocimiento (IIC-ADIC)",
+          "position": "Software Analyst",
+          "period": "May 2017 - Dec 2022",
+          "location": "Madrid, Spain",
+          "description": "I worked as a developer in a team that maintained and enhanced a critical product for banks. This software operated in Near Real Time with a response time of less than 100ms. It also included a web application used for product management and data visualization, along with storage in both relational and non-relational databases. Among my main responsibilities:",
+          "technologies": ["C", "C++", "Python", "Bash", "ElasticSearch", "Kibana", "SQL", "Linux", "Git", "REST", "SOAP"],
           "achievements": [
-            "Desarrollé 5 APIs principales del sistema",
-            "Implementé sistema de autenticación JWT",
-            "Reduje tiempo de respuesta de APIs en un 30%"
-          ]
-        },
-        {
-          "company": "Primera Empresa",
-          "position": "Junior Developer",
-          "period": "2018 - 2020",
-          "location": "Valencia, España",
-          "description": "Desarrollo web frontend y backend. Aprendizaje de tecnologías modernas y buenas prácticas.",
-          "technologies": ["JavaScript", "React", "PHP", "MySQL", "HTML/CSS"],
-          "achievements": [
-            "Desarrollé 2 aplicaciones web completas",
-            "Implementé sistema de gestión de usuarios",
-            "Mejoré la experiencia de usuario en un 25%"
+            "Backend developer of the described product, implementing new improvements and developments in a Linux (RedHat) environment.",
+            "Architect and maintainer of ElasticSearch clusters both for the company and for our clients.",
+            "Main point of contact with one of the clients, managing email communication as well as meetings regarding potential requirements and issues."
           ]
         }
       ]
@@ -112,25 +106,25 @@
       "label": "EDUCATION",
       "courses": [
         {
-          "title": "Grado en ingeniería informática",
-          "center": "Universidad Autonoma de Madrid",
-          "period": "2022 - Presente",
-          "grade": "8 / 10",
-          "description": "Desarrollo full stack en tecnologías modernas. Lidero el diseño y desarrollo de nuevas funcionalidades. Arquitecto y mantenedor de clusters ElasticSearch."
+          "title": "Master in Mathematical Engineering",
+          "center": "Universidad Complutense de Madrid",
+          "period": "Sep 2016 - Jun 2017",
+          "grade": "7.26 / 10",
+          "description": ""
         },
         {
-          "title": "Grado ",
-          "center": "Universidad ",
-          "period": "2022 - Presente",
-          "grade": "8 / 10",
-          "description": "Desarrollo"
+          "title": "Degree in Computer Engineering",
+          "center": "Universidad Autonoma de Madrid",
+          "period": "Sep 2011 - Jun 2016",
+          "grade": "8.68 / 10",
+          "description": ""
         },
         {
-          "title": "Grado en ingeniería informática",
+          "title": "Degree in Mathematics",
           "center": "Universidad Autonoma de Madrid",
-          "period": "2022 - Presente",
-          "grade": "8 / 10",
-          "description": "Desarrollo full stack en tecnologías modernas. Lidero el diseño y desarrollo de nuevas funcionalidades. Arquitecto y mantenedor de clusters ElasticSearch."
+          "period": "Sep 2011 - Jun 2016",
+          "grade": "7.54 / 10",
+          "description": ""
         }
       ]
     },
@@ -144,103 +138,103 @@
             {
               "name": "C",
               "level": "85",
-              "level_explanation": "level explanation",
-              "description": "description"
+              "level_explanation": "",
+              "description": ""
             },
             {
               "name": "Python",
               "level": "85",
-              "level_explanation": "level explanation",
-              "description": "description"
+              "level_explanation": "",
+              "description": ""
             },
             {
               "name": "Bash, AWK",
               "level": "85",
-              "level_explanation": "level explanation",
-              "description": "description"
+              "level_explanation": "",
+              "description": ""
             },
             {
               "name": "Angular, Typescript",
               "level": "65",
-              "level_explanation": "level explanation",
+              "level_explanation": "",
               "description": "Frontend framework, this website is built with Angular"
             },
             {
               "name": "C++",
               "level": "65",
-              "level_explanation": "level explanation",
-              "description": "description"
+              "level_explanation": "",
+              "description": ""
             },
             {
               "name": "HTML, PHP, CSS",
               "level": "65",
-              "level_explanation": "level explanation",
-              "description": "description"
+              "level_explanation": "",
+              "description": ""
             },
             {
               "name": "SQL",
               "level": "65",
-              "level_explanation": "level explanation",
-              "description": "description"
+              "level_explanation": "",
+              "description": ""
             }
           ]
         },
         {
           "name": "Software and other technologies",
-          "description": "description",
+          "description": "",
           "skills": [
             {
               "name": "ElasticSearch, Opensearch",
               "level": "95",
-              "level_explanation": "level explanation",
+              "level_explanation": "",
               "description": "Non-relational databases"
             },
             {
               "name": "Kibana, Opensearch-dashboards",
               "level": "95",
-              "level_explanation": "level explanation",
+              "level_explanation": "",
               "description": "Visualization tools"
+            },
+            {
+              "name": "Docker",
+              "level": "70",
+              "level_explanation": "",
+              "description": "Containerization"
             },
             {
               "name": "AWS",
               "level": "50",
-              "level_explanation": "level explanation",
+              "level_explanation": "",
               "description": "Cloud services"
             }
           ]
         },
         {
           "name": "CI/CD tools",
-          "description": "description",
+          "description": "",
           "skills": [
             {
               "name": "Gitlab, Gitlab Pipelines, Github",
               "level": "90",
-              "level_explanation": "level explanation",
+              "level_explanation": "",
               "description": "Repository management and CI/CD"
             },
             {
               "name": "Pytest, Google Test",
               "level": "90",
-              "level_explanation": "level explanation",
+              "level_explanation": "",
               "description": "Testing frameworks"
             },
             {
               "name": "SonarQube",
               "level": "80",
-              "level_explanation": "level explanation",
+              "level_explanation": "",
               "description": "description"
-            },
-            {
-              "name": "Docker",
-              "level": "70",
-              "level_explanation": "level explanation",
-              "description": "Containerization"
             },
             {
               "name": "Jenkins",
               "level": "50",
-              "level_explanation": "level explanation",
+              "level_explanation": "",
               "description": "description"
             }
           ]
