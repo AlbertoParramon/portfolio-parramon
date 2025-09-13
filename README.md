@@ -1,4 +1,12 @@
 # PortfolioParramon
+This is a configurable porfolio web. 
+Example: https://portfolio-albertoparramon.netlify.app/
+
+## Preview
+<img width="1846" height="925" alt="screenshot1" src="https://github.com/user-attachments/assets/d097c067-30e0-4aa2-8d59-240572b4563b" />
+
+<img width="850" height="928" alt="screenshot2" src="https://github.com/user-attachments/assets/5308b890-2472-48bd-a8f1-9f971c0b61c4" />
+
 
 ## Dependencies
 ```bash
