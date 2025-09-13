@@ -1,61 +1,38 @@
 # PortfolioParramon
 
-## Salida del install con pnpm
+## Dependencies
 ```bash
-$ rm -rf node_modules pnpm-lock.yaml
-$ pnpm install
- WARN  3 deprecated subdependencies found: glob@7.2.3, inflight@1.0.6, rimraf@3.0.2
-Packages: +525
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Progress: resolved 602, reused 523, downloaded 0, added 525, done
+# NodeJS
+nvm install node
+nvm install 24.5.0
+nvm use 24.5.0
 
-dependencies:
-+ @angular/common 20.1.4
-+ @angular/compiler 20.1.4
-+ @angular/core 20.1.4
-+ @angular/forms 20.1.4
-+ @angular/platform-browser 20.1.4
-+ @angular/router 20.1.4
-+ rxjs 7.8.2
-+ tslib 2.8.1
-+ zone.js 0.15.1
+# Angular
+npm install -g @angular/cli
 
-devDependencies:
-+ @angular/build 20.1.4
-+ @angular/cli 20.1.4
-+ @angular/compiler-cli 20.1.4
-+ @types/jasmine 5.1.8
-+ jasmine-core 5.8.0 (5.9.0 is available)
-+ karma 6.4.4
-+ karma-chrome-launcher 3.2.0
-+ karma-coverage 2.2.1
-+ karma-jasmine 5.1.0
-+ karma-jasmine-html-reporter 2.1.0
-+ typescript 5.8.3 (5.9.2 is available)
-
-╭ Warning ───────────────────────────────────────────────────────────────────────────────────╮
-│                                                                                            │
-│   Ignored build scripts: @parcel/watcher, esbuild, lmdb, msgpackr-extract.                 │
-│   Run "pnpm approve-builds" to pick which dependencies should be allowed to run scripts.   │
-│                                                                                            │
-╰────────────────────────────────────────────────────────────────────────────────────────────╯
-
-Done in 2.7s using pnpm v10.14.0
+# pnpm (better than npm)
+npm install -g pnpm
 ```
 
-Y del build:
-
+## How to use it:
 ```bash
-$ ng build
-Initial chunk files   | Names         |  Raw size | Estimated transfer size
-main-JCNJCWKA.js      | main          | 211.22 kB |                57.88 kB
-polyfills-HGDOEU5L.js | polyfills     |  34.58 kB |                11.32 kB
-styles-5INURTSO.css   | styles        |   0 bytes |                 0 bytes
+# 1. Clone the repository. For example:
+WORK_DIR=~/Documentos/PORTFOLIO
+cd $WORK_DIR
+git clone git@github.com:AlbertoParramon/portfolio-parramon.git 
+cd portfolio-parramon
 
-                      | Initial total | 245.80 kB |                69.20 kB
+# 2. Use the NodeJS version needed
+nvm use node  #or v24.5.0
 
-Application bundle generation complete. [1.391 seconds]
-
-Output location: /home/alberto.parramon/Documentos/Alberto_personal/WEB/portfolio-parramon.git/dist/portfolio-parramon
+# 3. Launch the project
+pnpm install # first time you launch it
+./start_project.sh AlbertoParramon
 ```
+
+Now you can change the directory src/assets/AlbertoParramon for your own directory (For example: PepitoGrillo) with your own config and launch it with
+```bash
+./start_project.sh PepitoGrillo
+```
+
 
