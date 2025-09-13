@@ -47,4 +47,5 @@ Thumbs.db
 /src/assets/favicon.ico
 /src/assets/*.pdf
 /src/assets/*.jpeg
+/src/assets/*.png
 /src/index.html

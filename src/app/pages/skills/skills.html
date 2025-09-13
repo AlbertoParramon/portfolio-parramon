@@ -19,7 +19,9 @@
                   <!-- Contenido de la habilidad -->
                   <div class="skill-content">
                     <h3 class="skill-name">{{ skill.name }}</h3>
-                    <p class="skill-description">{{ skill.description }}</p>
+                    @if (skill.description) { 
+                      <p class="skill-description">{{ skill.description }}</p>
+                    }
                     
                     <!-- Barra de progreso -->
                     <div class="skill-progress">

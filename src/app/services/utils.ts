@@ -9,9 +9,9 @@ export class UtilsService {
   constructor() { }
 
   /**
-   * Copia texto al portapapeles del usuario y maneja el feedback visual
-   * @param text - Texto a copiar
-   * @returns Promise que se resuelve con el texto copiado si es exitoso
+   * Copies text to the user's clipboard and handles visual feedback
+   * @param text - Text to copy
+   * @returns Promise that resolves with the copied text if successful
    */
   async copyToClipboard(text: string): Promise<string> {
     try {
@@ -20,17 +20,17 @@ export class UtilsService {
       setTimeout(() => this.valueCopied = "", 500);
       return text;
     } catch (err) {
-      console.error('Error al copiar al portapapeles:', err);
+      console.error('Error copying to clipboard:', err);
       throw err;
     }
   }
 
   /**
-   * Abre un archivo en una nueva pestaña
-   * @param path - Ruta del archivo a abrir
+   * Opens a file in a new tab
+   * @param path - Path of the file to open
    */
   async openFile(path: string): Promise<void> {
-    // Abrir el archivo en una nueva pestaña
+    // Open the file in a new tab
     window.open(path, '_blank');
   }
 }

@@ -3,22 +3,22 @@ import { NgClass } from '@angular/common';
 import { ConfigService, Config } from '@services/config';
 
 /*
-El componente padre debe gestionar qué hacer cuando sidebar se colapsa
-Este componente tiene la clase
+The parent component must handle what to do when the sidebar collapses.
+This component has the class:
     '[class.sidebar-is-collapsed]': 'isSidebarCollapsed'
 
-Otra alternativa hubiera sido:
-En sidebar.ts:
+Another alternative would have been:
+In sidebar.ts:
 @Output() sidebarStateChange = new EventEmitter<boolean>();
 this.sidebarStateChange.emit(this.isSidebarCollapsed);
 
-En componente padre:
+In the parent component:
 isSidebarCollapsed = false;
 onSidebarStateChange(collapsed: boolean) {
   this.isSidebarCollapsed = collapsed;
 }
 
-Y gestionar qué hacer cuando colapsa
+And then manage what to do when it collapses.
 */
 
 interface MenuItem {
@@ -96,9 +96,9 @@ export class Sidebar {
             behavior: 'smooth'
           });
           
-          console.log(`Scroll exitoso a: ${sectionName} - Pantalla pequeña`);
+          console.log(`Successful scroll to: ${sectionName} - Small screen`);
         } else {
-          console.warn(`Elemento con ID '${sectionName}' no encontrado. IDs disponibles:`, 
+          console.warn(`Element with ID '${sectionName}' not found. Available IDs:`, 
             Array.from(document.querySelectorAll('[id]')).map(el => el.id));
         }
       } else {
