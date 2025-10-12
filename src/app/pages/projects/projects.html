@@ -26,6 +26,16 @@
                   <div class="project-content">
                     <h3 class="project-title">{{ project.title }}</h3>
                     <p class="project-description">{{ project.description }}</p>
+                    <!-- Tecnologies -->
+                    @if (project.technologies) {
+                      <div class="technologies-section">
+                        <div class="technologies-tags">
+                          @for (tech of project.technologies; track tech) {
+                            <span class="tech-tag">{{ tech }}</span>
+                          }
+                        </div>
+                      </div>
+                    }
                     
                     <!-- Botones de acción -->
                     <div class="project-actions">
@@ -38,7 +48,7 @@
                           <span>Open Project</span>
                         </button>
                       }
-                      
+
                       @if (project.github_button) {
                         <a [href]="project.github_button" 
                            target="_blank" 

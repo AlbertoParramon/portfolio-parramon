@@ -22,13 +22,13 @@ export class Skills {
     let levelText = '';
     
     if (numLevel > 1 && numLevel <= 33) {
-      levelText = 'Básico';
+      levelText = 'Basic';
     } else if (numLevel > 33 && numLevel <= 66) {
-      levelText = 'Intermedio';
+      levelText = 'Intermediate';
     } else if (numLevel > 66 && numLevel <= 100) {
-      levelText = 'Avanzado';
+      levelText = 'Advanced';
     } else {
-      levelText = 'Desconocido';
+      levelText = 'Unknown';
     }
     
     // If there is level_explanation and it is not empty, add ":"

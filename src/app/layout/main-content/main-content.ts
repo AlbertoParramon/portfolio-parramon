@@ -23,8 +23,8 @@ export class MainContent {
     'about': About,
     'education': Education,
     'experience': Experience,
-    'skills': Skills,
     'projects': Projects,
+    'skills': Skills,
     'contact': Contact
   };
 

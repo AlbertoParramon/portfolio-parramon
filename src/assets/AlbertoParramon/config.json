@@ -78,12 +78,12 @@
           "period": "Jan 2023 - Present",
           "location": "Remote",
           "description": "Lynx is a new company that emerged from ADIC – IIC. At this company, critical software is developed for banks, operating in Near Real Time with a response time of less than 100ms. It also includes a web application used for product management and data visualization, along with storage in both relational and non-relational databases. Among my main responsibilities:",
-          "technologies": ["Elasticsearch", "Opensearch", "Kibana", "Python", "C", "Bash", "Docker", "AWS", "Typescript", "NodeJS", "CI/CD (Pytest, Google Test, Sonarqube, Jenkins)"],
+          "technologies": ["Elasticsearch", "Opensearch", "Kibana", "Python", "C", "Bash", "Docker", "AWS", "Terraform", "Kubernetes", "Typescript", "NodeJS", "CI/CD (Pytest, Google Test, Sonarqube, Jenkins)"],
           "achievements": [
+            "Responsible for architecture and sizing of Elasticsearch (and Opensearch) clusters for our customers and managing their Kibana (and Opensearch Dashboards) web interfaces.",
             "Backend developer of the described product, taking on the role of coordinator in the absence of the main coordinator.",
-            "Architecture and maintenance of Elasticsearch and Kibana clusters for our clients.",
             "Main product lead for one of the clients, handling email management, applying fixes, new features, and maintenance in a Linux (RedHat) environment.",
-            "Part of the team responsible for migrating the product to the cloud.",
+            "Part of the team responsible for migrating the product to the cloud (AWS)",
             "DevOps application – CI/CD for the software, performing unit tests and continuous integration."
           ]
         },
@@ -92,12 +92,44 @@
           "position": "Software Analyst",
           "period": "May 2017 - Dec 2022",
           "location": "Madrid, Spain",
-          "description": "I worked as a developer in a team that maintained and enhanced a critical product for banks. This software operated in Near Real Time with a response time of less than 100ms. It also included a web application used for product management and data visualization, along with storage in both relational and non-relational databases. Among my main responsibilities:",
+          "description": "I worked as a developer in a team that maintained and enhanced a critical product for banks (Lynx, as explained earlier). My main responsibilities included:",
           "technologies": ["C", "C++", "Python", "Bash", "ElasticSearch", "Kibana", "SQL", "Linux", "Git", "REST", "SOAP"],
           "achievements": [
-            "Backend developer of the described product, implementing new improvements and developments in a Linux (RedHat) environment.",
-            "Architect and maintainer of ElasticSearch clusters both for the company and for our clients.",
-            "Main point of contact with one of the clients, managing email communication as well as meetings regarding potential requirements and issues."
+            "Developing backend improvements and new features for the product in a Linux (Red Hat) environment.",
+            "Maintaining Elasticsearch clusters for both the company and its clients.",
+            "Acting as part of the team responsible for a major client, managing email communication and participating in meetings about potential requirements and issues."
+          ]
+        }
+      ]
+    },
+    "projects": {
+      "label": "PROJECTS",
+      "sections": [
+        {
+          "name": "",
+          "description": "Personal projects I have developed in my free time to help me learn new technologies and improve my skills.",
+          "projects": [
+            {
+              "image": "assets/AlbertoParramon/projects/images/kibana1.png",
+              "title": "Elasticsearch containerized cluster",
+              "description": "It creates custom images for Elasticsearch and deploys them in clusters using Docker, Kubernetes, Terraform, and AWS.",
+              "technologies": ["AWS", "Docker", "Kubernetes", "Terraform"],
+              "github_button": "https://github.com/AlbertoParramon/elasticsearch_cluster_factory"
+            },
+            {
+              "image": "assets/AlbertoParramon/projects/images/monitoring.png",
+              "title": "Monitoring tool",
+              "description": "Monitoring cpu and memory consumption by system processes with nmon and python.",
+              "technologies": ["Bash", "Python", "Linux"],
+              "github_button": "https://github.com/AlbertoParramon/monitoring_tool"
+            },
+            {
+              "image": "assets/AlbertoParramon/projects/images/portfolio.png",
+              "title": "Portfolio website",
+              "description": "This website is built with Angular, typescript, and scss. It is easily customizable to add new sections and projects.",
+              "technologies": ["Angular", "Typescript", "SCSS", "NodeJS"],
+              "github_button": "https://github.com/AlbertoParramon/portfolio-parramon"
+            }
           ]
         }
       ]
@@ -138,43 +170,43 @@
             {
               "name": "C",
               "level": "85",
-              "level_explanation": "",
+              "level_explanation": "I’ve used it every week since I started working.",
               "description": ""
             },
             {
               "name": "Python",
               "level": "85",
-              "level_explanation": "",
+              "level_explanation": "I’ve regularly used it in my job since the beginning of my career.",
               "description": ""
             },
             {
               "name": "Bash, AWK",
               "level": "85",
-              "level_explanation": "",
+              "level_explanation": "I’ve regularly used it in my job since the beginning of my career.",
               "description": ""
             },
             {
               "name": "Angular, Typescript",
               "level": "65",
-              "level_explanation": "",
-              "description": "Frontend framework, this website is built with Angular"
+              "level_explanation": "I’ve used it on this website and occasionally in my current job, where I develop Kibana plugins.",
+              "description": ""
             },
             {
               "name": "C++",
               "level": "65",
-              "level_explanation": "",
+              "level_explanation": "I’m currently using it in my job, and I also used it in my final degree and master’s projects.",
               "description": ""
             },
             {
               "name": "HTML, PHP, CSS",
               "level": "65",
-              "level_explanation": "",
+              "level_explanation": "I’ve used it on this website and occasionally in my current job",
               "description": ""
             },
             {
               "name": "SQL",
               "level": "65",
-              "level_explanation": "",
+              "level_explanation": "I’ve regularly used it in my job since the beginning of my career.",
               "description": ""
             }
           ]
@@ -186,26 +218,26 @@
             {
               "name": "ElasticSearch, Opensearch",
               "level": "95",
-              "level_explanation": "",
-              "description": "Non-relational databases"
+              "level_explanation": "I’ve regularly used it in my job since the beginning of my career. I also used it in one personal project.",
+              "description": "Non-relational databases."
             },
             {
               "name": "Kibana, Opensearch-dashboards",
               "level": "95",
-              "level_explanation": "",
-              "description": "Visualization tools"
+              "level_explanation": "I’ve regularly used it in my job since the beginning of my career. I also used it in one personal project.",
+              "description": "Data visualization tools."
             },
             {
               "name": "Docker",
               "level": "70",
-              "level_explanation": "",
-              "description": "Containerization"
+              "level_explanation": "I’ve been using Docker more extensively in my current job to automate processes, and I’ve also used it in my personal projects.",
+              "description": "Containerization."
             },
             {
-              "name": "AWS",
+              "name": "AWS, Kubernetes, Terraform",
               "level": "50",
-              "level_explanation": "",
-              "description": "Cloud services"
+              "level_explanation": "I’ve used it in the migration of my company’s main product to the cloud, and I’ve also used it in my personal projects.",
+              "description": "Cloud and container services."
             }
           ]
         },
@@ -216,33 +248,30 @@
             {
               "name": "Gitlab, Gitlab Pipelines, Github",
               "level": "90",
-              "level_explanation": "",
-              "description": "Repository management and CI/CD"
+              "level_explanation": "I’ve been using it more extensively in my current job to automate processes and tests",
+              "description": "Repository management and CI/CD."
             },
             {
               "name": "Pytest, Google Test",
               "level": "90",
-              "level_explanation": "",
-              "description": "Testing frameworks"
+              "level_explanation": "I’ve been using it more extensively in my current job to automate processes and tests",
+              "description": "Testing frameworks."
             },
             {
               "name": "SonarQube",
               "level": "80",
-              "level_explanation": "",
-              "description": "description"
+              "level_explanation": "I’ve been using it more extensively in my current job to automate processes and tests",
+              "description": "Code quality platform."
             },
             {
               "name": "Jenkins",
               "level": "50",
-              "level_explanation": "",
-              "description": "description"
+              "level_explanation": "I’ve been using it more extensively in my current job to automate processes and tests",
+              "description": "Automation server tool."
             }
           ]
         }
       ]
-    },
-    "projects": {
-      "label": "PROJECTS"
     },
     "contact": {
       "label": "CONTACT",

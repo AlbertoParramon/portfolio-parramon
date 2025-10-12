@@ -100,36 +100,6 @@
   margin: 0;
 }
 
-.technologies-section {
-  padding-top: 1rem;
-  padding-left: 1rem;
-}
-
-.technologies-section h5, .achievements-section h5 {
-  font-family: var(--font_family_content, 'Segoe UI', sans-serif);
-  font-size: 1rem;
-  color: var(--main-content-text-color, #236a79);
-  margin: 0 0 0.5rem 0;
-  font-weight: 600;
-}
-
-.technologies-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.tech-tag {
-  background: var(--main-content-text-light-color, #236a79);
-  background: var(--icons-color, #236a79);
-  color: white;
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
 .achievements-list {
   padding-left: 1.5rem;
   list-style: none;
