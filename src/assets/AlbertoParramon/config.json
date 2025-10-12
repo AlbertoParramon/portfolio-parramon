@@ -107,7 +107,7 @@
       "sections": [
         {
           "name": "",
-          "description": "Personal projects I have developed in my free time to help me learn new technologies and improve my skills.",
+          "description": "Personal projects I have developed in my free time to help me learn new technologies and improve my skills. I also included my final bachelor's project.",
           "projects": [
             {
               "image": "assets/AlbertoParramon/projects/images/kibana1.png",
@@ -129,7 +129,14 @@
               "description": "This website is built with Angular, typescript, and scss. It is easily customizable to add new sections and projects.",
               "technologies": ["Angular", "Typescript", "SCSS", "NodeJS"],
               "github_button": "https://github.com/AlbertoParramon/portfolio-parramon"
-            }
+            },
+            {
+              "image": "assets/AlbertoParramon/projects/images/tfm.png",
+              "title": "Bachelor's thesys - Tumor growth simulation model",
+              "description": "Model for simulating tumor growth in collaboration with the Faculty of Medicine at UAM, using technologies such as C++ and R.",
+              "technologies": ["C++", "R"],
+              "open_button": "assets/Alberto_Parramon_TFM.pdf"
+            }          
           ]
         }
       ]

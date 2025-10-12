@@ -1,0 +1,88 @@
+{
+  "general": {
+    "colours": {
+      "main": "#B07A64",
+      "secondary": "#8AAB72",
+      "background": "#ecf0f1",
+      "background_total": "#ffffff",
+      "sidebar_text": "#ffffff",
+      "main-content_text": "#4a4a4a",
+      "main-content_text_light": "#737272",
+      "footer_text": "#737272",
+      "footer_text_dark": "#4a4a4a"
+    },
+    "sizes": {
+      "sidebar_top": "60px",
+      "sidebar_left": "250px",
+      "profile_photo_sidebar": "150px",
+      "profile_photo_about": "200px"
+    },
+    "text": {
+      "sidebar_title": "Jiminy Cricket",
+      "font_family_title": "'Bebas Neue', sans-serif",
+      "font_family_content": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+    }
+  },
+  "sections": {
+    "about": {
+      "label": "ABOUT",
+      "name_1": "JIMINY",
+      "name_2": "CRICKET",
+      "cv": {
+        "path": "assets/Alberto_Parramon_CV.pdf"
+      },
+      "intro": [
+        "I may be small in size, but I’ve got a big job — I’m a conscience, a voice of reason, and sometimes a bit of a chatterbox. I was appointed to guide Pinocchio on his journey to become a real boy, teaching him right from wrong and reminding him that every choice has consequences.",
+        "I’m dressed quite neatly — I always wear my top hat, carry my umbrella, and try to keep a gentlemanly look. Even though I’m just a cricket, I like to think I’ve got a human heart. I believe in honesty, courage, and selflessness — the values that truly make someone ‘real.’ Of course, I’m not perfect either; I make mistakes, get scared, and sometimes doubt myself. But I always do my best to help others find their way, even when the path is difficult.",
+        "After all, being a conscience isn’t easy — but someone’s got to do it!."
+      ],
+      "info_table": [
+        {
+          "label": "email",
+          "value": "pepito.grillo@gmail.com",
+          "copy": true
+        },
+        {
+          "label": "phone",
+          "value": "+66 999888999",
+          "copy": true
+        },
+        {
+          "label": "languages",
+          "value": "Spanish, English",
+          "copy": false
+        },
+        {
+          "label": "birth date",
+          "value": "10 October 2025",
+          "copy": false
+        }
+      ],
+      "info_icons": [
+        {
+          "label": "linkedin",
+          "path": "https://www.linkedin.com/in/alberto-parramon-castillo/"
+        },
+        {
+          "label": "github",
+          "path": "https://github.com/albertoparramon"
+        }
+      ]
+    },
+    "experience": {
+      "label": "EXPERIENCE"
+    },
+    "education": {
+      "label": "EDUCATION"
+    },
+    "projects": {
+      "label": "PROJECTS"
+    },
+    "skills": {
+      "label": "SKILLS"
+    },
+    "contact": {
+      "label": "CONTACT"
+    }
+  }
+}
