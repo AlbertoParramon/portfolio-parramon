@@ -32,9 +32,7 @@
         "path": "assets/Alberto_Parramon_CV.pdf"
       },
       "intro": [
-        "Full Stack Developer with 8 years of professional experience. Native Spanish speaker with a C1 level of English.",
-        "I work as part of a 15-person development team and occasionally step in as coordinator when the main lead is unavailable. I serve as the architect and maintainer of ElasticSearch clusters and its Kibana interface. I also participate in the design and development of new features across our platform.",
-        "Currently seeking new opportunities in international teams, with a strong interest in expanding my skills in cybersecurity and AI/ML."
+        "Full Stack Developer with 9 years of experience building and scaling critical backend architectures and web applications. Experienced in designing and managing production Elasticsearch clusters and cloud environments on AWS. Proven team coordinator with expertise in CI/CD and DevOps, and a key driver of the adoption and integration of AI-powered development tools across engineering workflows."
       ],
       "info_table": [
         {
@@ -78,13 +76,14 @@
           "period": "Jan 2023 - Present",
           "location": "Remote",
           "description": "Lynx is a new company that emerged from ADIC – IIC. At this company, critical software is developed for banks, operating in Near Real Time with a response time of less than 100ms. It also includes a web application used for product management and data visualization, along with storage in both relational and non-relational databases. Among my main responsibilities:",
-          "technologies": ["Elasticsearch", "Opensearch", "Kibana", "Python", "C", "Bash", "Docker", "AWS", "Terraform", "Kubernetes", "Typescript", "NodeJS", "CI/CD (Pytest, Google Test, Sonarqube, Jenkins)"],
+          "technologies": ["Elasticsearch", "Opensearch", "Kibana", "Python", "C", "Bash", "Docker", "AWS", "Terraform", "Kubernetes", "Typescript", "NodeJS", "CI/CD (Pytest, Google Test, Sonarqube, Jenkins)", "Claude Code"],
           "achievements": [
-            "Responsible for architecture and sizing of Elasticsearch (and Opensearch) clusters for our customers and managing their Kibana (and Opensearch Dashboards) web interfaces.",
-            "Backend developer of the described product, taking on the role of coordinator in the absence of the main coordinator.",
-            "Main product lead for one of the clients, handling email management, applying fixes, new features, and maintenance in a Linux (RedHat) environment.",
-            "Part of the team responsible for migrating the product to the cloud (AWS)",
-            "DevOps application – CI/CD for the software, performing unit tests and continuous integration."
+            "Spearhead the integration of Claude AI into engineering workflows to improve developer productivity.",
+            "Design and sized Elasticsearch production clusters for 4 major international banks, managing 30+ TB of data across 20+ nodes.",
+            "Engineer core backend features for real-time financial systems, delivering high-throughput processing with <100ms response time.",
+            "Architect automated CI/CD pipelines and testing frameworks (Pytest/Google Test), achieving 80% code coverage across unit and end-to-end tests.",
+            "Manage client-facing maintenance, issue resolution, and feature deployments in enterprise Linux (Red Hat) environments.",
+            "Contributed to the migration of critical banking applications to AWS, supporting the organization's cloud transformation."
           ]
         },
         {
@@ -95,9 +94,9 @@
           "description": "I worked as a developer in a team that maintained and enhanced a critical product for banks (Lynx, as explained earlier). My main responsibilities included:",
           "technologies": ["C", "C++", "Python", "Bash", "ElasticSearch", "Kibana", "SQL", "Linux", "Git", "REST", "SOAP"],
           "achievements": [
-            "Developing backend improvements and new features for the product in a Linux (Red Hat) environment.",
-            "Maintaining Elasticsearch clusters for both the company and its clients.",
-            "Acting as part of the team responsible for a major client, managing email communication and participating in meetings about potential requirements and issues."
+            "Engineered backend enhancements and novel features in Linux environments for high-performance financial systems.",
+            "Maintained high-availability Elasticsearch clusters and directed critical technical communications with enterprise banking clients.",
+            "Automated infrastructure testing and deployment scripts, significantly increasing deployment reliability and CI/CD efficiency,"
           ]
         }
       ]
